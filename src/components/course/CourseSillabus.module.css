@@ -1,0 +1,382 @@
+.container {
+  direction: rtl;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 0, 0, 0.1), 
+    transparent
+  );
+}
+
+.mainTitle {
+  font-family: 'Assistant', sans-serif;
+  font-size: 2.5rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.titleIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.8;
+  color: #000000;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 10px rgba(194, 190, 181, 0.25),
+              inset 0 0 15px rgba(237, 196, 95, 0.15);
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
+  pointer-events: none;
+}
+
+.section:hover {
+  transform: translateY(-4px);
+}
+
+.meetingTitle {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.meetingTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.topicList {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.topic {
+  font-family: 'AssistantR', sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.topic:hover {
+  background: rgba(0, 0, 0, 0.03);
+  transform: translateX(-4px);
+}
+
+.topicIcon {
+  color: rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+.practicalSection {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 16px;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.practicalHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+.practicalTitle {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.2rem;
+  color: #000000;
+  margin: 0;
+}
+
+.subtopicList {
+  padding-right: 1rem;
+  margin: 1rem 0 0;
+}
+
+.subtopic {
+  font-family: 'AssistantR', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.subtopicIcon {
+  color: rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.4s; }
+.section:nth-child(4) { animation-delay: 0.6s; }
+
+/* Responsive Media Queries */
+
+/* מתחת ל-350px */
+@media screen and (max-width: 349px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .inner {
+    width: 90%;
+    max-width: none;
+padding:0.5rem 0;
+    border-radius: 15px;
+  }
+  
+  .mainTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .titleIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .meetingTitle {
+    font-size: 1.2rem;
+  }
+  
+  .topic {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
+  
+  .practicalSection {
+    padding: 1rem;
+  }
+  
+  .practicalTitle {
+    font-size: 1.1rem;
+  }
+  
+  .subtopic {
+    font-size: 0.85rem;
+  }
+}
+
+/* 350px - 450px */
+@media screen and (min-width: 350px) and (max-width: 450px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .inner {
+    width: 90%;
+    max-width: none;
+    padding:0.5rem 0;
+    border-radius: 20px;
+  }
+  
+  .mainTitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .titleIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  
+  .section {
+    padding: 1rem;
+  }
+  
+  .practicalSection {
+    padding: 1.25rem;
+  }
+}
+
+/* 450px - 550px */
+@media screen and (min-width: 451px) and (max-width: 550px) {
+  .inner {
+    width: 90%;
+    max-width: none;
+
+    padding:0.5rem 0;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+  }
+  
+  .section {
+    padding: 1.25rem;
+  }
+}
+
+/* 550px - 650px */
+@media screen and (min-width: 551px) and (max-width: 650px) {
+  .inner {
+    width: 90%;
+    max-width: none;
+  }
+  
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+  
+  .practicalSection {
+    padding: 1.25rem;
+  }
+}
+
+/* 650px - 750px */
+@media screen and (min-width: 651px) and (max-width: 750px) {
+  .inner {
+    max-width: 700px;
+  }
+}
+
+/* 750px - 850px */
+@media screen and (min-width: 751px) and (max-width: 850px) {
+  .inner {
+    max-width: 800px;
+  }
+}
+
+/* 850px - 950px */
+@media screen and (min-width: 851px) and (max-width: 950px) {
+  .inner {
+    max-width: 900px;
+  }
+}
+
+/* 950px - 1050px */
+@media screen and (min-width: 951px) and (max-width: 1050px) {
+  .inner {
+    max-width: 1000px;
+  }
+  
+  .section {
+    padding: 2rem;
+  }
+}
+
+/* 1050px - 1150px */
+@media screen and (min-width: 1051px) and (max-width: 1150px) {
+  .inner {
+    max-width: 1100px;
+  }
+  
+  .mainTitle {
+    font-size: 2.8rem;
+  }
+  
+  .titleIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+/* 1150px - 1250px */
+@media screen and (min-width: 1151px) and (max-width: 1250px) {
+  .inner {
+    max-width: 1200px;
+  }
+  
+  .mainTitle {
+    font-size: 3rem;
+  }
+  
+  .titleIcon {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .section {
+    padding: 2.5rem;
+  }
+  
+  .practicalSection {
+    padding: 2rem;
+  }
+}
+

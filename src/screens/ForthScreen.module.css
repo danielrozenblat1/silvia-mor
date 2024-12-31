@@ -1,0 +1,139 @@
+/* Default styles for screens above 1250px */
+.description {
+    font-family: 'AssistantR', sans-serif;
+    text-align: center;
+    direction: rtl;
+    font-size: 1.4rem;
+    width: 90%;
+    margin: 2% auto;
+  }
+  
+  .title {
+    font-family: "Assistant";
+    text-align: center;
+    direction: rtl;
+    width: 85%;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 2% auto;
+  }
+  
+  /* 1150px - 1250px */
+  @media screen and (max-width: 1250px) {
+    .description {
+      font-size: 1.35rem;
+      width: 88%;
+    }
+    .title {
+      font-size: 2.4rem;
+      width: 83%;
+    }
+  }
+  
+  /* 1050px - 1150px */
+  @media screen and (max-width: 1150px) {
+    .description {
+      font-size: 1.3rem;
+      width: 86%;
+    }
+    .title {
+      font-size: 2.3rem;
+      width: 81%;
+    }
+  }
+  
+  /* 950px - 1050px */
+  @media screen and (max-width: 1050px) {
+    .description {
+      font-size: 1.25rem;
+      width: 84%;
+    }
+    .title {
+      font-size: 2.2rem;
+      width: 79%;
+    }
+  }
+  
+  /* 850px - 950px */
+  @media screen and (max-width: 950px) {
+    .description {
+      font-size: 1.2rem;
+      width: 82%;
+    }
+    .title {
+      font-size: 2.1rem;
+      width: 77%;
+    }
+  }
+  
+  /* 750px - 850px */
+  @media screen and (max-width: 850px) {
+    .description {
+      font-size: 1.15rem;
+      width: 80%;
+    }
+    .title {
+      font-size: 2rem;
+      width: 75%;
+    }
+  }
+  
+  /* 650px - 750px */
+  @media screen and (max-width: 750px) {
+    .description {
+      font-size: 1.1rem;
+      width: 78%;
+    }
+    .title {
+      font-size: 1.9rem;
+      width: 73%;
+    }
+  }
+  
+  /* 550px - 650px */
+  @media screen and (max-width: 650px) {
+    .description {
+      font-size: 1.05rem;
+      width: 76%;
+    }
+    .title {
+      font-size: 1.8rem;
+      width: 71%;
+    }
+  }
+  
+  /* 450px - 550px */
+  @media screen and (max-width: 550px) {
+    .description {
+      font-size: 1rem;
+      width: 74%;
+    }
+    .title {
+      font-size: 1.7rem;
+      width: 69%;
+    }
+  }
+  
+  /* 350px - 450px */
+  @media screen and (max-width: 450px) {
+    .description {
+      font-size: 1.1rem;
+      width: 72%;
+    }
+    .title {
+      font-size: 1.6rem;
+      width: 90%;
+    }
+  }
+  
+  /* Below 350px */
+  @media screen and (max-width: 350px) {
+    .description {
+      font-size: 1rem;
+      width: 70%;
+    }
+    .title {
+      font-size: 1.5rem;
+      width: 75%;
+    }
+  }

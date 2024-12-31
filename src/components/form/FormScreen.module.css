@@ -1,0 +1,115 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {  
+  font-size: 3rem;
+  font-family: "Assistant";
+  text-align: center;
+  margin: 1.5rem auto;
+  color: #1a1a1a;
+  font-weight: 300;
+  direction: rtl;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  direction: rtl;
+  border-radius: 12px;
+ 
+  padding: 0.5rem 0 ;
+
+}
+
+.input {
+  padding: 14px 16px;
+  margin: 8px 0;
+  border: 1.5px solid #e8e8e8;
+  direction: rtl;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-family: "AssistantR";
+  outline: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.input::placeholder {
+  color: #999;
+  transition: color 0.25s ease;
+}
+
+.input:focus {
+  border-color: #1a1a1a;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.input:focus::placeholder {
+  color: #ccc;
+}
+
+.button {
+  font-family: 'AssistantR';
+  font-size: 1.1rem;
+  width: 300px;
+  color: #FFFFFF;
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  border: none;
+  margin: 1% auto;
+  border-radius: 10px;
+  direction: rtl;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 350px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .form {
+    width: 85%;
+    padding: 15px;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .form {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 750px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .form {
+    width: 80%;
+  }
+}

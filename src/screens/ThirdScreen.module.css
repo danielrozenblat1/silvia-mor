@@ -1,0 +1,198 @@
+/* Default styles for screens below 350px */
+.title {
+    font-family: "Assistant";
+    text-align: center;
+    direction: rtl;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1% auto;
+}
+
+.description {
+    font-family: 'AssistantR', sans-serif;
+    text-align: center;
+    direction: rtl;
+    font-size: 1rem;
+    width: 80%;
+    margin: 0.5% auto;
+}
+
+.bounceArrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.arrowContainer {
+    display: flex;
+    justify-content: center;
+    margin: 3% auto;
+    width: 95%;
+}
+
+/* 350px - 450px */
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    .title {
+        font-size: 1.7rem;
+        margin: 1.2% auto;
+        width: 85%;
+    }
+    .description {
+        font-size: 1.1rem;
+        width: 75%;
+        margin: 0.7% auto;
+    }
+    .bounceArrow {
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-22px); }
+        60% { transform: translateY(-11px); }
+    }
+}
+
+/* 450px - 550px */
+@media screen and (min-width: 450px) and (max-width: 550px) {
+    .title {
+        font-size: 1.9rem;
+        margin: 1.4% auto;
+    }
+    .description {
+        font-size: 1.2rem;
+        width: 72%;
+        margin: 0.8% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-24px); }
+        60% { transform: translateY(-12px); }
+    }
+}
+
+/* 550px - 650px */
+@media screen and (min-width: 550px) and (max-width: 650px) {
+    .title {
+        font-size: 2rem;
+        margin: 1.6% auto;
+    }
+    .description {
+        font-size: 1.25rem;
+        width: 80%;
+        margin: 0.9% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-26px); }
+        60% { transform: translateY(-13px); }
+    }
+}
+
+/* 650px - 750px */
+@media screen and (min-width: 650px) and (max-width: 750px) {
+    .title {
+        font-size: 2.1rem;
+        margin: 1.7% auto;
+    }
+    .description {
+        font-size: 1.3rem;
+        width: 78%;
+        margin: 1% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-27px); }
+        60% { transform: translateY(-14px); }
+    }
+}
+
+/* 750px - 850px */
+@media screen and (min-width: 750px) and (max-width: 850px) {
+    .title {
+        font-size: 2.2rem;
+        margin: 1.8% auto;
+    }
+    .description {
+        font-size: 1.33rem;
+        width: 77%;
+        margin: 1% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-28px); }
+        60% { transform: translateY(-14px); }
+    }
+}
+
+/* 850px - 950px */
+@media screen and (min-width: 850px) and (max-width: 950px) {
+    .title {
+        font-size: 2.3rem;
+        margin: 1.9% auto;
+    }
+    .description {
+        font-size: 1.35rem;
+        width: 76%;
+        margin: 1% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-29px); }
+        60% { transform: translateY(-15px); }
+    }
+}
+
+/* 950px - 1050px */
+@media screen and (min-width: 950px) and (max-width: 1050px) {
+    .title {
+        font-size: 2.4rem;
+        margin: 2% auto;
+    }
+    .description {
+        font-size: 1.37rem;
+        width: 75%;
+        margin: 1% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-30px); }
+        60% { transform: translateY(-15px); }
+    }
+}
+
+/* 1050px - 1150px */
+@media screen and (min-width: 1050px) and (max-width: 1150px) {
+    .title {
+        font-size: 2.45rem;
+        margin: 2% auto;
+    }
+    .description {
+        font-size: 1.38rem;
+        width: 75%;
+        margin: 1% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-30px); }
+        60% { transform: translateY(-15px); }
+    }
+}
+
+/* 1150px - 1250px */
+@media screen and (min-width: 1150px) and (max-width: 1250px) {
+    .title {
+        font-size: 2.5rem;
+        margin: 2% auto;
+    }
+    .description {
+        font-size: 1.4rem;
+        width: 75%;
+        margin: 1% auto;
+    }
+    @keyframes bounce {
+        40% { transform: translateY(-30px); }
+        60% { transform: translateY(-15px); }
+    }
+}

@@ -1,0 +1,496 @@
+/* Base styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    padding-top: 230px;
+}
+
+.intro,.introP {
+    font-family: 'AssistantR', sans-serif;
+    color: #181818;
+    font-size: 1.5rem;
+    direction: rtl;
+    margin:2% auto;
+    text-align: center;
+
+}
+.introP{
+    padding-top: 80px;
+}
+
+.explainContainer {
+    position: relative;
+    max-width: 80%;
+    z-index: 2;
+}
+
+.imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.topLeftImage,
+.topRightImage,
+.middleLeftImage,
+.middleRightImage {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    z-index: -1;
+    transition: transform 0.1s ease-out;
+}
+
+.topLeftImage {
+    top: -115px;
+    left: -75px;
+    transform: rotate(-20deg);
+    background-image: url('../images/סילביה מור תמונה שמאל.png');
+}
+
+.topRightImage {
+    top: -115px;
+    right: -75px;
+    transform: rotate(20deg);
+    background-image: url('../images/סילביה מור תמונה ימין.png');
+}
+
+.middleLeftImage {
+    top: -155px;
+    left: calc(25% - 75px);
+    transform: rotate(-20deg);
+    background-image: url('../images/סילביה מור תמונה אמצע שמאל.png');
+}
+
+.middleRightImage {
+    top: -155px;
+    right: calc(25% - 75px);
+    transform: rotate(20deg);
+    background-image: url('../images/סילביה מור תמונה אמצע ימין.png');
+}
+
+.explain {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2rem;
+  color: #181818;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.255);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+}
+
+.contentWrapper {
+    padding: 2.5rem;
+    max-width: 70%;
+    background: rgba(255, 255, 255, 0.255);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.descriptionWrapper {
+    font-family: 'AssistantR', sans-serif;
+  color: #181818;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.5rem;
+    direction: rtl;
+    margin: 0.5rem 0;
+}
+
+.description:first-child {
+    font-family: 'Assistant', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.description:last-child {
+    position: relative;
+    display: inline-block;
+}
+
+.description:last-child::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #181818, #dddcdb, #181818);
+    animation: underlineAnimation 3s infinite;
+}
+
+@keyframes underlineAnimation {
+    0%, 100% {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+    }
+    50% {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+.bounceArrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 350px) {
+    .container {
+        padding-top: 100px;
+        gap: 0.75rem;
+    }
+    .intro,.introP {
+        font-size: 1.1rem;
+        margin: 0.75rem auto;
+    }
+    .explainContainer, .contentWrapper {
+        max-width: 80%;
+    }
+    .explain {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    .description {
+        font-size: 1.3rem;
+    }
+    .description:first-child {
+        font-size: 1.3rem;
+    }
+    .contentWrapper {
+        width: 70%;
+    }
+    .topLeftImage,
+    .topRightImage,
+    .middleLeftImage,
+    .middleRightImage {
+        width: 65px;
+        height: 87px;
+    }
+    .topLeftImage {
+        top: -50px;
+        left: -25px;
+    }
+    .topRightImage {
+        top: -50px;
+        right: -25px;
+    }
+    .middleLeftImage {
+        top: -67px;
+        left: calc(25% - 32.5px);
+    }
+    .middleRightImage {
+        top: -67px;
+        right: calc(25% - 32.5px);
+    }
+}
+
+@media (min-width: 350px) and (max-width: 450px) {
+    .container {
+        padding-top: 100px;
+        gap: 0.75rem;
+    }
+    .intro,.introP {
+        font-size: 1.2rem;
+        margin: 0.75rem auto;
+    }
+    .explainContainer, .contentWrapper {
+        max-width: 85%;
+    }
+    .explain {
+        font-size: 1.4rem;
+    }
+    .contentWrapper {
+        width: 75%;
+        padding: 2rem;
+    }
+    .description {
+        font-size: 1.3rem;
+    }
+    .description:first-child {
+        font-size: 1.5rem;
+    }
+    .topLeftImage,
+    .topRightImage,
+    .middleLeftImage,
+    .middleRightImage {
+        width: 80px;
+        height: 107px;
+    }
+    .topLeftImage {
+        top: -61px;
+        left: -30px;
+    }
+    .topRightImage {
+        top: -61px;
+        right: -30px;
+    }
+    .middleLeftImage {
+        top: -82px;
+        left: calc(25% - 40px);
+    }
+    .middleRightImage {
+        top: -82px;
+        right: calc(25% - 40px);
+    }
+}
+
+@media (min-width: 450px) and (max-width: 550px) {
+    .container {
+        padding-top: 180px;
+        gap: 1rem;
+    }
+    .explainContainer, .contentWrapper {
+        max-width: 80%;
+    }
+    .explain {
+        font-size: 1.6rem;
+    }
+    .description {
+        font-size: 1.25rem;
+    }
+    .contentWrapper {
+        width: 75%;
+        padding: 2rem;
+    }
+    .description:first-child {
+        font-size: 1.5rem;
+    }
+    .topLeftImage,
+    .topRightImage,
+    .middleLeftImage,
+    .middleRightImage {
+        width: 95px;
+        height: 127px;
+    }
+    .topLeftImage {
+        top: -73px;
+        left: -37px;
+    }
+    .topRightImage {
+        top: -73px;
+        right: -37px;
+    }
+    .middleLeftImage {
+        top: -98px;
+        left: calc(25% - 47.5px);
+    }
+    .middleRightImage {
+        top: -98px;
+        right: calc(25% - 47.5px);
+    }
+}
+
+@media (min-width: 550px) and (max-width: 650px) {
+    .container {
+        padding-top: 200px;
+    }
+    .explainContainer, .contentWrapper {
+        max-width: 75%;
+    }
+    .explain {
+        font-size: 1.7rem;
+    }
+    .description {
+        font-size: 1.3rem;
+    }
+    .description:first-child {
+        font-size: 1.5rem;
+    }
+    .topLeftImage,
+    .topRightImage,
+    .middleLeftImage,
+    .middleRightImage {
+        width: 120px;
+        height: 160px;
+    }
+    .topLeftImage {
+        top: -92px;
+        left: -60px;
+    }
+    .topRightImage {
+        top: -92px;
+        right: -60px;
+    }
+    .middleLeftImage {
+        top: -124px;
+        left: calc(25% - 60px);
+    }
+    .middleRightImage {
+        top: -124px;
+        right: calc(25% - 60px);
+    }
+}
+
+@media (min-width: 650px) and (max-width: 750px) {
+    .container {
+        padding-top: 230px;
+        gap: 1.5rem;
+    }
+    .explainContainer {
+        max-width: 75%;
+    }
+    .contentWrapper {
+        max-width: 65%;
+    }
+    .explain {
+        font-size: 1.8rem;
+    }
+    .description {
+        font-size: 1.4rem;
+    }
+    .description:first-child {
+        font-size: 1.6rem;
+    }
+    .topLeftImage,
+    .topRightImage,
+    .middleLeftImage,
+    .middleRightImage {
+        width: 135px;
+        height: 180px;
+    }
+    .topLeftImage {
+        top: -103.5px;
+        left: -67.5px;
+    }
+    .topRightImage {
+        top: -103.5px;
+        right: -67.5px;
+    }
+    .middleLeftImage {
+        top: -139.5px;
+        left: calc(25% - 67.5px);
+    }
+    .middleRightImage {
+        top: -139.5px;
+        right: calc(25% - 67.5px);
+    }
+}
+
+@media (min-width: 750px) and (max-width: 850px) {
+    .container {
+        padding-top: 240px;
+        gap: 1.5rem;
+    }
+    .explainContainer {
+        max-width: 75%;
+    }
+    .contentWrapper {
+        max-width: 65%;
+    }
+    .explain {
+        font-size: 1.9rem;
+    }
+    .description {
+        font-size: 1.45rem;
+    }
+    .description:first-child {
+        font-size: 1.7rem;
+    }
+    .topLeftImage,
+    .topRightImage,
+    .middleLeftImage,
+    .middleRightImage {
+        width: 142px;
+        height: 190px;
+    }
+    .topLeftImage {
+        top: -109px;
+        left: -71px;
+    }
+    .topRightImage {
+        top: -109px;
+        right: -71px;
+    }
+    .middleLeftImage {
+        top: -147px;
+        left: calc(25% - 71px);
+    }
+    .middleRightImage {
+        top: -147px;
+        right: calc(25% - 71px);
+    }
+}
+
+@media (min-width: 850px) and (max-width: 950px) {
+    .container {
+        padding-top: 250px;
+        gap: 1.5rem;
+    }
+    .explainContainer {
+        max-width: 80%;
+    }
+    .contentWrapper {
+        max-width: 65%;
+    }
+    .explain {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1.5rem;
+    }
+    .description:first-child {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 950px) and (max-width: 1050px) {
+    .container {
+        gap: 1.5rem;
+    }
+    .contentWrapper {
+        max-width: 65%;
+    }
+}
+
+@media (min-width: 1050px) and (max-width: 1150px) {
+    .container {
+        gap: 1.5rem;
+    }
+    .explainContainer {
+        max-width: 75%;
+    }
+    .contentWrapper {
+        max-width: 65%;
+    }
+}
+
+@media (min-width: 1150px) and (max-width: 1250px) {
+    .container {
+        gap: 1.5rem;
+    }
+    .explainContainer {
+        max-width: 70%;
+    }
+    .contentWrapper {
+        max-width: 65%;
+    }
+}

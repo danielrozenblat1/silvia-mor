@@ -1,0 +1,135 @@
+.NewBox {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  box-shadow: 0 8px 10px rgba(184, 177, 161, 0.25),
+              inset 0 0 10px rgba(152, 129, 95, 0.25);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 25px;
+
+  border-radius: 50% 20px 40% 20px / 20px 40% 20px 40%;
+  position: relative;
+  border: 1px solid rgba(152, 129, 95, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.description {
+  font-size: 1.1rem;
+  font-family: "AssistantR", Arial, sans-serif;
+  text-align: right;
+
+  direction: rtl;
+  width: 90%;
+  color: #666;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+
+}
+
+.title {
+  font-size: 1.6rem;
+  font-family: "Assistant", Arial, sans-serif;
+  text-align: right;
+  direction: rtl;
+  flex: 1;
+  font-weight: 700;
+  color: #2d2d3d;
+  letter-spacing: -0.02em;
+  margin-right: 15px;
+}
+
+.icon {
+  display: flex;
+  width: 20%;
+
+  justify-content: flex-start;
+  transition: transform 0.4s ease;
+}
+
+
+
+.NewBox:hover .icon {
+  transform: scale(1.03) translateX(-5px);
+}
+
+.NewBox:hover .description {
+  transform: translateX(-8px);
+  color: #444;
+}
+
+@media only screen and (max-width: 350px) {
+  .NewBox {
+    width: 270px;
+    max-width: 320px;
+    padding: 15px;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    width: 100%;
+   
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .icon {
+    width: 25%;
+    min-width: 25%;
+  }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 450px) {
+  .NewBox {
+    width: 340px;
+    padding: 18px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    width: 95%;
+    margin-right: 8%;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .icon {
+    width: 28%;
+    min-width: 28%;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 550px) {
+  .NewBox {
+    width: 360px;
+  }
+  
+  .description {
+    font-size: 1.05rem;
+    width: 90%;
+    margin-right: 9%;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .icon {
+    width: 30%;
+    min-width: 30%;
+  }
+}
