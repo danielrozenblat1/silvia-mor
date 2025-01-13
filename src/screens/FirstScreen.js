@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from "./FirstScreen.module.css";
 import { ChevronDown } from 'lucide-react';
-// import Loader from '../../components/loader/Loader';
+import Loader from '../components/loader/Loader';
 
 const FirstScreen = (props) => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -64,9 +64,9 @@ const FirstScreen = (props) => {
     };
   }, [imagesLoaded]);
 
-//   if (!imagesLoaded) {
-//     return <Loader />;
-//   }
+  if (!imagesLoaded) {
+    return <Loader />;
+  }
 
   return <>
   <div className={props.scrolled? styles.introP :styles.intro}> *במיוחד עבור מי שמחפש/ת לצבור בטחון בביצוע כל תסרוקת, ליצור יתרון תחרותי בשוק ולהרחיב את סל השירותים*</div>
