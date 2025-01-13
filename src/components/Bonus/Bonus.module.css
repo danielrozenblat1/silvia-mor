@@ -115,10 +115,13 @@
         width: 100%;
         max-width: none;
     }
-
+ 
     .icon {
         width: 65px;
         height: 65px;
+    }
+    .text {
+        font-size: 1.2rem;
     }
 }
 

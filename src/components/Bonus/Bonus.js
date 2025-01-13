@@ -37,7 +37,7 @@ const ServiceColumns = () => {
         {
             icon: certificate,
             ref: playerRef3,
-            title: "תעודת הסמכה וידע שנרכש מהטובים בעולם",
+            title: "תעודת הסמכה מהידע שנרכש מהטובים בעולם",
             type: "image",
             image: certificates
         },

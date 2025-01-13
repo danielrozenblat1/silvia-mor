@@ -14,7 +14,7 @@
     direction: rtl;
     font-size: 1.4rem;
     width: 80%;
-    margin: 0.5% auto;
+    margin: 2% auto;
 }
 
 .bounceArrow {
@@ -36,27 +36,27 @@
 .arrowContainer {
     display: flex;
     justify-content: center;
-    margin: 3% auto;
+    margin: 3% auto 0;
     width: 95%;
 }
 
 /* 350px - 450px */
 @media screen and (min-width: 350px) and (max-width: 450px) {
     .title {
-        font-size: 2rem;
-        margin: 2% auto;
+        font-size: 1.8rem;
+        margin: 3% auto;
         width: 85%;
     }
     .description {
         font-size: 1.1rem;
         width: 75%;
-        margin: 2% auto;
+        margin: 3% auto;
     }
     .bounceArrow {
         animation: bounce 2s infinite;
     }
     @keyframes bounce {
-        40% { transform: translateY(-22px); }
+        40% { transform: translateY(-12px); }
         60% { transform: translateY(-11px); }
     }
 }
