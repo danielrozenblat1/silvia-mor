@@ -56,26 +56,29 @@
 
 .button {
   font-family: 'AssistantR';
-  font-size: 1.1rem;
-  width: 300px;
-  color: #FFFFFF;
-  background-color: #1a1a1a;
+  font-size:1.1rem;
+  width:300px;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(172, 149, 125, 0.2);
   padding: 15px 30px;
   border: none;
-  margin: 1% auto;
   border-radius: 10px;
   direction: rtl;
+  margin:2% auto;
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
   position: relative;
   overflow: hidden;
 }
 
-.button:hover {
-  background-color: #333;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+
 
 .button:active {
   transform: translateY(0);

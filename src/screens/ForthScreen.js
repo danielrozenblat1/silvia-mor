@@ -7,9 +7,10 @@ import Cube from "../components/Bonus/Bonus";
 import ServiceColumns from "../components/Bonus/Bonus";
 import FormScreen from "../components/form/FormScreen";
 import FAQItem from "../components/questions/Questions";
+import Button from '../components/button/Button';
 
 const ForthScreen = () => {
-  return (
+  return <>
     <div className="w-full" dir="rtl">
       <div className={styles.title}>כמה דברים שחשוב לי לענות עליהם</div>
       <div className={styles.description}>
@@ -58,7 +59,8 @@ const ForthScreen = () => {
         answer="בהחלט! יש לנו מאות בוגרות מצליחות מכל רחבי הארץ, 95% מהבוגרות שלנו עובדות בתחום. רבות מהן פתחו סטודיו עצמאי, הגדילו משמעותית את ההכנסה שלהן והפכו למובילות בתחום התסרוקות."
       />
     </div>
-  );
+    <Button text="סילביה, יש לי עוד שאלות"/>
+    </>
 };
 
 export default ForthScreen;

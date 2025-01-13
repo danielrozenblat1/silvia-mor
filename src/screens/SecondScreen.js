@@ -43,7 +43,7 @@ const SecondScreen = () => {
       <div className={styles.description}>גם אני הייתי שם - שנים של תסכול וחוסר ביטחון. אבל לא ויתרתי. כשהגעתי לרוסיה, גיליתי עולם חדש: בדיוק כמו שלמעצב אופנה יש גזרות מדויקות, גם לתסרוקות יש תיאוריה שלמה ומדויקת!.</div>
  
       <Students/>
-      <div className={styles.description}>הדרך שלנו מתחילה כאן</div>
+      <div className={styles.description}>כמה פרטים ואני חוזרת אלייך</div>
       <div className={styles.arrowContainer}>
         <ChevronDown className={styles.bounceArrow} size={40} strokeWidth={1} />
       </div>

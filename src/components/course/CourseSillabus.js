@@ -83,7 +83,7 @@ const HairstylingCourse = () => {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="קורס מתחילות">
       <div className={styles.inner}>
         <h1 className={styles.mainTitle}>
           <Scissors className={styles.titleIcon} />
