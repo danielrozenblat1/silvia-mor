@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Me.module.css';
-import silvi from "../../images/סילביה מור תסרוקות 14.png";
+import silvi from "../../images/סילביה מור תדמית.jpg";
 import silvia from "../../images/סילביה מור גורג'י קוט.png";
 import Stats from '../stats/Stats';
 import Recommends from '../recommends/Recommends';

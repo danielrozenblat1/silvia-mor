@@ -7,7 +7,7 @@ import work from "../../Icons/wired-lineal-406-study-graduation-hover-pinch.json
 import secure from "../../Icons/wired-lineal-16-avatar-woman-nodding-hover-pinch (1).json"
 import avialable from "../../Icons/wired-lineal-405-non-stop-24-h-hover-spin.json"
 import silvia from "../../images/סילביה מסדרת עבודות.png"
-
+import certificates from "../../images/סילביה תעודות.png"
 const ServiceColumns = () => {
     const playerRef1 = useRef(null);
     const playerRef2 = useRef(null);
@@ -39,7 +39,7 @@ const ServiceColumns = () => {
             ref: playerRef3,
             title: "תעודת הסמכה וידע שנרכש מהטובים בעולם",
             type: "image",
-            image: silvia
+            image: certificates
         },
         {
             icon: avialable,
