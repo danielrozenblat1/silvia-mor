@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(to right, #00000000, #19191900);
+  background: transparent;
   height: 80px;
   width: 100%;
   display: flex;
@@ -10,32 +10,11 @@
   padding: 0 20px;
   z-index: 999;
   justify-content: space-between;
-  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-  will-change: transform;
   box-sizing: border-box;
-  position: relative;
-  transform: translateY(0);
-  box-shadow: 0 0 5px 2px rgba(45, 45, 45, 0.345);
-}
-
-.sticky {
   position: fixed;
   top: 0;
   left: 0;
-  align-items: center;
-  z-index: 1000;
-  height: 80px;
-  animation: slideDown 0.8s ease-in-out;
   box-shadow: 0 0 5px 2px rgba(45, 45, 45, 0.345);
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-10%);
-  }
-  to {
-    transform: translateY(0);
-  }
 }
 
 .logo {
@@ -65,9 +44,9 @@
   width: 30px;
   height: 30px;
   font-size: 25px;
-  background-color: none;
+  background-color: transparent;
   border-radius: 5px;
-  color: black;
+  color: white;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -75,7 +54,7 @@
 .hamburger {
   cursor: pointer;
   font-size: 1.5rem;
-  color: black;
+  color: white;
   z-index: 1001;
   display: flex;
   align-items: center;
@@ -88,7 +67,7 @@
 }
 
 .menuItems a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-family: "AssistantR";
   font-size: 1.2rem;
@@ -128,7 +107,7 @@
 }
 
 .mobileMenuItem {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 1.5rem;
   font-family: "AssistantR";
@@ -146,6 +125,7 @@
   object-fit: contain;
 }
 
+/* Animations */
 @keyframes revealMenu {
   from {
     clip-path: circle(0% at top right);
@@ -186,6 +166,7 @@
   }
 }
 
+/* Media Queries */
 @media (max-width: 850px) {
   .menuItems {
     display: none;

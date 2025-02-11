@@ -1,138 +1,179 @@
-.box{
-    width:400px;
-    height:auto;
-    display: flex;
-    flex-direction: column;
-    margin: 2% auto;
+/* Box styles */
+.box {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 2% auto;
+  padding: 0.5rem 1.5rem;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  
 }
-.description{
-    font-size:1.1rem;
-    font-family: "AssistantR";
-    text-align: center;
-    margin:2% auto;
-    direction:rtl;
-    width:90%;
-    text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-    color: rgb(64, 45, 21);
+
+/* Description styles */
+.description {
+  font-size: 1rem;
+  font-family: "AssistantR";
+  text-align: center;
+  margin: 2% auto;
+  direction: rtl;
+
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: #E3DCD2;
+}
+
+/* Title styles */
+.title {
+  font-family: "Assistant";
+  text-align: center;
+  direction: rtl;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 20px auto;
+  margin: 3% auto;
+  
+}
+
+/* Icon styles */
+.icon {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  margin: 0 auto;
+}
+
+/* Media Queries */
+/* For screens smaller than 350px */
+@media only screen and (max-width: 350px) {
+  .box {
+      width: 300px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 3% auto;
   }
-  .title{
-    font-size:2.5rem;
-    font-family: "Assistant";
-    text-align: center;
-    margin:3% auto;
-    direction:rtl;
-    width:60;
-    text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-    color: rgb(66, 43, 11);
+  
+  .description {
+      font-size: 1rem;
+      font-family: "AssistantR";
+      text-align: center;
+      margin: 2% auto;
+      direction: rtl;
+      width: 90%;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      color: #E3DCD2;
   }
-  .icon{
-    display: flex;
-    justify-content: center;
-    width:30%;
-    margin:0 auto;
+  
+  .title {
+      font-size: 1.8rem;
+      font-family: "Assistant";
+      text-align: center;
+      margin: 3% auto;
+      direction: rtl;
+      width: 60%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
   }
-  @media only screen and (max-width: 350px){
-    .box{
-        width:300px;
-        height:auto;
-        display: flex;
-        flex-direction: column;
-        margin:3% auto;
-    }
-    .description{
-        font-size:1rem;
-        font-family: "AssistantR";
-        text-align: center;
-        margin:2% auto;
-        direction:rtl;
-        width:90%;
-        text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-        color: rgb(64, 45, 21);
-      }
-      .title{
-        font-size:1.8rem;
-        font-family: "Assistant";
-        text-align: center;
-        margin:3% auto;
-        direction:rtl;
-        width:60%;
-        text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-        color: rgb(66, 43, 11);
-      }
-      .icon{
-        display: flex;
-        justify-content: center;
-        width:30%;
-        margin:2% auto;
-      }
+  
+  .icon {
+      display: flex;
+      justify-content: center;
+      width: 30%;
+      margin: 2% auto;
   }
-  @media only screen and (min-width: 350px) and (max-width: 450px){
-    .box{
-        width:300px;
-        height:auto;
-        display: flex;
-        flex-direction: column;
-        margin:3% auto;
-    }
-    .description{
-        font-size:1.1rem;
-        font-family: "AssistantR";
-        text-align: center;
-        margin:2% auto;
-        direction:rtl;
-        width:90%;
-        text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-        color: rgb(64, 45, 21);
-      }
-      .title{
-        font-size:2rem;
-        font-family: "Assistant";
-        text-align: center;
-        margin:3% auto;
-        direction:rtl;
-        width:60%;
-        text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-        color: rgb(66, 43, 11);
-      }
-      .icon{
-        display: flex;
-        justify-content: center;
-        width:30%;
-        margin:2% auto;
-      }
+}
+
+/* For screens between 350px and 450px */
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+  .box {
+      width: 300px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 3% auto;
   }
-  @media only screen and (min-width: 450px) and (max-width: 550px){
-    .box{
-        width:350px;
-        height:auto;
-        display: flex;
-        flex-direction: column;
-        margin:3% auto;
-    }
-    .description{
-        font-size:1.15rem;
-        font-family: "AssistantR";
-        text-align: center;
-        margin:2% auto;
-        direction:rtl;
-        width:95%;
-        text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-        color: rgb(64, 45, 21);
-      }
-      .title{
-        font-size:2.2rem;
-        font-family: "Assistant";
-        text-align: center;
-        margin:3% auto;
-        direction:rtl;
-        width:60%;
-        text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.158);
-        color: rgb(66, 43, 11);
-      }
-      .icon{
-        display: flex;
-        justify-content: center;
-        width:25%;
-        margin:2% auto;
-      }
+  
+  .description {
+      font-size: 1.1rem;
+      font-family: "AssistantR";
+      text-align: center;
+      margin: 2% auto;
+      direction: rtl;
+      width: 90%;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      color: #E3DCD2;
   }
+  
+  .title {
+      font-size: 2rem;
+      font-family: "Assistant";
+      text-align: center;
+      margin: 3% auto;
+      direction: rtl;
+      width: 60%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+  
+  .icon {
+      display: flex;
+      justify-content: center;
+      width: 30%;
+      margin: 2% auto;
+  }
+}
+
+/* For screens between 450px and 550px */
+@media only screen and (min-width: 450px) and (max-width: 550px) {
+  .box {
+      width: 350px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 3% auto;
+  }
+  
+  .description {
+      font-size: 1.15rem;
+      font-family: "AssistantR";
+      text-align: center;
+      margin: 2% auto;
+      direction: rtl;
+      width: 95%;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      color: #E3DCD2;
+  }
+  
+  .title {
+      font-size: 2.2rem;
+      font-family: "Assistant";
+      text-align: center;
+      margin: 3% auto;
+      direction: rtl;
+      width: 60%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+  
+  .icon {
+      display: flex;
+      justify-content: center;
+      width: 25%;
+      margin: 2% auto;
+  }
+}

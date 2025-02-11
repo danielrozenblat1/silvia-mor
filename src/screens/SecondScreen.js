@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertTriangle, ChevronDown, EyeOff, Unplug } from 'lucide-react';
-import NewBox from "../components/NewBox/NewBox";
+import Box from "../components/box/Box";
 import styles from "./SecondScreen.module.css";
 import stress from "../Icons/wired-outline-712-woman-style-10-hover-pinch.json"
 import prevent from "../Icons/wired-outline-719-woman-style-17-hover-pinch.json"
@@ -12,28 +12,41 @@ import AboutMe from '../components/me/Me';
 const SecondScreen = () => {
   return (
     <>
-      <div className={styles.title}>כמה פעמים יצא לך</div>
+
+    <div className={styles.background}>
+      <div className={styles.title}>אצלי תקבלו</div>
       
+       
       <div className={styles.row}>
-        <NewBox 
-          title="להלחץ מבקשות מורכבות"
-          description="בקשות חדשות של לקוחות פוטנציאלים, תסרוקת שמתפרקת באמצע האירוע או שיטות חדשות שעוד לא יצא לך להתעסק איתן - ואיתן, הלחץ מתחיל"
+        <Box 
+          title="בטחון בכל סוג תסרוקת שתעשי"
+          description="את תקבלי את הכלים והביטחון לבצע כל סוג של תסרוקת, גם כאלו שלא התנסית בהן קודם. הידע המקיף והטכניקות המתקדמות יאפשרו לך להתמודד בהצלחה עם כל אתגר ובקשה של לקוחה"
           icon={stress}
         />
         
-        <NewBox 
-          title="להמנע משיער לא מוכר"
-          description="יש לך מומחיות בכמה סוגי שיער ספציפים אבל ברגע שמגיעים סוגים שונים של שיער שלא עבדת איתם /של מגזרים שונים - את/ה מעדיף להמנע"
+        <Box 
+          title="תעודת הסמכה בינלאומית"
+          description="תקבלי תעודה מוכרת בינלאומית שתאפשר לך לעבוד בכל מקום בעולם. ההסמכה מעידה על רמה מקצועית גבוהה ומאפשרת לך להתמודד עם כל סוגי השיער והתסרוקות"
           icon={prevent}
         />
-        
-        <NewBox 
-          title="להתבייש לפרסם עבודות"
-          description="פרסום העבודות שלך יכול להכפיל את ההכנסות שלך אם תעשה/י את זה בצורה נכונה! החשש לפרסם את העבודות כי הן חוזרות על עצמן/לא מספיק טובות (בעיניך) מונע ממך להתקדם"
+      </div>
+                
+      <div className={styles.row}>
+        <Box 
+          title="ידע מקצועי שלא קיים בארץ"
+          description="תלמדי טכניקות ושיטות עבודה ייחודיות שלמדתי בעצמי ברוסיה! ידע שלא מלמדים בארץ. הידע המקצועי שתרכשי יבדל אותך ממעצבי שיער אחרים ויתן לך יתרון משמעותי בשוק"
           icon={social}
         />
+        
+        <Box 
+          title="זמינות והזדמנויות עבודה גם לאחר הקורס"
+          description="תקבלי ליווי מקצועי והזדמנויות עבודה גם לאחר סיום הקורס. נשמור על קשר רציף, נעזור לך להשתלב בשוק העבודה ונעדכן אותך בהצעות עבודה רלוונטיות"
+          icon={social}
+        />     
+      </div>
+          <FormScreen title="תשאירו פרטים כאן ונחזור אליכם בהקדם"/>
       </div>  
-      <div className={styles.title}>ואז מגיעות המחשבות</div>
+      {/* <div className={styles.title}>ואז מגיעות המחשבות</div>
       <div className={styles.quates}>
       <div className={styles.quate}>"אולי אני לא מספיק טובה"</div>
       <div className={styles.quate}>"אולי התחום הזה לא באמת בשבילי כמו שחשבתי"</div>
@@ -46,9 +59,10 @@ const SecondScreen = () => {
       <div className={styles.description}>כמה פרטים ואני חוזרת אלייך</div>
       <div className={styles.arrowContainer}>
         <ChevronDown className={styles.bounceArrow} size={40} strokeWidth={1} />
-      </div>
-      <FormScreen/>
-      <AboutMe/>
+      </div> */}
+{/*  
+      <AboutMe/> */}
+    
     </>
   );
 };

@@ -7,6 +7,11 @@ import ThirdScreen from './screens/ThirdScreen';
 import { useEffect, useState } from 'react';
 import ByMe from './components/ByMe/ByMe';
 import ForthScreen from './screens/ForthScreen';
+import FixedFirstScreen from './screens/FixedFirstScreen';
+import SixthScreen from './screens/SixthScreen';
+import SeventhScreen from './screens/SeventhScreen';
+import ParallaxQuote from './screens/EightScreen';
+import NinthScreen from './screens/NinthScreen';
 
 function App() {
       
@@ -33,10 +38,15 @@ function App() {
   };
   return <>
   <NavBarNew/>
-  <FirstScreen scrolled={scrolled}/>
+  {/* <FirstScreen scrolled={scrolled}/> */}
+  <FixedFirstScreen/>
   <SecondScreen/>
-  <ThirdScreen/>
-  <ForthScreen/>
+  <SixthScreen/>
+  <SeventhScreen/>
+  <ParallaxQuote/>
+  <NinthScreen/>
+  {/* <ThirdScreen/>
+  <ForthScreen/> */}
   <ByMe/>
   </>
 }

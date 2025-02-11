@@ -4,14 +4,17 @@
   align-items: center;
 }
 
-.title {  
-  font-size: 3rem;
+.title {
   font-family: "Assistant";
   text-align: center;
-  margin: 1.5rem auto;
-  color: #1a1a1a;
-  font-weight: 300;
   direction: rtl;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 20px auto;
 }
 
 .form {
@@ -20,18 +23,16 @@
   width: 300px;
   direction: rtl;
   border-radius: 12px;
- 
-  padding: 0.5rem 0 ;
-
+  padding: 0.5rem 0;
 }
 
 .input {
   padding: 14px 16px;
   margin: 8px 0;
-  border: 1.5px solid #e8e8e8;
+  border: 1.5px solid #E3DCD2;
   direction: rtl;
   border-radius: 8px;
-  background: #fafafa;
+  background: #F8F4EA;
   font-size: 1rem;
   color: #1a1a1a;
   font-family: "AssistantR";
@@ -40,45 +41,48 @@
 }
 
 .input::placeholder {
-  color: #999;
+  color: #B8B0A4;
   transition: color 0.25s ease;
 }
 
 .input:focus {
-  border-color: #1a1a1a;
+  border-color: #D4AF37;
   background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.1);
 }
 
 .input:focus::placeholder {
-  color: #ccc;
+  color: #D4AF37;
 }
 
 .button {
   font-family: 'AssistantR';
-  font-size:1.1rem;
-  width:300px;
-  color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(172, 149, 125, 0.2);
+  font-size: 1.1rem;
+  width: 300px;
+  color: #1a1a1a;
+  background: linear-gradient(45deg, #E3DCD2, #F8F4EA);
   padding: 15px 30px;
   border: none;
   border-radius: 10px;
   direction: rtl;
-  margin:2% auto;
+  margin: 2% auto;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.1), 
+    0 4px 6px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    inset 0 -2px 5px rgba(212, 175, 55, 0.1);
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
 }
 
+.button:hover {
 
+  transform: translateY(-2px);
+}
 
 .button:active {
   transform: translateY(0);

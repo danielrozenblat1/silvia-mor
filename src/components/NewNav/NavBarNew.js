@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from "react-scroll";
 import styles from './NavBarNew.module.css';
-import logo from "../../images/סילביה מור לוגו.png"
+import logo from "../../images/סילביה מור לוגו 2.png"
 
 import { FaInstagram, FaFacebook, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa';
 

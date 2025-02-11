@@ -1,0 +1,104 @@
+.container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .subtitle {
+    font-family: "Assistant";
+    text-align: center;
+    direction: rtl;
+    font-size: 1.5rem;
+ 
+   
+margin:2% auto;
+  }
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin:2% auto;
+    flex-wrap: wrap;
+  }
+  .description{
+    font-family: "AssistantR";
+    text-align: center;
+    direction: rtl;
+    font-size: 1.4rem;
+ width:80%;
+   
+margin:2% auto;
+
+  }
+  .parallaxImage {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    will-change: transform;
+  }
+  
+  .image1 {
+    composes: parallaxImage;
+    top: 25%;
+    left: 4rem;
+    border-radius: 20px;
+  }
+  
+  .image2 {
+    composes: parallaxImage;
+    top: 75%;
+    left: 6rem;
+    border-radius: 20px;
+  }
+  
+  .image3 {
+    composes: parallaxImage;
+    top: 25%;
+    right: 4rem;
+    border-radius: 20px;
+  }
+  
+  .image4 {
+    composes: parallaxImage;
+    top: 75%;
+    right: 6rem;
+    border-radius: 20px;
+  }
+  
+  .quote {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-family: "AssistantR",serif;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    font-style: italic;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    direction: rtl;
+  }
+  
+  @media (max-width: 768px) {
+    .parallaxImage {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .image1, .image2 {
+      left: 1rem;
+    }
+    
+    .image3, .image4 {
+      right: 1rem;
+    }
+    
+    .quote {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }

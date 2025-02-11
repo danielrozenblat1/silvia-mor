@@ -3,11 +3,13 @@ import styles from './Me.module.css';
 import silvi from "../../images/סילביה מור תדמית.jpg";
 import silvia from "../../images/סילביה מור גורג'י קוט.png";
 import Stats from '../stats/Stats';
-import Recommends from '../recommends/Recommends';
+import silviaRecommends from "../../images/המלצות סילביה.png"
+import FormScreen from '../form/FormScreen';
 
 const AboutMe = () => {
   return (
     <>
+    <div className={styles.background}>
       <div className={styles.header} id="מי אני">בואי נכיר</div>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
@@ -36,10 +38,14 @@ const AboutMe = () => {
         <img className={styles.image} alt="סילביה מור" src={silvia}/>
       </div>
       <div className={styles.descriptionC}>
-לקחתי כל את הידע שצברתי והחלטתי שזה הזמן להעביר אותו הלאה ולספק את מה שהיה לי חסר!  <br/> והיום:
+לקחתי כל את הידע שצברתי והחלטתי שזה הזמן להעביר אותו הלאה ולספק את מה שהיה לי חסר!  <br/> והיום,התוצאות מדברות:
       </div>
-<Stats/>
-<Recommends/>
+      <div className={styles.centerBig}>
+        <img className={styles.image} alt="סילביה מור" src={silviaRecommends}/>
+      </div>
+      <div className={styles.titleC}>זה הזמן לקחת את הצעד</div>
+<FormScreen />
+</div>
     </>
   );
 };

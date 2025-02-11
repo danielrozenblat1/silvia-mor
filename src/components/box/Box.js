@@ -51,7 +51,7 @@ const Box=(props)=>{
 return <>
 <div className={styles.box}>
         <div className={styles.title}>{props.title}</div>
-     <div className={styles.icon}><Player icon={props.icon} ref={playerRef1} size="100%" loop={true} onComplete={handleComplete}></Player></div>  
+     <div className={styles.icon}><Player colorize="white" icon={props.icon} ref={playerRef1} size="100%" loop={true} onComplete={handleComplete}></Player></div>  
         <div className={styles.description}>{props.description}</div>
     </div>
 </>

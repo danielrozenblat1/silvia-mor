@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react';
 import styles from './FormScreen.module.css'
+
 const FormScreen = (props) => {
   const [submitted, setSubmitted] = useState(false)
   const nameRef = useRef('')
   const phoneRef = useRef('')
   const emailRef = useRef('')
-  const reasonRef = useRef('') // New ref for reason
+  const reasonRef = useRef('') 
   const reciver = "silvimorart@gmail.com"
 
   const submitHandler = async(e) => {
@@ -13,7 +14,7 @@ const FormScreen = (props) => {
       const name = nameRef?.current?.value
       const phone = phoneRef?.current?.value
       const email = emailRef?.current?.value
-      const reason = reasonRef?.current?.value // Get reason value
+      const reason = reasonRef?.current?.value
       
       if(name.trim().length <= 2) {
           alert("אנא הכניסי שם מלא ")
@@ -27,16 +28,16 @@ const FormScreen = (props) => {
           alert("אנא הכניסי מייל תקין ")
           return;
       }
-      if(reason.trim().length <= 2) {
-        alert("אנא הכניסי שם מלא ")
-        return;
-    }
+      if(!reason) {
+          alert("אנא בחרי סיבת פנייה")
+          return;
+      }
    
       const formData = {
           name: name,
           phone: phone,
           email: email,
-          reason: reason, // Add reason to formData
+          reason: reason,
           reciver: reciver
       }
 
@@ -51,7 +52,7 @@ const FormScreen = (props) => {
           nameRef.current.value = ""
           phoneRef.current.value = ""
           emailRef.current.value = ""
-          reasonRef.current.value = "" // Clear reason input
+          reasonRef.current.value = ""
           setSubmitted(true)
       }
   }
@@ -78,17 +79,23 @@ const FormScreen = (props) => {
                   placeholder="מייל"
                   ref={emailRef}
               />
-              <textarea // New textarea for reason
+              <select
                   className={styles.input}
-                  placeholder="סיבת הפנייה"
                   ref={reasonRef}
-                  rows="4"
-              />
+                  defaultValue=""
+              >
+                  <option value="" disabled>בחרי סיבת פנייה</option>
+                  <option value="הרשמה לקורס">הרשמה לקורס</option>
+                  <option value="שאלה על הקורס">שאלה על הקורס</option>
+                  <option value="בקשה לפרטים נוספים על סילבוס">בקשה לפרטים נוספים על סילבוס</option>
+                  <option value="אחר">אחר</option>
+              </select>
               <button onClick={submitHandler} className={styles.button}>
-              סילביה, צרי איתי קשר
+                  סילביה, צרי איתי קשר
               </button>
           </form>
       </div>
   </>
 };
+
 export default FormScreen

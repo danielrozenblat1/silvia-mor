@@ -7,6 +7,15 @@
   padding: 20px;
   border-radius: 10px;
 }
+.background {
+  border-radius: 100px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;  /* חשוב! זה יוודא שכל התוכן בפנים לא יחרוג מהבורדר */
+  width: 100%;
+  height: auto;
+  position: relative;
+}
 
 .row {
   display: flex;
@@ -35,7 +44,8 @@
   width: 90%;
   display: flex;
   height: auto;
-  max-height: 500px;
+
+  
   border-radius: 20px;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -121,6 +131,11 @@
 
 .center {
   width: 30%;
+  justify-content: center;
+  margin: 2% auto;
+}
+.centerBig {
+  width: 40%;
   justify-content: center;
   margin: 2% auto;
 }

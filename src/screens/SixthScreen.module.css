@@ -1,0 +1,316 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    direction: rtl;
+}
+
+.title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2rem;
+    margin: 2% auto;
+    text-align: center;
+    direction: rtl;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(139, 69, 19, 0.1);
+    width: fit-content;
+}
+
+.description {
+    font-family: 'AssistantR', sans-serif;
+    font-size: 1.4rem;
+    width: 80%;
+    text-align: center;
+    margin: 2% auto;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(139, 69, 19, 0.1);
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.subtitle {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.4rem;
+    margin: 2% auto;
+    text-align: center;
+    direction: rtl;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: fit-content;
+}
+
+.subtitle::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        #be855d,
+        #c4a484,
+        #deb887,
+        #f5deb3,
+        #deb887,
+        #c4a484,
+        #aa7147
+    );
+    animation: shimmer 8s linear infinite;
+    background-size: 200% 100%;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.1);
+}
+
+.listContainer {
+    width: 90%;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.listItem {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1% auto;
+    font-family: 'AssistantR', sans-serif;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(222, 184, 135, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(222, 184, 135, 0.4);
+}
+
+.listItem p {
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(139, 69, 19, 0.1);
+    margin: 0;
+}
+
+.negativeMark,
+.positiveMark {
+    min-width: 24px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px rgba(222, 184, 135, 0.2),
+        inset 0 0 15px rgba(222, 184, 135, 0.2);
+    border: 1px solid rgba(222, 184, 135, 0.3);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.negativeMark {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+}
+
+.positiveMark {
+    color: #51cf66;
+    background: rgba(81, 207, 102, 0.15);
+}
+
+.listItem:hover .negativeMark,
+.listItem:hover .positiveMark {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1250px) {
+    .title { font-size: 2.4rem; }
+    .listItem {
+        width: 340px;
+        padding: 0.95rem 1.45rem;
+    }
+    .listItem p { font-size: 1.9rem; }
+    .description {
+        font-size: 1.9rem;
+        width: 85%;
+    }
+    .subtitle { font-size: 1.9rem; }
+}
+
+@media screen and (max-width: 1150px) {
+    .title { font-size: 2.3rem; }
+    .listItem {
+        width: 330px;
+        padding: 0.9rem 1.4rem;
+    }
+    .listItem p { font-size: 1.8rem; }
+    .description {
+        font-size: 1.8rem;
+        width: 85%;
+    }
+    .subtitle { font-size: 1.8rem; }
+}
+
+@media screen and (max-width: 1050px) {
+    .title { font-size: 2.2rem; }
+    .listItem {
+        width: 320px;
+        padding: 0.85rem 1.35rem;
+    }
+    .listItem p { font-size: 1.7rem; }
+    .description {
+        font-size: 1.7rem;
+        width: 87%;
+    }
+    .subtitle { font-size: 1.7rem; }
+}
+
+@media screen and (max-width: 950px) {
+    .title { font-size: 2.1rem; }
+    .listItem {
+        width: 310px;
+        padding: 0.8rem 1.3rem;
+    }
+    .listItem p { font-size: 1.6rem; }
+    .description {
+        font-size: 1.6rem;
+        width: 88%;
+    }
+    .subtitle { font-size: 1.6rem; }
+}
+
+@media screen and (max-width: 850px) {
+    .title { font-size: 2rem; }
+    .listItem {
+        width: 300px;
+        padding: 0.75rem 1.25rem;
+    }
+    .listItem p { font-size: 1.5rem; }
+    .description {
+        font-size: 1.5rem;
+        width: 89%;
+    }
+    .subtitle { font-size: 1.5rem; }
+    .negativeMark,
+    .positiveMark {
+        min-width: 22px;
+        padding: 0.45rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .listContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .title { font-size: 1.9rem; }
+    .listItem {
+        width: 85%;
+        max-width: 400px;
+        padding: 0.7rem 1.2rem;
+    }
+    .listItem p { font-size: 1.45rem; }
+    .description {
+        font-size: 1.45rem;
+        width: 90%;
+    }
+    .subtitle { font-size: 1.45rem; }
+}
+
+@media screen and (max-width: 650px) {
+    .title { font-size: 1.8rem; }
+    .listItem {
+        width: 88%;
+        max-width: 380px;
+        padding: 0.65rem 1.15rem;
+    }
+    .listItem p { font-size: 1.4rem; }
+    .description {
+        font-size: 1.4rem;
+        width: 91%;
+    }
+    .subtitle { font-size: 1.4rem; }
+    .negativeMark,
+    .positiveMark {
+        min-width: 20px;
+        padding: 0.4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .title { font-size: 1.7rem; }
+    .listItem {
+        width: 90%;
+        max-width: 360px;
+        padding: 0.6rem 1.1rem;
+    }
+    .listItem p { font-size: 1.35rem; }
+    .description {
+        font-size: 1.35rem;
+        width: 92%;
+    }
+    .subtitle { font-size: 1.35rem; }
+}
+
+@media screen and (max-width: 450px) {
+    .title { font-size: 1.6rem; }
+    .listItem {
+        width: 92%;
+        max-width: 340px;
+        padding: 0.55rem 1rem;
+    }
+    .listItem p { font-size: 1.3rem; }
+    .description {
+        font-size: 1.3rem;
+        width: 93%;
+    }
+    .subtitle { font-size: 1.3rem; }
+    .negativeMark,
+    .positiveMark {
+        min-width: 18px;
+        padding: 0.35rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .title { font-size: 1.5rem; }
+    .listItem {
+        width: 94%;
+        max-width: 320px;
+        padding: 0.5rem 0.9rem;
+    }
+    .listItem p { font-size: 1.2rem; }
+    .description {
+        font-size: 1.2rem;
+        width: 95%;
+    }
+    .subtitle { font-size: 1.2rem; }
+    .negativeMark,
+    .positiveMark {
+        min-width: 16px;
+        padding: 0.3rem;
+    }
+    .listContainer { gap: 1.2rem; }
+}

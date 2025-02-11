@@ -11,7 +11,7 @@ const ThirdScreen=()=>{
 
 return <>
 
-       
+{/*        
           <div className={styles.title}>סילביה , דברי אלי! איך הולך הקורס?</div>
           <div className={styles.description}>תחזיקו חזק! צוללים פנימה</div>
           <div className={styles.arrowContainer}>
@@ -22,7 +22,7 @@ return <>
     <div className={styles.description}>בסוף הקורס תצאו ממני עם </div>
     <ServiceColumns/>
     <div className={styles.description}>רוצה לשמוע עוד? השאירי פרטים כאן למטה ונחזור אלייך בהקדם!</div>
-    <FormScreen/>
+    <FormScreen/> */}
 </>
 
 
