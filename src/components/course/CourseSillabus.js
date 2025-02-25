@@ -90,17 +90,19 @@ const HairstylingCourse = () => {
           סילבוס קורס תסרוקות
           <Scissors className={styles.titleIcon} />
         </h1>
-        {courseContent.map((meeting, index) => (
-          <section key={index} className={styles.section}>
-            <h2 className={styles.meetingTitle}>{meeting.title}</h2>
-            <ul className={styles.topicList}>
-              {meeting.topics.map((topic, topicIndex) => (
-                <Topic key={topicIndex} content={topic} index={topicIndex} />
-              ))}
-            </ul>
-            <PracticalSection topics={meeting.practical} />
-          </section>
-        ))}
+        <div className={styles.contentWrapper}>
+          {courseContent.map((meeting, index) => (
+            <div key={index}>
+              <h2 className={styles.meetingTitle}>{meeting.title}</h2>
+              <ul className={styles.topicList}>
+                {meeting.topics.map((topic, topicIndex) => (
+                  <Topic key={topicIndex} content={topic} index={topicIndex} />
+                ))}
+              </ul>
+              <PracticalSection topics={meeting.practical} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

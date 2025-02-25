@@ -1,0 +1,164 @@
+.aboutMeContainer {
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .leftSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .greeting {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: "AssistantR";
+  }
+  
+  .name {
+    font-size: 2.5rem;
+    margin-top: 0;
+    font-family: "Assistant";
+  }
+  
+  .centerSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+  }
+  
+  .centerImageContainer {
+    position: relative;
+    z-index: 2;
+    margin-top: -100px;
+  }
+  
+  .centerImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .rightSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top:150px
+  }
+  
+  .description {
+    max-width: 400px;
+   
+    font-family: "AssistantR";
+  }
+  
+  .description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .description p {
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .fullWidthImageContainer {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    margin-top: -10vh;
+  }
+  
+  .fullWidthImage {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto 2%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 992px) {
+    .topSection {
+      flex-direction: column;
+      height: auto;
+      padding-bottom: 15vh;
+    }
+  
+    .leftSection, .centerSection, .rightSection {
+      width: 100%;
+      padding: 1rem 2rem;
+    }
+  
+    .centerImageContainer {
+      position: relative;
+      top: 0;
+      margin: 2rem 0;
+    }
+  
+    .centerImage {
+      max-width: 300px;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .description {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .fullWidthImage {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .greeting {
+      font-size: 1.5rem;
+    }
+  
+    .name {
+      font-size: 2rem;
+    }
+  
+    .description h3 {
+      font-size: 1.5rem;
+    }
+  
+    .description p {
+      font-size: 1rem;
+    }
+  
+    .fullWidthImage {
+      width: 95%;
+    }
+  }

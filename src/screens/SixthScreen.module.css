@@ -143,6 +143,67 @@
     100% { background-position: -100% 0; }
 }
 
+
+.ctaButton {
+    background: rgba(158, 134, 63, 0.918);
+    border: none;
+    border-radius: 100px;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 3rem;
+    display: block;
+  }
+  
+  .buttonContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .buttonGlow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37); /* Pearl to cream to soft gold */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .buttonGlow::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    border-radius: 99px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .ctaButton:hover .buttonGlow {
+    opacity: 1;
+  }
+  
+  .buttonIcon {
+    font-family: 'AssistantR', sans-serif;
+    font-size: 1.5rem;
+    color: #E3DCD2; /* Pearl color */
+    transition: transform 0.3s ease;
+  }
+  
+  .ctaButton:hover .buttonIcon {
+    transform: translateY(5px);
+  }
+  
+  .buttonText {
+    font-family: 'AssistantR', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #F5F5F5; /* Soft white */
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+
 /* Media Queries */
 @media screen and (max-width: 1250px) {
     .title { font-size: 2.4rem; }

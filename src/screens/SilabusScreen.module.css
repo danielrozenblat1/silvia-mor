@@ -1,0 +1,6 @@
+.container{
+    width:100%;
+    overflow-x: hidden;
+    background: rgb(244, 233, 233);
+    border-radius:100px;
+}

@@ -1,86 +1,87 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1.5rem;
-    width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  width: 800px;
+  margin: 0 auto;
+}
 
-    margin: 0 auto;
-  }
-  
-  .card {
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-2px);
-  }
-  
-  .title {
-    font-family: 'Assistant', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-align: right;
-    background: linear-gradient(135deg, #8B4513, #DEB887); /* משלב חום כהה עם חום בהיר */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .itemsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
-    padding: 0.5rem;
-    transition: background-color 0.2s ease;
-  }
-  
-  .item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 0.5rem;
-  }
-  
-  .text {
-    font-family: 'AssistantR', sans-serif;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: right;
-  }
-  
-  .checkIcon, .xIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    border-radius: 9999px;
-    min-width: 2.5rem;
-    height: 2.5rem;
-  }
-  
-  .checkIcon {
-    background-color: rgba(34, 197, 94, 0.2);
-    color: #4ADE80;
-  }
-  
-  .xIcon {
-    background-color: rgba(239, 68, 68, 0.2);
-    color: #F87171;
-  }
-  
-  .checkIcon svg, .xIcon svg {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
+.card {
+  backdrop-filter: blur(12px);
+  background: rgba(245, 245, 247, 0.7); /* רקע אפרפר-לבן חצי שקוף */
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* גבול כהה יותר */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: rgba(240, 240, 245, 0.8); /* רקע אפרפר-לבן כהה יותר בהובר */
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.card .title {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  color: #000000; /* טקסט שחור במקום הגרדיאנט */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-text-fill-color: #000000; /* מבטל את האפקט השקוף */
+  background: none; /* מבטל את הגרדיאנט */
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* רקע אפור כהה יותר בהובר */
+  border-radius: 0.5rem;
+}
+
+.text {
+  font-family: 'AssistantR', sans-serif;
+  color: #000000; /* טקסט שחור במקום לבן */
+  text-align: right;
+}
+
+.checkIcon, .xIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  min-width: 2.5rem;
+  height: 2.5rem;
+}
+
+.checkIcon {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22a55b; /* צבע ירוק כהה יותר שיראה טוב על רקע בהיר */
+}
+
+.xIcon {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #dc2626; /* צבע אדום כהה יותר שיראה טוב על רקע בהיר */
+}
+
+.checkIcon svg, .xIcon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}

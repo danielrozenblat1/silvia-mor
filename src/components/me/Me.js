@@ -1,51 +1,65 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './Me.module.css';
-import silvi from "../../images/סילביה מור תדמית.jpg";
 import silvia from "../../images/סילביה מור גורג'י קוט.png";
 import Stats from '../stats/Stats';
 import silviaRecommends from "../../images/המלצות סילביה.png"
 import FormScreen from '../form/FormScreen';
+import { PointerIcon } from 'lucide-react';
+import Popped from '../poppedUpWindow/Popped';
 
 const AboutMe = () => {
+
+   
   return (
     <>
     <div className={styles.background}>
-      <div className={styles.header} id="מי אני">בואי נכיר</div>
-      <div className={styles.container}>
-        <div className={styles.imageContainer}>
-          <img src={silvi} alt="סילביה מור" className={styles.image} />
+      <div className={styles.header} id="מי אני">בואו נכיר</div>
+      
+      {/* חלק ראשון */}
+      <div className={styles.sectionContainer}>
+        <div className={styles.descriptionCenter}>
+          נולדתי וגדלתי במושב בעמק האלה, להורים שעלו ממרוקו. 
+          גדלתי בבית דתי עם ערכים שמלווים אותי עד היום. מגיל קטן תמיד נמשכתי לאומנות, 
+          הייתי תלמידה קצת שובבה, אני זוכרת שהמורה הייתה מענישה אותי בזה שלא אכנס לשיעור מלאכת יד - היא ידעה ששם זה הכאב שלי.
         </div>
-        <div className={styles.content}>
-          <h1 className={styles.title}>סילביה מור</h1>
-          <div className={styles.subtitle}>"בטחון בתחום הזה שווה המון!"</div>
-    
-          <div className={styles.description}>למדתי אצל כל מי שנחשב בתעשייה אבל אף אחד לא נתן מענה לפרפקציוניזם שלי. שילמתי אלפי שקלים פה בארץ ללמוד אבל תמיד יצאתי מתוסכלת. פחדתי לעשות תסרוקות מורכבות שאולי יתפרקו לכלה בערב, או שאם היא תבקש תסרוקת שלא אדע לבצע אותה. תמיד זה הכניס אותי לפחד וחוסר ביטחון, וגם לא העזתי לבקש הרבה כסף כי לא האמנתי שאני טובה.</div>
-          <div className={styles.description}>את ההכשרות שלי עברתי בחו''ל והיום אני מלמדת מתוך שליחות להעביר הלאה את הידע בצורה הכי פרקטית שאפשר</div>
-       
-
         
-
+        <div className={styles.descriptionCenter}>
+          עם השנים התחתנתי ונולדו לי 3 בנות. היה לי עסק לשמלות כלה במרכז ירושלים שלא צלח והכניס אותי למקומות כלכליים לא טובים, 
+          אפשר לומר הייתי בתחתית. אבל לא התייאשתי. ידעתי לקום מזה כמו גדולה ולהמשיך. אחרי הנפילה של סלון הכלות חזרתי לעבוד במספרה שלי. 
+          מאוד אהבתי את העבודה, אבל זו עבודה קשה ולצערי לא בהכרח מתגמלת כמו שצריך.
+        </div>
+        
+        <div className={styles.descriptionCenter}>
+          הייתי גם מסרקת כלות. למדתי אצל כל מי שנחשב בארץ בתעשייה אבל אף אחד לא נתן מענה לפרפקציוניזם שלי. שילמתי אלפי שקלים פה בארץ 
+          ללמוד אבל תמיד יצאתי מתוסכלת פשוט לימדו אותי לסרק לפי שיטת העתק הדבק.. פחדתי לעשות תסרוקות מורכבות שחלילה לא יתפרק לכלה 
+          פחדתי שאולי היא תבקש תסורוקת שלא אדע לעשות ואם יהיה לה שיער מורכב שלא אדע להתמודד איתו? תמיד זה הכניס אותי לפחד וחוסר ביטחון, 
+          וגם לא העזתי לבקש הרבה כסף כי לא האמנתי שאני טובה.
         </div>
       </div>
-      <div className={styles.descriptionC} style={{textDecoration:"underline"}}>הייתי בדיוק במקום שלך לפני 20 שנה!</div>
-      <div className={styles.titleC}>הרגשתי שאני צריכה להשתפר</div>
-      <div className={styles.descriptionC}>חיפשתי בכל מקום איך לצבור עוד טכניקות ועוד שיטות חדשות כדי להתקדם אבל לא באמת נתקלתי במקום שסיפק לי את הדברים בצורה פרקטית!</div>
-      <div className={styles.titleC}>והגעתי למסקנה</div>
-      <div className={styles.descriptionC}>שאם אני לא מצליחה למצוא מקום שיספק לי את הידע בארץ</div>
-      <div className={styles.titleC}>אני אעלה על מטוס</div>
-      <div className={styles.descriptionC}>וזה מה שקרה! טסתי לרוסיה ללמוד אצל גורג'י קוט ושם הבנתי שזה לא שאני לא טובה - זה ששיטת הלימוד בארץ לקויה. הרגשתי שמצאתי את הייעוד שלי, את הבית שלי שבו אני יכולה לצמוח ולהתפתח.</div>
-      <div className={styles.center}>
-        <img className={styles.image} alt="סילביה מור" src={silvia}/>
+      
+      {/* מפריד בין החלקים */}
+      <div className={styles.divider}></div>
+      
+      {/* חלק שני */}
+      <div className={styles.sectionContainer}>
+        <div className={styles.descriptionCenter}>
+          ואז קרה נקודות המפנה בחיים שלי - טסתי לרוסיה לבית ספר של גיורגי קוט, ושם הבנתי שזה לא שאני לא טובה - 
+          <span className={styles.highlight}>זה ששיטת הלימוד בארץ לקויה.</span> הרגשתי שמצאתי את הבית שלי שבו אני יכולה לצמוח ולהתפתח.
+        </div>
+        
+        <div className={styles.descriptionCenter}>
+          <span className={styles.highlight}>ואז זה קרה - </span>
+          התחלתי להעביר השתלמויות למעצבי שיער מתוך תחושה של שליחות. אני רוצה לקדם קולגות שמרגישים כמו שאני הרגשתי. 
+          שנמצאים במקום שאני הייתי. לא מגיע לכם להרגיש ככה - אתם טובים, אתם רק צריכים את הכלים הנכונים והביטחון, וההצלחה תגיע.
+        </div>
       </div>
-      <div className={styles.descriptionC}>
-לקחתי כל את הידע שצברתי והחלטתי שזה הזמן להעביר אותו הלאה ולספק את מה שהיה לי חסר!  <br/> והיום,התוצאות מדברות:
-      </div>
-      <div className={styles.centerBig}>
-        <img className={styles.image} alt="סילביה מור" src={silviaRecommends}/>
-      </div>
-      <div className={styles.titleC}>זה הזמן לקחת את הצעד</div>
-<FormScreen />
-</div>
+      
+  
+
+     
+   
+    </div>
+
     </>
   );
 };

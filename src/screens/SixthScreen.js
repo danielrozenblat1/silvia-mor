@@ -1,9 +1,26 @@
 import React from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check,PointerIcon } from 'lucide-react';
 import styles from './SixthScreen.module.css';
 import FormScreen from '../components/form/FormScreen';
-
+import {useEffect,useState,useRef} from "react"
+import Popped from "../components/poppedUpWindow/Popped"
 const SixthScreen = () => {
+  const formRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isPoppedOpen, setIsPoppedOpen] = useState(false); // New state for Popped component
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleButtonClick = () => {
+    setIsPoppedOpen(true); // Open the Popped component
+  };
+
   const negativePoints = [
     "לאבד לקוחות פוטנציאליים בגלל חוסר ביטחון בתסרוקות מורכבות",
     "להרגיש תקועים עם אותן תסרוקות בסיסיות שוב ושוב",
@@ -20,33 +37,41 @@ const SixthScreen = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.description}>
-        אתם מעצבי שיער <span className={styles.highlight}>מוכשרים</span> ו<span className={styles.highlight}>מקצועיים</span>. 
-        יש לכם את כל הכישרון והתשוקה, אבל משהו חסר. הבעיה היא לא בכם - 
-        זו <span className={styles.highlight}>שיטת ההכשרה</span> המיושנת בארץ. 
-        כולם מלמדים אותו דבר, מתמקדים בסגנון אחד בלבד, ומשאירים אתכם לא מוכנים לאתגרים האמיתיים.
+       <div className={styles.title}>גלו את התיאוריה הייחודית שהבאתי מרוסיה - והפכו למעצבי שיער ברמה בינלאומית! </div>
+      <div className={styles.description} style={{fontFamily:"Assistant"}}>אתם מעצבי שיער מוכשרים ומקצועיים, אבל למדתם במקום שלא מיקצע אתכם.
       </div>
 
+      <div className={styles.description}><span className={styles.highlight} style={{textDecoration:"underline"}}>זה לא שאתם לא טובים</span> זו שיטת הלימוד בארץ שלא נכונה.
+ כולם מלמדים אותו הדבר , לעשות סגנון אחד של תסרוקות - מוברש.
+בתור מעצבי שיער אתם צריכים לדעת לבצע את כלל הסגנונות.
+
+      </div>
+      <div className={styles.subtitle}>אין דבר כזה תסרוקת מסובכת.</div>
+  
       <div className={styles.description}>
-        הגיע הזמן לשבור את התקרה הזו. להיות מסוגלים ליצור כל תסרוקת שתרצו: 
-        ניפוחים מושלמים, תסרוקות אסופות מורכבות, וכל מה שנראה לכם בלתי אפשרי עד היום. 
-        עם <span className={styles.highlight}>שיטה מוכחת</span> וטכניקות נכונות, הכל הופך פשוט ואפשרי.
+      כשעובדים עם תיאוריה וסדר פעולות נכון, היא ממש לא מסובכת
       </div>
 
-      <h3 className={styles.description}>
-        אם אתם רוצים להעלות את העסק שלכם לרמה הבאה, אבל עדיין מרגישים תקועים - 
-        אם אתם יודעים שמגיע לכם יותר, אבל לא בטוחים איך להגיע לשם
-      </h3>
-
-      <div className={styles.subtitle}>ובשורה התחתונה</div>
-      <div className={styles.description}>
-        אתם רואים מעצבים אחרים מצליחים יותר, סוגרים יותר עבודות, ונהנים מהצלחה שגם לכם מגיעה.
+{/* תמונות של תסרוקות בהנפשה */}
+<div className={styles.title}>אז אם אתם</div>
+<div className={styles.description}>
+רוצים להגדיל נפח עבודה, אבל אתם עדיין מתקשים לקבל כלות חדשות, עדיין חוששים מתסרוקות מורכבות, עדיין לא בטוחים לגבות מחיר ראוי ולא מקבלים מספיק פניות כמו שציפיתם
       </div>
-
-      <div className={styles.title}>זה הזמן שלכם לפרוץ קדימה</div>
-      <FormScreen/>
-
-    
+      <div className={styles.description}><span className={styles.highlight}>שורה תחתונה - </span>  אתם עדיין לא מצליחים להגיע לרמה של המעצבים המובילים שסוגרים יותר עבודות ובפחות מאמץ.</div>
+      <div className={styles.title}>זה לא חייב להיות ככה</div>
+      <div className={styles.description}>יש דרך אחרת. עם התיאוריה הנכונה והכלים המקצועיים, תוכלו להיות בין המובילים בתחום.
+      </div>
+      <div className={styles.description}  style={{fontFamily:"Assistant",textDecoration:"underline"}}><span className={styles.highlight}>איך אני יודעת? </span></div>
+      <div className={styles.description}>כי עברתי את זה בעצמי, וכבר עזרתי למאות מעצבי שיער להגיע לרמה הבאה.</div>
+      <button onClick={handleButtonClick} className={styles.ctaButton}>
+                  <div className={styles.buttonContent}>
+                    <span className={styles.buttonIcon}>
+                      <PointerIcon size={24} strokeWidth={1.5} />
+                    </span>
+                    <span className={styles.buttonText}>בואו ללמוד לסרק בביטחון</span>
+                  </div>
+                  <div className={styles.buttonGlow} />
+                </button>
       {/* <h3 className={styles.subtitle}>אם אתם מזהים את עצמכם באחד מאלה:</h3>
       <div className={styles.listContainer}>
         {negativePoints.map((point, index) => (
@@ -66,6 +91,7 @@ const SixthScreen = () => {
           </div>
         ))}
       </div> */}
+           {isPoppedOpen && <Popped onClose={() => setIsPoppedOpen(false)} />}
     </div>
   );
 };

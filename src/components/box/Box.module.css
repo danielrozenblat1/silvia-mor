@@ -1,6 +1,6 @@
 /* Box styles */
 .box {
-  width: 400px;
+  width: 250px;
   height: auto;
   display: flex;
   flex-direction: column;

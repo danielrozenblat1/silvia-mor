@@ -9,7 +9,6 @@
 }
 .background {
   border-radius: 100px;
-
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;  /* חשוב! זה יוודא שכל התוכן בפנים לא יחרוג מהבורדר */
   width: 100%;
@@ -44,8 +43,6 @@
   width: 90%;
   display: flex;
   height: auto;
-
-  
   border-radius: 20px;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -119,6 +116,39 @@
   margin-bottom: 15px;
 }
 
+/* הפרדת חלקים */
+.sectionContainer {
+  width: 85%;
+  margin: 0 auto 2rem;
+  padding: 1rem 0;
+}
+
+.divider {
+  width: 60%;
+  margin: 2rem auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2), transparent);
+}
+
+/* הדגשה */
+.highlight {
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+/* קלאס חדש לתיאור במרכז */
+.descriptionCenter {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  direction: rtl;
+  font-weight: 300;
+  font-family: "AssistantR";
+  margin: 0 auto 15px;
+  width: 85%;
+  text-align: center;
+}
+
 .descriptionC {
   font-size: 1.4rem;
   direction: rtl;
@@ -150,6 +180,8 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
+
+
 @media only screen and (max-width: 1050px) {
   .container {
     width: 90%;
@@ -171,6 +203,9 @@
     width: 85%;
     font-size: 1.3rem;
   }
+  .descriptionCenter {
+    width: 90%;
+  }
   .center {
     width: 40%;
   }
@@ -179,6 +214,12 @@
   }
   .bottomImage {
     max-height: 450px;
+  }
+  .sectionContainer {
+    width: 90%;
+  }
+  .divider {
+    width: 70%;
   }
 }
 
@@ -208,6 +249,10 @@
   .description {
     font-size: 1rem;
   }
+  .descriptionCenter {
+    width: 95%;
+    font-size: 1rem;
+  }
   .bottomImageContainer {
     width: 85%;
   }
@@ -229,6 +274,13 @@
   }
   .bottomImage {
     max-height: 300px;
+  }
+  .sectionContainer {
+    width: 95%;
+  }
+  .divider {
+    width: 80%;
+    margin: 1.5rem auto;
   }
 }
 
@@ -257,6 +309,10 @@
     margin: 2% auto;
     width: 100%;
   }
+  .descriptionCenter {
+    width: 90%;
+    font-size: 1.1rem;
+  }
   .bottomImageContainer {
     width: 60%;
   }
@@ -280,6 +336,13 @@
   }
   .bottomImage {
     max-height: 350px;
+  }
+  .sectionContainer {
+    width: 95%;
+  }
+  .divider {
+    width: 80%;
+    margin: 1.5rem auto;
   }
 }
 
@@ -307,6 +370,10 @@
     margin: 2% auto;
     width: 100%;
   }
+  .descriptionCenter {
+    width: 90%;
+    font-size: 1.2rem;
+  }
   .bottomImageContainer {
     width: 45%;
   }
@@ -329,6 +396,12 @@
   .bottomImage {
     max-height: 400px;
   }
+  .sectionContainer {
+    width: 92%;
+  }
+  .divider {
+    width: 75%;
+  }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 650px) {
@@ -340,6 +413,10 @@
   }
   .title {
     font-size: 2.3em;
+  }
+  .descriptionCenter {
+    width: 85%;
+    font-size: 1.2rem;
   }
   .bottomImageContainer {
     width: 40%;
@@ -363,6 +440,12 @@
   .bottomImage {
     max-height: 425px;
   }
+  .sectionContainer {
+    width: 90%;
+  }
+  .divider {
+    width: 70%;
+  }
 }
 
 @media only screen and (min-width: 650px) and (max-width: 750px) {
@@ -371,6 +454,10 @@
   }
   .title {
     font-size: 2.4em;
+  }
+  .descriptionCenter {
+    width: 80%;
+    font-size: 1.25rem;
   }
   .bottomImageContainer {
     width: 35%;
@@ -394,11 +481,21 @@
   .bottomImage {
     max-height: 450px;
   }
+  .sectionContainer {
+    width: 88%;
+  }
+  .divider {
+    width: 65%;
+  }
 }
 
 @media only screen and (min-width: 750px) and (max-width: 850px) {
   .header {
     font-size: 3.3rem;
+  }
+  .descriptionCenter {
+    width: 78%;
+    font-size: 1.27rem;
   }
   .bottomImageContainer {
     width: 30%;
@@ -422,11 +519,21 @@
   .bottomImage {
     max-height: 475px;
   }
+  .sectionContainer {
+    width: 87%;
+  }
+  .divider {
+    width: 62%;
+  }
 }
 
 @media only screen and (min-width: 850px) and (max-width: 950px) {
   .header {
     font-size: 3.4rem;
+  }
+  .descriptionCenter {
+    width: 76%;
+    font-size: 1.28rem;
   }
   .bottomImageContainer {
     width: 28%;
@@ -450,11 +557,21 @@
   .bottomImage {
     max-height: 485px;
   }
+  .sectionContainer {
+    width: 86%;
+  }
+  .divider {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 950px) and (max-width: 1050px) {
   .header {
     font-size: 3.5rem;
+  }
+  .descriptionCenter {
+    width: 75%;
+    font-size: 1.29rem;
   }
   .bottomImageContainer {
     width: 26%;
@@ -477,5 +594,11 @@
   }
   .bottomImage {
     max-height: 495px;
+  }
+  .sectionContainer {
+    width: 85%;
+  }
+  .divider {
+    width: 60%;
   }
 }

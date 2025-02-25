@@ -1,27 +1,88 @@
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { 
+  Scissors, 
+  Trophy, 
+  Sparkles, 
+  HeartHandshake, 
+  Brush, 
+  GraduationCap, 
+  Users, 
+  DollarSign, 
+  Rocket, 
+  Crown, 
+  Ban, 
+  UserX, 
+  PencilRuler, 
+  BookX, 
+  AlertTriangle
+} from 'lucide-react';
 import styles from './Fit.module.css';
 
 const CourseEligibility = () => {
     const suitable = [
-      { text: "למעצבי שיער שרוצים לדעת לבצע כל סוג תסרוקת בביטחון מלא" },
-      { text: "למי שמוכן להשקיע בעצמו ולהגיע לרמה הגבוהה ביותר" },
-      { text: "למי שרוצה לדעת להכין כל סוג שיער בצורה מקצועית" },
-      { text: "למי שחולם לעבוד עם כלות אבל חושש מתסרוקות מורכבות" },
-      { text: "למי שרוצה להפסיק להתמקד רק במוברש ולהרחיב את היכולות שלו" },
-      { text: "למי שמבין שצריך תיאוריה מקצועית כדי להצליח בשוק תחרותי" },
-      { text: "למי שרוצה שהלקוחות יבואו אליו במקום לרדוף אחריהם" },
-      { text: "למי שרוצה סוף סוף להרוויח כמו שמגיע לו" },
-      { text: "למי שמוכן לצאת מאזור הנוחות ולהגיע לתוצאות אמיתיות" },
-      { text: "למי שרוצה להיות מעצב שיער מוביל בתחומו" }
+      { 
+        text: "למעצבי שיער שרוצים לדעת לבצע כל סוג תסרוקת בביטחון מלא",
+        icon: <Scissors />
+      },
+      { 
+        text: "למי שמוכן להשקיע בעצמו ולהגיע לרמה הגבוהה ביותר", 
+        icon: <Trophy />
+      },
+      { 
+        text: "למי שרוצה לדעת להכין כל סוג שיער בצורה מקצועית", 
+        icon: <Sparkles />
+      },
+      { 
+        text: "למי שחולם לעבוד עם כלות אבל חושש מתסרוקות מורכבות", 
+        icon: <HeartHandshake />
+      },
+      { 
+        text: "למי שרוצה להפסיק להתמקד רק במוברש ולהרחיב את היכולות שלו", 
+        icon: <Brush />
+      },
+      { 
+        text: "למי שמבין שצריך תיאוריה מקצועית כדי להצליח בשוק תחרותי", 
+        icon: <GraduationCap />
+      },
+      { 
+        text: "למי שרוצה שהלקוחות יבואו אליו במקום לרדוף אחריהם", 
+        icon: <Users />
+      },
+      { 
+        text: "למי שרוצה סוף סוף להרוויח כמו שמגיע לו", 
+        icon: <DollarSign />
+      },
+      { 
+        text: "למי שמוכן לצאת מאזור הנוחות ולהגיע לתוצאות אמיתיות", 
+        icon: <Rocket />
+      },
+      { 
+        text: "למי שרוצה להיות מעצב שיער מוביל בתחומו", 
+        icon: <Crown />
+      }
     ];
   
     const notSuitable = [
-      { text: "למי שחושב שאפשר להצליח בלי להשקיע בלימודים מקצועיים" },
-      { text: "למי שמחכה שהכלות פשוט יגיעו אליו בלי להתמקצע" },
-      { text: "למי שלא מוכן לצאת מאזור הנוחות וללמוד שיטות חדשות" },
-      { text: "למי שחושב שאפשר להיות מוביל בתחום בלי תיאוריה מקצועית" },
-      { text: "למי שמפחד להתמודד עם תסרוקות מורכבות ולא מוכן ללמוד איך לבצע אותן נכון" }
+      { 
+        text: "למי שחושב שאפשר להצליח בלי להשקיע בלימודים מקצועיים", 
+        icon: <Ban />
+      },
+      { 
+        text: "למי שמחכה שהכלות פשוט יגיעו אליו בלי להתמקצע", 
+        icon: <UserX />
+      },
+      { 
+        text: "למי שלא מוכן לצאת מאזור הנוחות וללמוד שיטות חדשות", 
+        icon: <PencilRuler />
+      },
+      { 
+        text: "למי שחושב שאפשר להיות מוביל בתחום בלי תיאוריה מקצועית", 
+        icon: <BookX />
+      },
+      { 
+        text: "למי שמפחד להתמודד עם תסרוקות מורכבות ולא מוכן ללמוד איך לבצע אותן נכון", 
+        icon: <AlertTriangle />
+      }
     ];
   
     return (
@@ -34,7 +95,7 @@ const CourseEligibility = () => {
               <div key={index} className={styles.item}>
                 <span className={styles.text}>{item.text}</span>
                 <div className={styles.checkIcon}>
-                  <Check />
+                  {item.icon}
                 </div>
               </div>
             ))}
@@ -49,7 +110,7 @@ const CourseEligibility = () => {
               <div key={index} className={styles.item}>
                 <span className={styles.text}>{item.text}</span>
                 <div className={styles.xIcon}>
-                  <X />
+                  {item.icon}
                 </div>
               </div>
             ))}
