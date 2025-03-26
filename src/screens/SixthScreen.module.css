@@ -8,7 +8,7 @@
 
 .title {
     font-family: 'Assistant', sans-serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin: 2% auto;
     text-align: center;
     direction: rtl;
@@ -65,6 +65,78 @@
     background-size: 200% 100%;
     box-shadow: 0 0 5px rgba(255, 215, 0, 0.1);
 }
+
+.featureBoxesContainer {
+    width: 100%;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    direction: rtl;
+}
+
+.featureBox {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(222, 184, 135, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureBox:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(222, 184, 135, 0.4);
+}
+
+.featureIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    flex-shrink: 0;
+}
+
+.featureCheckIcon {
+    color: #D4AF37; /* Gold color */
+    stroke-width: 1.5;
+    min-width: 24px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px rgba(222, 184, 135, 0.2),
+        inset 0 0 15px rgba(222, 184, 135, 0.2);
+    border: 1px solid rgba(222, 184, 135, 0.3);
+    transition: all 0.3s ease;
+    background: rgba(212, 175, 55, 0.15);
+}
+
+.featureBox:hover .featureCheckIcon {
+    background: rgba(212, 175, 55, 0.25);
+    box-shadow: 
+        0 0 15px rgba(212, 175, 55, 0.3),
+        inset 0 0 20px rgba(212, 175, 55, 0.2);
+    transform: scale(1.05);
+}
+
+.featureText {
+    flex: 1;
+    font-family: 'AssistantR', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: right;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(139, 69, 19, 0.1);
+    margin: 0;
+}
+/* Feature Boxes Styles - END */
 
 .listContainer {
     width: 90%;
@@ -175,7 +247,7 @@
   .buttonGlow::before {
     content: '';
     position: absolute;
-    inset: 1px;
+    inset: 3px;
     background: linear-gradient(45deg, #000000, #1a1a1a);
     border-radius: 99px;
     transition: opacity 0.3s ease;
@@ -217,6 +289,7 @@
         width: 85%;
     }
     .subtitle { font-size: 1.9rem; }
+    .featureText { font-size: 1.9rem; }
 }
 
 @media screen and (max-width: 1150px) {
@@ -231,6 +304,7 @@
         width: 85%;
     }
     .subtitle { font-size: 1.8rem; }
+    .featureText { font-size: 1.8rem; }
 }
 
 @media screen and (max-width: 1050px) {
@@ -245,6 +319,7 @@
         width: 87%;
     }
     .subtitle { font-size: 1.7rem; }
+    .featureText { font-size: 1.7rem; }
 }
 
 @media screen and (max-width: 950px) {
@@ -259,6 +334,7 @@
         width: 88%;
     }
     .subtitle { font-size: 1.6rem; }
+    .featureText { font-size: 1.6rem; }
 }
 
 @media screen and (max-width: 850px) {
@@ -273,10 +349,22 @@
         width: 89%;
     }
     .subtitle { font-size: 1.5rem; }
+    .featureText { font-size: 1.5rem; }
     .negativeMark,
-    .positiveMark {
+    .positiveMark,
+    .featureCheckIcon {
         min-width: 22px;
         padding: 0.45rem;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .featureBoxesContainer {
+        justify-content: center;
+    }
+    
+    .featureBox {
+        max-width: calc(50% - 16px);
     }
 }
 
@@ -285,14 +373,22 @@
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
+        width: 90%;
+    }
+    
+    .featureBoxesContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 90%;
     }
     .title { font-size: 1.9rem; }
-    .listItem {
-        width: 85%;
+    .listItem, .featureBox {
+        width: 100%;
         max-width: 400px;
         padding: 0.7rem 1.2rem;
     }
-    .listItem p { font-size: 1.45rem; }
+    .listItem p, .featureText { font-size: 1.45rem; }
     .description {
         font-size: 1.45rem;
         width: 90%;
@@ -302,19 +398,20 @@
 
 @media screen and (max-width: 650px) {
     .title { font-size: 1.8rem; }
-    .listItem {
-        width: 88%;
+    .listItem, .featureBox {
+        width: 100%;
         max-width: 380px;
         padding: 0.65rem 1.15rem;
     }
-    .listItem p { font-size: 1.4rem; }
+    .listItem p, .featureText { font-size: 1.4rem; }
     .description {
         font-size: 1.4rem;
         width: 91%;
     }
     .subtitle { font-size: 1.4rem; }
     .negativeMark,
-    .positiveMark {
+    .positiveMark,
+    .featureCheckIcon {
         min-width: 20px;
         padding: 0.4rem;
     }
@@ -322,12 +419,12 @@
 
 @media screen and (max-width: 550px) {
     .title { font-size: 1.7rem; }
-    .listItem {
-        width: 90%;
+    .listItem, .featureBox {
+        width: 100%;
         max-width: 360px;
         padding: 0.6rem 1.1rem;
     }
-    .listItem p { font-size: 1.35rem; }
+    .listItem p, .featureText { font-size: 1.35rem; }
     .description {
         font-size: 1.35rem;
         width: 92%;
@@ -337,19 +434,20 @@
 
 @media screen and (max-width: 450px) {
     .title { font-size: 1.6rem; }
-    .listItem {
-        width: 92%;
+    .listItem, .featureBox {
+        width: 100%;
         max-width: 340px;
         padding: 0.55rem 1rem;
     }
-    .listItem p { font-size: 1.3rem; }
+    .listItem p, .featureText { font-size: 1.3rem; }
     .description {
         font-size: 1.3rem;
         width: 93%;
     }
     .subtitle { font-size: 1.3rem; }
     .negativeMark,
-    .positiveMark {
+    .positiveMark,
+    .featureCheckIcon {
         min-width: 18px;
         padding: 0.35rem;
     }
@@ -357,21 +455,22 @@
 
 @media screen and (max-width: 350px) {
     .title { font-size: 1.5rem; }
-    .listItem {
-        width: 94%;
+    .listItem, .featureBox {
+        width: 100%;
         max-width: 320px;
         padding: 0.5rem 0.9rem;
     }
-    .listItem p { font-size: 1.2rem; }
+    .listItem p, .featureText { font-size: 1.2rem; }
     .description {
         font-size: 1.2rem;
         width: 95%;
     }
     .subtitle { font-size: 1.2rem; }
     .negativeMark,
-    .positiveMark {
+    .positiveMark,
+    .featureCheckIcon {
         min-width: 16px;
         padding: 0.3rem;
     }
-    .listContainer { gap: 1.2rem; }
+    .listContainer, .featureBoxesContainer { gap: 1.2rem; }
 }

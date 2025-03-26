@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import styles from './SeventhScreenFixed.module.css';
-import silvia from "../images/סילביה מור תדמית.jpg"
+import silvia from "../images/סילביה אצל גורגי.png"
 import Stats from '../components/stats/Stats';
 const StyledLayout = () => {
   const listItems = [

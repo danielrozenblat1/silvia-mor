@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './NewAboutMe.module.css';
 import allStudents from "../../images/סילביה מור כולם.png";
-import silvia from "../../images/סילביה מור ראשית.png";
+import silvia from "../../images/סילביה מעיל שחור.png";
+import Works from '../recommends/Works';
 
 const AboutMe = () => {
   const portraitRef = useRef(null);
@@ -50,13 +51,16 @@ const AboutMe = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  return (
+  return <>
     <div className={styles.aboutMeContainer} ref={containerRef}>
       <div className={styles.topSection}>
         <div className={styles.leftSection}>
+          
           <div className={styles.header}>
+          <p className={styles.description} style={{margin:"0 auto"}}>הנציגה הרשמית של ג'ורגי קוט בישראל</p>
             <p className={styles.greeting}><strong>נעים מאוד</strong></p>
             <p className={styles.name}><strong>סילביה מור</strong></p>
+            
           </div>
         </div>
         
@@ -84,16 +88,13 @@ const AboutMe = () => {
         </div>
       </div>
       
-      <div className={styles.fullWidthImageContainer}>
-        <img 
-          ref={bottomImageRef}
-          src={allStudents}
-          alt="תמונות מחזור של הקורס" 
-          className={styles.fullWidthImage}
-        />
-      </div>
+   
     </div>
-  );
+       <div className={styles.fullWidthImageContainer}      ref={bottomImageRef}>
+       <Works/>
+          </div>
+  
+</>
 };
 
 export default AboutMe;

@@ -1,44 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CourseSillabus.module.css';
 import { Scissors, Brush, Wind, Crown, Sparkles, Wand2, Heart, Gem, 
-         Palette, Feather, Smile, Star, Settings, Shell } from 'lucide-react';
+         Palette, Feather, Smile, Star, Settings, Shell, Plus, Minus } from 'lucide-react';
 
-const getTopicIcon = (index) => {
-  const icons = [
-    Scissors, Brush, Wind, Crown, Sparkles, Wand2, 
-    Heart, Gem, Palette, Feather, Smile, Star, Settings, Shell
-  ];
-  return icons[index % icons.length];
-};
+const CourseSillabus = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedMeetings, setExpandedMeetings] = useState({});
 
-const Topic = ({ content, index }) => {
-  const Icon = getTopicIcon(index);
-  return (
-    <li className={styles.topic}>
-      <Icon className={styles.topicIcon} size={16} />
-      <span>{content}</span>
-    </li>
-  );
-};
+  const toggleSyllabus = () => {
+    setIsOpen(!isOpen);
+  };
 
-const PracticalSection = ({ topics }) => (
-  <div className={styles.practicalSection}>
-    <div className={styles.practicalHeader}>
-      <Sparkles size={18} />
-      <h3 className={styles.practicalTitle}>תרגול מעשי</h3>
+  const toggleMeeting = (index) => {
+    setExpandedMeetings({
+      ...expandedMeetings,
+      [index]: !expandedMeetings[index]
+    });
+  };
+
+  const getTopicIcon = (index) => {
+    const icons = [
+      Scissors, Brush, Wind, Crown, Sparkles, Wand2, 
+      Heart, Gem, Palette, Feather, Smile, Star, Settings, Shell
+    ];
+    return icons[index % icons.length];
+  };
+  
+  const Topic = ({ content, index }) => {
+    const Icon = getTopicIcon(index);
+    return (
+      <li className={styles.topic}>
+        <Icon className={styles.topicIcon} size={16} />
+        <span>{content}</span>
+      </li>
+    );
+  };
+  
+  const PracticalSection = ({ topics }) => (
+    <div className={styles.practicalSection}>
+      <div className={styles.practicalHeader}>
+        <Sparkles size={18} />
+        <h3 className={styles.practicalTitle}>תרגול מעשי</h3>
+      </div>
+      <ul className={styles.subtopicList}>
+        {topics.map((topic, index) => (
+          <li key={index} className={styles.subtopic}>
+            <Crown size={14} className={styles.subtopicIcon} />
+            <span>{topic}</span>
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul className={styles.subtopicList}>
-      {topics.map((topic, index) => (
-        <li key={index} className={styles.subtopic}>
-          <Crown size={14} className={styles.subtopicIcon} />
-          <span>{topic}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+  );
 
-const HairstylingCourse = () => {
   const courseContent = [
     {
       title: 'מפגש ראשון: תיאוריה',
@@ -83,23 +97,50 @@ const HairstylingCourse = () => {
   ];
 
   return (
-    <div className={styles.container} id="קורס מתחילות">
+    <div className={styles.container} id="קורס-מתחילות">
       <div className={styles.inner}>
-        <h1 className={styles.mainTitle}>
-          <Scissors className={styles.titleIcon} />
-          סילבוס קורס תסרוקות
-          <Scissors className={styles.titleIcon} />
-        </h1>
-        <div className={styles.contentWrapper}>
+        <div className={styles.syllabusHeader} onClick={toggleSyllabus}>
+          <div className={styles.headerRight}>
+            <h1 className={styles.mainTitle}>
+              <Scissors className={styles.titleIcon} />
+              סילבוס קורס תסרוקות
+            </h1>
+            <p className={styles.syllabusDescription}>לחצו כדי לפתוח את הסילבוס המלא</p>
+          </div>
+          <div className={styles.headerLeft}>
+            {isOpen ? 
+              <Minus className={styles.toggleIcon} /> : 
+              <Plus className={styles.toggleIcon} />
+            }
+          </div>
+        </div>
+        
+        <div className={`${styles.contentWrapper} ${isOpen ? styles.open : ''}`}>
           {courseContent.map((meeting, index) => (
-            <div key={index}>
-              <h2 className={styles.meetingTitle}>{meeting.title}</h2>
-              <ul className={styles.topicList}>
-                {meeting.topics.map((topic, topicIndex) => (
-                  <Topic key={topicIndex} content={topic} index={topicIndex} />
-                ))}
-              </ul>
-              <PracticalSection topics={meeting.practical} />
+            <div key={index} className={styles.meetingContainer}>
+              <h2 
+                className={styles.meetingTitle} 
+                onClick={() => toggleMeeting(index)}
+              >
+                <div className={styles.meetingTitleContent}>
+                  <span>{meeting.title}</span>
+                </div>
+                <div className={styles.meetingToggle}>
+                  {expandedMeetings[index] ? 
+                    <Minus size={16} className={styles.meetingToggleIcon} /> : 
+                    <Plus size={16} className={styles.meetingToggleIcon} />
+                  }
+                </div>
+              </h2>
+              
+              <div className={`${styles.meetingContent} ${expandedMeetings[index] ? styles.open : ''}`}>
+                <ul className={styles.topicList}>
+                  {meeting.topics.map((topic, topicIndex) => (
+                    <Topic key={topicIndex} content={topic} index={topicIndex} />
+                  ))}
+                </ul>
+                <PracticalSection topics={meeting.practical} />
+              </div>
             </div>
           ))}
         </div>
@@ -108,4 +149,4 @@ const HairstylingCourse = () => {
   );
 };
 
-export default HairstylingCourse;
+export default CourseSillabus;

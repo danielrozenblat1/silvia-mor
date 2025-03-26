@@ -1,0 +1,12 @@
+.cursor {
+    display: inline-block;
+    width: 3px;
+    margin-right: 4px;
+    animation: blink 1s step-end infinite;
+    color: white;
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }

@@ -1,146 +1,145 @@
 .container {
   direction: rtl;
   padding: 2rem;
-  min-height: 100vh;
-  border-radius: 150px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #f8f8f9;
 }
 
 .inner {
   width: 100%;
   max-width: 800px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 24px;
-  padding: 3rem 2rem;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
   position: relative;
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.05),
-    0 1px 8px rgba(0, 0, 0, 0.02),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
-.inner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent,
-    rgba(0, 0, 0, 0.05),
-    transparent
-  );
+.syllabusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.syllabusHeader:hover {
+  background: #f9f9f9;
+}
+
+.headerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleIcon {
+  width: 24px;
+  height: 24px;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 .mainTitle {
   font-family: 'Assistant', sans-serif;
-  font-size: 2.5rem;
-  color: #1a1a1a;
-  text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  position: relative;
+  gap: 1rem;
 }
 
-.mainTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(218, 165, 32, 0.2),
-    rgba(218, 165, 32, 0.4),
-    rgba(218, 165, 32, 0.2),
-    transparent
-  );
-}
-
-.mainTitle::before {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(218, 165, 32, 0.1),
-    rgba(218, 165, 32, 0.2),
-    rgba(218, 165, 32, 0.1),
-    transparent
-  );
+.syllabusDescription {
+  font-family: 'AssistantR', sans-serif;
+  color: #666;
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
 }
 
 .titleIcon {
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.85;
-  color: #1a1a1a;
+  width: 2rem;
+  height: 2rem;
+  color: #333;
 }
 
 .contentWrapper {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.03),
-    0 2px 12px rgba(0, 0, 0, 0.02),
-    inset 0 0 0 1px rgba(218, 165, 32, 0.08);
-  position: relative;
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
+  transition: all 0.5s ease;
+  padding: 0 1rem;
+}
+
+.contentWrapper.open {
+  max-height: 3000px;
+  opacity: 1;
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.meetingContainer {
+  margin-bottom: 2rem;
 }
 
 .meetingTitle {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'AssistantR', sans-serif;
   font-size: 1.5rem;
-  color: #1a1a1a;
-  margin: 4.5rem 0 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
-  position: relative;
+  font-weight: bold;
+  color: #333;
+  padding: 1rem;
+  margin: 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.meetingTitle::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    rgba(218, 165, 32, 0.1),
-    rgba(218, 165, 32, 0.3),
-    rgba(218, 165, 32, 0.1)
-  );
+.meetingTitle:hover {
+  background: #f9f9f9;
 }
 
-.meetingTitle:first-of-type {
-  margin-top: 0;
+.meetingTitleContent {
+  display: flex;
+  align-items: center;
 }
 
-.meetingTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  right: 0;
-  width: 30%;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), transparent);
+.meetingToggle {
+  display: flex;
+  align-items: center;
+}
+
+.meetingToggleIcon {
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.meetingContent {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0 1rem;
+}
+
+.meetingContent.open {
+  max-height: 1000px;
+  opacity: 1;
+  padding: 1rem;
 }
 
 .topicList {
@@ -158,16 +157,14 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
-  border-radius: 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .topic:hover {
   transform: translateX(-4px);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .topicIcon {
@@ -176,42 +173,13 @@
 }
 
 .practicalSection {
-  margin-top: 2.5rem;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: rgba(251, 248, 240, 0.7);
-  border-radius: 16px;
-  border: 1px solid rgba(218, 165, 32, 0.15);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
   position: relative;
   overflow: hidden;
-}
-
-.practicalSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 2px;
-  background: linear-gradient(180deg,
-    rgba(218, 165, 32, 0),
-    rgba(218, 165, 32, 0.2),
-    rgba(218, 165, 32, 0)
-  );
-}
-
-.practicalSection::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  bottom: 0;
-  background: linear-gradient(180deg,
-    rgba(218, 165, 32, 0),
-    rgba(218, 165, 32, 0.2),
-    rgba(218, 165, 32, 0)
-  );
 }
 
 .practicalHeader {
@@ -225,7 +193,7 @@
 .practicalTitle {
   font-family: 'Assistant', sans-serif;
   font-size: 1.2rem;
-  color: #1a1a1a;
+  color: #333;
   margin: 0;
 }
 
@@ -235,7 +203,7 @@
 }
 
 .subtopic {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'AssistantR', sans-serif;
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 0.75rem;
@@ -245,33 +213,11 @@
 }
 
 .subtopicIcon {
-  color: #595858;
+  color: #555;
   flex-shrink: 0;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Base styles remain the same, just add these media queries at the end of your CSS file */
-
-/* 1150px - 1250px */
+/* Media Queries - שמרתי רק את השינויי גודל, ללא שינויי צבע */
 @media screen and (max-width: 1250px) {
   .container {
     padding: 1.5rem;
@@ -279,48 +225,32 @@
   
   .inner {
     max-width: 900px;
-    padding: 2.5rem 1.8rem;
-  }
-  
-  .contentWrapper {
-    padding: 2.5rem;
+    padding: 1.8rem;
   }
 }
 
-/* 1050px - 1150px */
 @media screen and (max-width: 1150px) {
   .inner {
     max-width: 850px;
-    padding: 2.3rem 1.6rem;
+    padding: 1.6rem;
   }
   
   .mainTitle {
-    font-size: 2.3rem;
-  }
-  
-  .contentWrapper {
-    padding: 2.3rem;
+    font-size: 1.8rem;
   }
 }
 
-/* 950px - 1050px */
 @media screen and (max-width: 1050px) {
   .inner {
     max-width: 800px;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
   
   .mainTitle {
-    font-size: 2.2rem;
-    margin-bottom: 3.5rem;
-  }
-  
-  .contentWrapper {
-    padding: 2rem;
+    font-size: 1.7rem;
   }
 }
 
-/* 850px - 950px */
 @media screen and (max-width: 950px) {
   .container {
     padding: 1.2rem;
@@ -328,40 +258,37 @@
   
   .inner {
     max-width: 750px;
-    padding: 1.8rem 1.3rem;
+    padding: 1.3rem;
   }
   
   .mainTitle {
-    font-size: 2.1rem;
-    margin-bottom: 3rem;
+    font-size: 1.6rem;
   }
   
   .practicalSection {
-    padding: 1.8rem;
+    padding: 1.4rem;
   }
 }
 
-/* 750px - 850px */
 @media screen and (max-width: 850px) {
   .inner {
     max-width: 700px;
-    padding: 1.6rem 1.2rem;
+    padding: 1.2rem;
   }
   
   .mainTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .meetingTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   
   .practicalSection {
-    padding: 1.6rem;
+    padding: 1.3rem;
   }
 }
 
-/* 650px - 750px */
 @media screen and (max-width: 750px) {
   .container {
     padding: 1rem;
@@ -369,124 +296,11 @@
   
   .inner {
     max-width: 650px;
-    padding: 1.5rem 1.1rem;
+    padding: 1.1rem;
   }
   
   .mainTitle {
-    font-size: 1.9rem;
-    gap: 1.2rem;
-  }
-  
-  .titleIcon {
-    width: 2.2rem;
-    height: 2.2rem;
-  }
-  
-  .contentWrapper {
-    padding: 1.8rem;
-  }
-}
-
-/* 550px - 650px */
-@media screen and (max-width: 650px) {
-  .inner {
-    max-width: 100%;
-    padding: 1.3rem 1rem;
-    border-radius: 20px;
-  }
-  
-  .mainTitle {
-    font-size: 1.8rem;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-  }
-  
-  .contentWrapper {
-    padding: 1.5rem;
-    border-radius: 16px;
-  }
-  
-  .practicalSection {
-    padding: 1.4rem;
-    margin-top: 2rem;
-  }
-}
-
-/* 450px - 550px */
-@media screen and (max-width: 550px) {
-  .container {
-    padding: 0.8rem;
-  }
-  
-  .inner {
-    padding: 1.2rem 0.9rem;
-    border-radius: 16px;
-  }
-  
-  .mainTitle {
-    font-size: 1.7rem;
-    padding-bottom: 1.5rem;
-  }
-  
-  .titleIcon {
-    width: 2rem;
-    height: 2rem;
-  }
-  
-  .meetingTitle {
-    font-size: 1.3rem;
-    margin: 3rem 0 1.5rem;
-  }
-  
-  .topic {
-    padding: 0.6rem 0.8rem;
-  }
-}
-
-/* 350px - 450px */
-@media screen and (max-width: 450px) {
-  .container {
-    padding: 0.6rem;
-  }
-  
-  .inner {
-    padding: 1rem 0.8rem;
-    border-radius: 12px;
-  }
-  
-  .mainTitle {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-  
-  .contentWrapper {
-    padding: 1.2rem;
-    border-radius: 12px;
-  }
-  
-  .practicalSection {
-    padding: 1.2rem;
-    margin-top: 1.8rem;
-  }
-  
-  .practicalTitle {
-    font-size: 1.1rem;
-  }
-}
-
-/* Under 350px */
-@media screen and (max-width: 350px) {
-  .container {
-    padding: 0.4rem;
-  }
-  
-  .inner {
-    padding: 0.8rem 0.6rem;
-    border-radius: 10px;
-  }
-  
-  .mainTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     gap: 0.8rem;
   }
   
@@ -494,18 +308,124 @@
     width: 1.8rem;
     height: 1.8rem;
   }
-  
-  .contentWrapper {
+}
+
+@media screen and (max-width: 650px) {
+  .inner {
+    max-width: 100%;
     padding: 1rem;
     border-radius: 10px;
   }
   
+  .mainTitle {
+    font-size: 1.3rem;
+    gap: 0.7rem;
+  }
+  
+  .syllabusDescription {
+    font-size: 0.9rem;
+  }
+  
+  .contentWrapper.open {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .practicalSection {
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    padding: 0.8rem;
+  }
+  
+  .inner {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  .mainTitle {
+    font-size: 1.2rem;
+  }
+  
+  .titleIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  
+  .meetingTitle {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+  
+  .topic {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0.6rem;
+  }
+  
+  .inner {
+    padding: 0.7rem;
+    border-radius: 8px;
+  }
+  
+  .mainTitle {
+    font-size: 1.1rem;
+  }
+  
+  .titleIcon {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  
+  .contentWrapper.open {
+    padding: 1rem 0.5rem;
+  }
+  
+  .practicalSection {
+    padding: 1rem;
+  }
+  
+  .practicalTitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 0.4rem;
+  }
+  
+  .inner {
+    padding: 0.6rem;
+    border-radius: 8px;
+  }
+  
+  .mainTitle {
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .syllabusDescription {
+    font-size: 0.8rem;
+  }
+  
+  .titleIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  
   .topic {
     padding: 0.5rem 0.6rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .subtopic {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }

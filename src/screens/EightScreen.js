@@ -1,17 +1,26 @@
 import React from 'react';
 import styles from './EightScreen.module.css';
 import { Building2, GraduationCap, Users, FileText } from 'lucide-react';
-import backgroundvideo from "../components/videos/סילביה סרטון ראשי.mp4";
+import backgroundvideo from "../components/videos/סילביה וגורג'י חותמים.mp4";
 import Students from '../components/recommends/Students';
+import TypingEffect from './TypingScreen';
+
 const IconText = ({ icon: Icon, text }) => (
   <div className={styles.iconTextContainer}>
-      <Icon className={styles.icon} size={32}  strokeWidth={1} color="white" />
+    <Icon className={styles.icon} size={32} strokeWidth={1} color="white" />
     <span className={styles.text}>{text}</span>
-  
   </div>
 );
 
 const EightScreen = () => {
+  // Array of quotes to cycle through
+  const quotes = [
+    "אני לא מוכרת חלומות - אני מלמדת תיאוריות שעובדות",
+
+  ];
+  // "כל אחד יכול להיות מעצב שיער מוביל - עם השיטה הנכונה",
+  // "אקדמיה לתסרוקות - לא עוד קורס, אלא דרך חיים מקצועית",
+  // "ביטחון מקצועי נרכש דרך טכניקה מושלמת"
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.container}>
@@ -26,9 +35,8 @@ const EightScreen = () => {
           <source src={backgroundvideo} type="video/mp4" />
         </video>
 
-        <blockquote className={styles.quote}>
-          "אני לא מוכרת חלומות - אני מלמדת תיאוריות שעובדות"
-        </blockquote>
+        {/* Replace static quote with typing effect component */}
+        <TypingEffect quotes={quotes} />
       </div>
 
       <div className={styles.contentWrapper}>
@@ -60,16 +68,15 @@ const EightScreen = () => {
           />
         </div>
         <div className={styles.subtitle}>
-        אני לא אומרת את זה כדי להתפאר - אני אומרת את זה כי כל אחד מסוגל להיות ברמה גבוהה 
+          אני לא אומרת את זה כדי להתפאר - אני אומרת את זה כי כל אחד מסוגל להיות ברמה גבוהה 
         </div>
         <div className={styles.description}>
-        אחרי שנים של לימודים בארץ ובחו"ל, הכשרות מקצועיות, ולימוד התיאוריה הייחודית מהמאסטר גיורגי קוט, אני יכולה לומר בפה מלא: 
+          אחרי שנים של לימודים בארץ ובחו"ל, הכשרות מקצועיות, ולימוד התיאוריה הייחודית מהמאסטר גיורגי קוט, אני יכולה לומר בפה מלא: 
 יש לי את כל הכלים להפוך אתכם למעצבי שיער מובילים, להעניק לכם ביטחון מקצועי מלא, וללמד אתכם איך לבצע כל תסרוקת בצורה מושלמת.
-
         </div>
         <Students/>
         <div className={styles.subtitle}>
-        הקורס שלי מדבר בעד עצמו – וזה מה שהתלמידים שלי מספרים
+          הקורס שלי מדבר בעד עצמו – וזה מה שהתלמידים שלי מספרים
         </div>
         {/* סרטוני המלצות */}
       </div>

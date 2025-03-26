@@ -34,7 +34,7 @@ const RecommendsScreen = () => {
         <div className={styles.decorativeElement}></div>
         
         <div className={styles.rightSection}>
-          <h2 className={styles.title}>תשמעו מאלה שעשו את הצעד</h2>
+          <h2 className={styles.title}>תשמעו מהתלמידים שעשו את הצעד</h2>
           <div className={styles.headerImageContainer}>
             <img 
               src={headerImage} 

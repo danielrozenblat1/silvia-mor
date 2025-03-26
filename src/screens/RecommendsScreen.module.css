@@ -174,19 +174,7 @@
     transform: scale(1.03);
   }
   
-  /* אלמנט דקורטיבי */
-  .decorativeElement {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: rgba(245, 245, 245, 0.6);
-    top: -90px;
-    right: -90px;
-    z-index: 0;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.03);
-  }
-  
+
   /* מדיה קווריז משופרים */
   @media (max-width: 1200px) {
     .recommendsContainer {

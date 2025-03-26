@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './FixedFirstScreen.module.css';
-import silvia from "../images/סילביה מור ראשית.png"
+import silvia from "../images/סילביה מעיל שחור.png"
 import background from "../components/videos/סרטון זהב.mp4"
 import { PointerIcon } from 'lucide-react';
 import Popped from '../components/poppedUpWindow/Popped'; // Make sure to import the Popped component
@@ -25,18 +25,7 @@ const FixedFirstScreen = () => {
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.container}>
-        <div className={styles.videoContainer}>
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className={styles.video}
-          >
-            <source src={background} type="video/mp4" />
-          </video>
-          <div className={styles.overlay} />
-        </div>
+   
 
         <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
           <div className={styles.mainContent}>
@@ -53,7 +42,9 @@ const FixedFirstScreen = () => {
               </div>
 
               <div className={`${styles.textContent} ${isVisible ? styles.fadeIn : ''}`}>
+      
                 <div className={styles.decorativeLine} />
+             
                 <h1 className={styles.mainTitle}>
                   <span>להצטרף לקורס שישנה לך את הקריירה</span>
                   <span className={styles.highlightText}> ב-4 מפגשים בלבד</span>

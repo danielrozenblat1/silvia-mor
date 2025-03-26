@@ -38,9 +38,9 @@ const NinthScreen = () => {
 <div className={styles.title}>אם הגעתם לכאן</div>
 <div className={styles.description}>סימן שאתם באמת רציניים לגבי העסק שלכם,אז בואו נהיה כנים</div>
 <CourseEligibility/>
-<div className={styles.title}>אצלנו התוצאות מדברות!</div>
+{/* <div className={styles.title}>אצלי יוצאים עם תוצאות!</div>
 <div className={styles.description}>הכנתי מקבץ עבודות של מעצבי שיער לאחר שעברו את הקורס</div>
-<StudentsWorks/>
+<StudentsWorks/> */}
 
 <AboutMe/>
 <AboutMee/>

@@ -5,7 +5,7 @@
   justify-content: center;
   flex-wrap: wrap;
   direction: rtl;
-  margin: 0 auto;
+  margin: -5% auto 2%;
 }
 
 .background {
@@ -13,6 +13,7 @@
   padding-top: 20px;
   border-radius: 0 0  100px 100px;
   margin:0 auto;
+  padding-bottom: 50px;
 }
 
 .description {
