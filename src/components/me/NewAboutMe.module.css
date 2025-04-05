@@ -1,165 +1,448 @@
 .aboutMeContainer {
-    font-family: 'Arial', sans-serif;
-    direction: rtl;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  .topSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
-    height: 100vh;
-    position: relative;
-  }
-  
-  .leftSection {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-  }
-  
-  .header {
-    text-align: center;
-  }
-  
-  .greeting {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    font-family: "AssistantR";
-  }
-  
-  .name {
-    font-size: 2.5rem;
-    margin-top: 0;
-    font-family: "Assistant";
-  }
-  
-  .centerSection {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100%;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  direction: rtl;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  height: 100vh;
+  position: relative;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.greeting {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: "AssistantR";
+}
+
+.name {
+  font-size: 2.5rem;
+  margin-top: 0;
+  font-family: "Assistant";
+}
+
+.centerSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.centerImageContainer {
+  position: relative;
+  z-index: 2;
+  margin-top: -400px;
+}
+
+.centerImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease-out;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  margin-top: 150px;
+}
+
+.description {
+  max-width: 400px;
+  font-size: 1.25rem;
+  font-family: "AssistantR";
+}
+
+.description h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.fullWidthImageContainer {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  margin-top: -10vh;
+}
+
+.fullWidthImage {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto 2%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Mobile Layout Styles */
+.mobileLayout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.mobileHeader {
+  width: 100%;
+  text-align: center;
+}
+
+.mobileImageContainer {
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5rem auto 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.mobileDescription {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: "AssistantR";
+  max-width: 400px;
+  font-size: 1.25rem;
+  margin: 0 auto;
+}
+
+.mobileDescription p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* 1150px - 1250px */
+@media (max-width: 1250px) and (min-width: 1150px) {
   .centerImageContainer {
-    position: relative;
-    z-index: 2;
-    margin-top: -100px;
-  }
-  
-  .centerImage {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-    transition: transform 0.3s ease-out;
+    margin-top: -390px;
   }
   
   .rightSection {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-    margin-top:150px
+    margin-top: 140px;
   }
   
   .description {
-    max-width: 400px;
-    font-size: 1.25rem;
-    font-family: "AssistantR";
+    max-width: 380px;
+    font-size: 1.2rem;
   }
-  
-  .description h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .description p {
-    font-size: 1.1rem;
+}
 
-    line-height: 1.6;
+/* 1050px - 1150px */
+@media (max-width: 1150px) and (min-width: 1050px) {
+  .centerImageContainer {
+    margin-top: -380px;
+  }
+  
+  .rightSection {
+    margin-top: 130px;
+  }
+  
+  .description {
+    max-width: 360px;
+    font-size: 1.15rem;
+  }
+}
+
+/* 950px - 1050px */
+@media (max-width: 1050px) and (min-width: 950px) {
+  .centerImageContainer {
+    margin-top: -370px;
+  }
+  
+  .greeting {
+    font-size: 1.9rem;
+  }
+  
+  .name {
+    font-size: 2.3rem;
+  }
+  
+  .rightSection {
+    margin-top: 120px;
+  }
+  
+  .description {
+    max-width: 340px;
+    font-size: 1.1rem;
+  }
+}
+
+/* 850px - 950px */
+@media (max-width: 950px) and (min-width: 850px) {
+  .centerImageContainer {
+    margin-top: -360px;
+  }
+  
+  .greeting {
+    font-size: 1.8rem;
+  }
+  
+  .name {
+    font-size: 2.2rem;
+  }
+  
+  .rightSection {
+    margin-top: 110px;
+  }
+  
+  .description {
+    max-width: 320px;
+    font-size: 1.05rem;
+  }
+}
+
+/* 750px - 850px */
+@media (max-width: 850px) and (min-width: 750px) {
+  .centerImageContainer {
+    margin-top: -350px;
+  }
+  
+  .greeting {
+    font-size: 1.7rem;
+  }
+  
+  .name {
+    font-size: 2.1rem;
+  }
+  
+  .rightSection {
+    margin-top: 100px;
+  }
+  
+  .description {
+    max-width: 300px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Styles - Below 750px */
+@media (max-width: 750px) {
+  .topSection {
+    height: auto;
+    padding: 1rem 0 2rem;
+  }
+  
+  .mobileLayout {
+    padding: 1rem;
+  }
+  
+  .mobileHeader {
+    margin-bottom: 0.5rem;
+  }
+  
+  .greeting {
+    font-size: 1.7rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .name {
+    font-size: 2.1rem;
+    margin-top: 0;
+  }
+  
+  .mobileImageContainer {
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
   
   .fullWidthImageContainer {
-    width: 100%;
-    position: relative;
-    z-index: 5;
-    margin-top: -10vh;
+    margin-top: -5vh;
   }
-  
-  .fullWidthImage {
-    width: 70%;
-    height: auto;
-    display: block;
-    margin: 0 auto 2%;
-    position: relative;
-    z-index: 10;
-  }
-  
-  /* Media Queries for Responsive Design */
-  @media (max-width: 992px) {
-    .topSection {
-      flex-direction: column;
-      height: auto;
-      padding-bottom: 15vh;
-    }
-  
-    .leftSection, .centerSection, .rightSection {
-      width: 100%;
-      padding: 1rem 2rem;
-    }
-  
-    .centerImageContainer {
-      position: relative;
-      top: 0;
-      margin: 2rem 0;
-    }
-  
-    .centerImage {
-      max-width: 300px;
-      margin: 0 auto;
-      display: block;
-    }
-  
-    .description {
-      max-width: 100%;
-      text-align: center;
+}
 
-    }
-  
-    .fullWidthImage {
-      width: 80%;
-    }
+/* 650px - 750px */
+@media (max-width: 750px) and (min-width: 650px) {
+  .mobileImageContainer {
+    max-width: 280px;
   }
   
-  @media (max-width: 576px) {
-    .greeting {
-      font-size: 1.5rem;
-    }
-  
-    .name {
-      font-size: 2rem;
-    }
-  
-    .description h3 {
-      font-size: 1.5rem;
-    }
-  
-    .description p {
-      font-size: 1rem;
-    }
-  
-    .fullWidthImage {
-      width: 95%;
-    }
+  .greeting {
+    font-size: 1.6rem;
   }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .mobileDescription {
+    font-size: 1.05rem;
+  }
+}
+
+/* 550px - 650px */
+@media (max-width: 650px) and (min-width: 550px) {
+  .mobileImageContainer {
+    max-width: 260px;
+  }
+  
+  .greeting {
+    font-size: 1.5rem;
+  }
+  
+  .name {
+    font-size: 1.9rem;
+  }
+  
+  .mobileDescription {
+    font-size: 1rem;
+  }
+}
+
+/* 450px - 550px */
+@media (max-width: 550px) and (min-width: 450px) {
+  .mobileImageContainer {
+    max-width: 240px;
+  }
+  
+  .greeting {
+    font-size: 1.4rem;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .mobileDescription {
+    font-size: 0.95rem;
+  }
+  
+  .fullWidthImageContainer {
+    margin-top: -3vh;
+  }
+}
+
+/* 350px - 450px */
+@media (max-width: 450px) and (min-width: 350px) {
+  .mobileImageContainer {
+    max-width: 220px;
+  }
+  
+  .greeting {
+    font-size: 1.3rem;
+  }
+  
+  .name {
+    font-size: 1.7rem;
+  }
+  
+  .mobileDescription {
+    font-size: 0.9rem;
+  }
+  
+  .fullWidthImageContainer {
+    margin-top: -2vh;
+  }
+}
+
+/* Below 350px */
+@media (max-width: 350px) {
+  .mobileImageContainer {
+    max-width: 200px;
+  }
+  
+  .greeting {
+    font-size: 1.2rem;
+  }
+  
+  .name {
+    font-size: 1.6rem;
+  }
+  
+  .mobileDescription {
+    font-size: 0.85rem;
+  }
+  
+  .fullWidthImageContainer {
+    margin-top: -1vh;
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+  .topSection {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 15vh;
+  }
+
+  .leftSection, .centerSection, .rightSection {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .centerImageContainer {
+    position: relative;
+    top: 0;
+    margin: 2rem 0;
+  }
+
+  .centerImage {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .fullWidthImage {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .greeting {
+    font-size: 1.5rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .description h3 {
+    font-size: 1.5rem;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+
+  .fullWidthImage {
+    width: 95%;
+  }
+}

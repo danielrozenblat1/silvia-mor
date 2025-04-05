@@ -1,32 +1,29 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './FixedFirstScreen.module.css';
-import silvia from "../images/סילביה מעיל שחור.png"
-import background from "../components/videos/סרטון זהב.mp4"
+import silvia from "../images/סילביה מעיל שחור.png";
 import { PointerIcon } from 'lucide-react';
-import Popped from '../components/poppedUpWindow/Popped'; // Make sure to import the Popped component
+import Popped from '../components/poppedUpWindow/Popped';
 
 const FixedFirstScreen = () => {
-  const formRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isPoppedOpen, setIsPoppedOpen] = useState(false); // New state for Popped component
+  const [isPoppedOpen, setIsPoppedOpen] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Add a small delay for the animation to be more noticeable
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const handleButtonClick = () => {
-    setIsPoppedOpen(true); // Open the Popped component
+    setIsPoppedOpen(true);
   };
 
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.container}>
-   
-
         <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
           <div className={styles.mainContent}>
             <div className={styles.contentGrid}>
@@ -42,9 +39,6 @@ const FixedFirstScreen = () => {
               </div>
 
               <div className={`${styles.textContent} ${isVisible ? styles.fadeIn : ''}`}>
-      
-                <div className={styles.decorativeLine} />
-             
                 <h1 className={styles.mainTitle}>
                   <span>להצטרף לקורס שישנה לך את הקריירה</span>
                   <span className={styles.highlightText}> ב-4 מפגשים בלבד</span>
@@ -76,7 +70,6 @@ const FixedFirstScreen = () => {
         </div>
       </div>
       
-      {/* Render the Popped component conditionally */}
       {isPoppedOpen && <Popped onClose={() => setIsPoppedOpen(false)} />}
     </div>
   );

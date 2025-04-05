@@ -1,14 +1,13 @@
 import React from 'react';
-import { AlertTriangle, ChevronDown, EyeOff, Unplug } from 'lucide-react';
+
 import Box from "../components/box/Box";
 import styles from "./SecondScreen.module.css";
 import stress from "../Icons/wired-outline-712-woman-style-10-hover-pinch.json"
 import prevent from "../Icons/wired-outline-719-woman-style-17-hover-pinch.json"
 import social from "../Icons/wired-outline-962-social-media-marketing-hover-pinch (2).json"
+import shake from "../Icons/wired-outline-645-people-handshake-transaction-hover-pinch (3).json"
 
-import FormScreen from '../components/form/FormScreen';
-import Students from '../components/recommends/Students';
-import AboutMe from '../components/me/Me';
+
 const SecondScreen = () => {
   return (
     <>
@@ -39,7 +38,7 @@ const SecondScreen = () => {
       <Box 
         title="ליווי אישי וצמיחה"
         description="ליויי אישי וזמינות מלאה גם אחרי הקורס - כי ההצלחה שלך חשובה לי"
-        icon={social}
+        icon={shake}
       />
       </div>
                 

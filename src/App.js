@@ -47,17 +47,18 @@ function App() {
   <SecondScreen/>
   <SixthScreen/>
   <SeventhScreenFixed/>
-  {/* <SeventhScreen/> */}
   <ParallaxQuote/>
   <SilabusScreen/>
   <RecommendsScreen/>
-
   <NinthScreen/>
+
   
-  {/* <ThirdScreen/>
-  <ForthScreen/> */}
+
   <ByMe/>
   </>
+    {/* <SeventhScreen/> */}
+      {/* <ThirdScreen/>
+  <ForthScreen/> */}
 }
 
 export default App;

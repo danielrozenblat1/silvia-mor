@@ -52,7 +52,7 @@
 /* Media queries remain the same */
 @media (max-width: 1250px) {
   .statsContainer {
-    padding: 1.8rem;
+    padding: 1.8rem 0;
     gap: 1.8rem;
   }
   .statItem {
@@ -68,7 +68,7 @@
 
 @media (max-width: 1150px) {
   .statsContainer {
-    padding: 1.7rem;
+    padding: 1.7rem 0;
     gap: 1.7rem;
   }
   .statItem {
@@ -81,7 +81,7 @@
 
 @media (max-width: 1050px) {
   .statsContainer {
-    padding: 1.6rem;
+    padding: 1.6rem 0;
     gap: 1.6rem;
   }
   .statItem {
@@ -94,7 +94,7 @@
 
 @media (max-width: 950px) {
   .statsContainer {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     gap: 1.5rem;
   }
   .statItem {
@@ -110,7 +110,7 @@
 
 @media (max-width: 850px) {
   .statsContainer {
-    padding: 1.4rem;
+    padding: 1.4rem 0;
     gap: 1.4rem;
   }
   .statItem {
@@ -123,7 +123,7 @@
 
 @media (max-width: 750px) {
   .statsContainer {
-    padding: 1.3rem;
+    padding: 1.3rem 0;
     gap: 1.3rem;
   }
   .statItem {
@@ -139,7 +139,7 @@
 
 @media (max-width: 650px) {
   .statsContainer {
-    padding: 1.2rem;
+    padding: 1.2rem 0;
     gap: 1.2rem;
   }
   .statItem {
@@ -152,7 +152,7 @@
 
 @media (max-width: 550px) {
   .statsContainer {
-    padding: 1.1rem;
+    padding: 1.1rem 0;
     gap: 1.1rem;
   }
   .statItem {
@@ -169,7 +169,7 @@
 
 @media (max-width: 450px) {
   .statsContainer {
-    padding: 1rem;
+    padding: 1rem 0;
     gap: 1rem;
   }
   .number {
@@ -183,7 +183,7 @@
 
 @media (max-width: 350px) {
   .statsContainer {
-    padding: 0.8rem;
+    padding: 0.8rem 0;
     gap: 0.8rem;
   }
   .number {

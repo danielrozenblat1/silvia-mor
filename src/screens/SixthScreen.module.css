@@ -1,8 +1,9 @@
+/* אין שינויים עד כאן - משאיר את קוד ה-CSS המקורי */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+
     direction: rtl;
 }
 
@@ -215,7 +216,6 @@
     100% { background-position: -100% 0; }
 }
 
-
 .ctaButton {
     background: rgba(158, 134, 63, 0.918);
     border: none;
@@ -226,149 +226,283 @@
     overflow: hidden;
     margin: 0 auto 3rem;
     display: block;
-  }
+}
   
-  .buttonContent {
+.buttonContent {
     position: relative;
     z-index: 2;
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
+}
   
-  .buttonGlow {
+.buttonGlow {
     position: absolute;
     inset: 0;
     background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37); /* Pearl to cream to soft gold */
     opacity: 0.8;
     transition: opacity 0.3s ease;
-  }
+}
   
-  .buttonGlow::before {
+.buttonGlow::before {
     content: '';
     position: absolute;
     inset: 3px;
     background: linear-gradient(45deg, #000000, #1a1a1a);
     border-radius: 99px;
     transition: opacity 0.3s ease;
-  }
+}
   
-  .ctaButton:hover .buttonGlow {
+.ctaButton:hover .buttonGlow {
     opacity: 1;
-  }
+}
   
-  .buttonIcon {
+.buttonIcon {
     font-family: 'AssistantR', sans-serif;
     font-size: 1.5rem;
     color: #E3DCD2; /* Pearl color */
     transition: transform 0.3s ease;
-  }
+}
   
-  .ctaButton:hover .buttonIcon {
+.ctaButton:hover .buttonIcon {
     transform: translateY(5px);
-  }
+}
   
-  .buttonText {
+.buttonText {
     font-family: 'AssistantR', sans-serif;
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #F5F5F5; /* Soft white */
     font-weight: 500;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-  }
-
-/* Media Queries */
-@media screen and (max-width: 1250px) {
-    .title { font-size: 2.4rem; }
-    .listItem {
-        width: 340px;
-        padding: 0.95rem 1.45rem;
-    }
-    .listItem p { font-size: 1.9rem; }
-    .description {
-        font-size: 1.9rem;
-        width: 85%;
-    }
-    .subtitle { font-size: 1.9rem; }
-    .featureText { font-size: 1.9rem; }
 }
 
-@media screen and (max-width: 1150px) {
-    .title { font-size: 2.3rem; }
-    .listItem {
-        width: 330px;
-        padding: 0.9rem 1.4rem;
+/* Media Queries - מסודרים מהקטן לגדול */
+@media screen and (max-width: 350px) {
+    .title { 
+        font-size: 1.2rem; /* Reduced font size */
+        width: 95%; 
     }
-    .listItem p { font-size: 1.8rem; }
+    .subtitle { 
+        font-size: 1.1rem; /* Reduced font size */
+        width: 95%;
+    }
     .description {
-        font-size: 1.8rem;
-        width: 85%;
+        font-size: 1rem; /* Reduced font size */
+        width: 95%;
+        max-width: 95%;
     }
-    .subtitle { font-size: 1.8rem; }
-    .featureText { font-size: 1.8rem; }
+    .featureText { 
+        font-size: 1rem; /* Reduced font size */ 
+        max-width: calc(100% - 30px); /* Further reduced for smallest screens */
+    }
+    
+    .listItem, .featureBox {
+        width: 85%; /* הקטנת הרוחב מ-95% ל-85% */
+        max-width: 85%; /* הקטנת הרוחב המקסימלי מ-95% ל-85% */
+        padding: 0.5rem 0.6rem; /* Reduced horizontal padding */
+    }
+    .listItem p { 
+        font-size: 1rem; /* Reduced font size */
+    }
+    
+    .negativeMark,
+    .positiveMark {
+        min-width: 16px;
+        padding: 0.3rem;
+    }
+    
+    .featureCheckIcon {
+        min-width: 16px;
+        width: 16px;
+        height: 16px;
+        padding: 0.3rem;
+    }
+    
+    .featureIconContainer {
+        margin-left: 8px; /* Reduced margin even more */
+    }
+    
+    .listContainer,
+    .featureBoxesContainer {
+        gap: 1.2rem;
+        width: 95%;
+    }
+    
+    .ctaButton {
+        padding: 0.7rem 1.5rem;
+        max-width: 90%;
+    }
+    
+    .buttonText {
+        font-size: 0.9rem;
+    }
+    
+    .buttonIcon {
+        font-size: 1.2rem;
+    }
 }
 
-@media screen and (max-width: 1050px) {
-    .title { font-size: 2.2rem; }
-    .listItem {
-        width: 320px;
-        padding: 0.85rem 1.35rem;
+/* 350px-450px */
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    .title { 
+        font-size: 1.3rem; 
+        width: 95%;
     }
-    .listItem p { font-size: 1.7rem; }
+    .subtitle { 
+        font-size: 1.2rem; 
+        width: 95%;
+    }
     .description {
-        font-size: 1.7rem;
-        width: 87%;
+        font-size: 1.1rem;
+        width: 95%;
+        max-width: 95%;
     }
-    .subtitle { font-size: 1.7rem; }
-    .featureText { font-size: 1.7rem; }
+    .featureText { 
+        font-size: 1.1rem; 
+        max-width: calc(100% - 35px);
+    }
+    
+    .listItem, .featureBox {
+        width: 85%; /* הקטנת הרוחב מ-95% ל-85% */
+        max-width: 85%; /* הקטנת הרוחב המקסימלי מ-95% ל-85% */
+        padding: 0.55rem 0.7rem; /* Reduced horizontal padding */
+    }
+    .listItem p { font-size: 1.1rem; }
+    
+    .negativeMark,
+    .positiveMark {
+        min-width: 18px;
+        padding: 0.35rem;
+    }
+    
+    .featureCheckIcon {
+        min-width: 18px;
+        width: 18px;
+        height: 18px;
+        padding: 0.35rem;
+    }
+    
+    .featureIconContainer {
+        margin-left: 10px;
+    }
+    
+    .listContainer,
+    .featureBoxesContainer {
+        width: 95%;
+    }
+    
+    .ctaButton {
+        padding: 0.8rem 1.8rem;
+        max-width: 90%;
+    }
+    
+    .buttonText {
+        font-size: 1rem;
+    }
 }
 
-@media screen and (max-width: 950px) {
-    .title { font-size: 2.1rem; }
-    .listItem {
-        width: 310px;
-        padding: 0.8rem 1.3rem;
+/* 450px-550px */
+@media screen and (min-width: 450px) and (max-width: 550px) {
+    .title { 
+        font-size: 1.4rem; 
+        width: 95%;
     }
-    .listItem p { font-size: 1.6rem; }
+    .subtitle { 
+        font-size: 1.25rem; 
+        width: 95%;
+    }
     .description {
-        font-size: 1.6rem;
-        width: 88%;
+        font-size: 1.15rem;
+        width: 95%;
+        max-width: 95%;
     }
-    .subtitle { font-size: 1.6rem; }
-    .featureText { font-size: 1.6rem; }
+    .featureText { 
+        font-size: 1.15rem; 
+        max-width: calc(100% - 35px);
+    }
+    
+    .listItem, .featureBox {
+        width: 85%; /* הקטנת הרוחב מ-95% ל-85% */
+        max-width: 85%; /* הקטנת הרוחב המקסימלי מ-95% ל-85% */
+        padding: 0.6rem 0.8rem; /* Reduced horizontal padding */
+    }
+    .listItem p { font-size: 1.15rem; }
+    
+    .featureIconContainer {
+        margin-left: 10px;
+    }
+    
+    .listContainer,
+    .featureBoxesContainer {
+        width: 95%;
+    }
+    
+    .ctaButton {
+        max-width: 90%;
+    }
 }
 
-@media screen and (max-width: 850px) {
-    .title { font-size: 2rem; }
-    .listItem {
-        width: 300px;
-        padding: 0.75rem 1.25rem;
+/* 550px-650px */
+@media screen and (min-width: 550px) and (max-width: 650px) {
+    .title { 
+        font-size: 1.5rem; 
+        width: 90%;
     }
-    .listItem p { font-size: 1.5rem; }
+    .subtitle { 
+        font-size: 1.3rem; 
+        width: 90%;
+    }
     .description {
-        font-size: 1.5rem;
-        width: 89%;
+        font-size: 1.2rem;
+        width: 90%;
+        max-width: 90%;
     }
-    .subtitle { font-size: 1.5rem; }
-    .featureText { font-size: 1.5rem; }
+    .featureText { font-size: 1.2rem; }
+    
+    .listItem, .featureBox {
+        width: 85%; /* הקטנת הרוחב מ-95% ל-85% */
+        max-width: 85%; /* הקטנת הרוחב המקסימלי מ-90% ל-85% */
+        padding: 0.65rem 1.15rem;
+    }
+    .listItem p { font-size: 1.2rem; }
+    
     .negativeMark,
     .positiveMark,
     .featureCheckIcon {
-        min-width: 22px;
-        padding: 0.45rem;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .featureBoxesContainer {
-        justify-content: center;
+        min-width: 20px;
+        padding: 0.4rem;
     }
     
-    .featureBox {
-        max-width: calc(50% - 16px);
+    .listContainer,
+    .featureBoxesContainer {
+        width: 90%;
     }
 }
 
-@media screen and (max-width: 750px) {
+/* 650px-750px */
+@media screen and (min-width: 650px) and (max-width: 750px) {
+    .title { 
+        font-size: 1.6rem; 
+        width: 90%;
+    }
+    .subtitle { 
+        font-size: 1.35rem; 
+        width: 90%;
+    }
+    .description {
+        font-size: 1.25rem;
+        width: 90%;
+        max-width: 90%;
+    }
+    .featureText { font-size: 1.25rem; }
+    
+    .listItem, .featureBox {
+        width: 85%; /* הקטנת הרוחב מ-95% ל-85% */
+        max-width: 85%; /* הקטנת הרוחב המקסימלי מ-90% ל-85% */
+        padding: 0.7rem 1.2rem;
+    }
+    .listItem p { font-size: 1.25rem; }
+    
     .listContainer {
         flex-direction: column;
         align-items: center;
@@ -382,95 +516,184 @@
         gap: 1.5rem;
         width: 90%;
     }
-    .title { font-size: 1.9rem; }
-    .listItem, .featureBox {
-        width: 100%;
-        max-width: 400px;
-        padding: 0.7rem 1.2rem;
-    }
-    .listItem p, .featureText { font-size: 1.45rem; }
-    .description {
-        font-size: 1.45rem;
-        width: 90%;
-    }
-    .subtitle { font-size: 1.45rem; }
 }
 
-@media screen and (max-width: 650px) {
-    .title { font-size: 1.8rem; }
-    .listItem, .featureBox {
-        width: 100%;
-        max-width: 380px;
-        padding: 0.65rem 1.15rem;
+/* 750px-850px */
+@media screen and (min-width: 750px) and (max-width: 850px) {
+    .title { 
+        font-size: 1.7rem; 
+        width: 85%;
     }
-    .listItem p, .featureText { font-size: 1.4rem; }
-    .description {
-        font-size: 1.4rem;
-        width: 91%;
+    .subtitle { 
+        font-size: 1.4rem; 
+        width: 85%;
     }
-    .subtitle { font-size: 1.4rem; }
-    .negativeMark,
-    .positiveMark,
-    .featureCheckIcon {
-        min-width: 20px;
-        padding: 0.4rem;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .title { font-size: 1.7rem; }
-    .listItem, .featureBox {
-        width: 100%;
-        max-width: 360px;
-        padding: 0.6rem 1.1rem;
-    }
-    .listItem p, .featureText { font-size: 1.35rem; }
-    .description {
-        font-size: 1.35rem;
-        width: 92%;
-    }
-    .subtitle { font-size: 1.35rem; }
-}
-
-@media screen and (max-width: 450px) {
-    .title { font-size: 1.6rem; }
-    .listItem, .featureBox {
-        width: 100%;
-        max-width: 340px;
-        padding: 0.55rem 1rem;
-    }
-    .listItem p, .featureText { font-size: 1.3rem; }
     .description {
         font-size: 1.3rem;
-        width: 93%;
+        width: 85%;
+        max-width: 85%;
     }
-    .subtitle { font-size: 1.3rem; }
+    .featureText { font-size: 1.3rem; }
+    
+    .listItem {
+        width: 45%;
+        max-width: 300px;
+        padding: 0.75rem 1.25rem;
+    }
+    .listItem p { font-size: 1.3rem; }
+    
     .negativeMark,
     .positiveMark,
     .featureCheckIcon {
-        min-width: 18px;
-        padding: 0.35rem;
+        min-width: 22px;
+        padding: 0.45rem;
+    }
+    
+    .featureBox {
+        width: 45%;
+        max-width: 360px;
+    }
+    
+    .featureBoxesContainer,
+    .listContainer {
+        justify-content: center;
+        width: 90%;
     }
 }
 
-@media screen and (max-width: 350px) {
-    .title { font-size: 1.5rem; }
-    .listItem, .featureBox {
-        width: 100%;
-        max-width: 320px;
-        padding: 0.5rem 0.9rem;
+/* 850px-950px */
+@media screen and (min-width: 850px) and (max-width: 950px) {
+    .title { 
+        font-size: 1.8rem;
+        width: 80%; 
     }
-    .listItem p, .featureText { font-size: 1.2rem; }
+    .subtitle { 
+        font-size: 1.45rem; 
+        width: 80%;
+    }
     .description {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
+        width: 80%;
+        max-width: 80%;
+    }
+    .featureText { font-size: 1.35rem; }
+    
+    .listItem {
+        width: 45%;
+        max-width: 310px;
+        padding: 0.8rem 1.3rem;
+    }
+    .listItem p { font-size: 1.35rem; }
+    
+    .featureBoxesContainer {
+        justify-content: center;
+        width: 90%;
+    }
+    
+    .featureBox {
+        width: 45%;
+        max-width: calc(50% - 16px);
+    }
+    
+    .listContainer {
+        width: 90%;
+    }
+}
+
+/* 950px-1050px */
+@media screen and (min-width: 950px) and (max-width: 1050px) {
+    .title, .subtitle, .description {
+        width: 80%;
+    }
+    
+    .title { font-size: 1.9rem; }
+    .subtitle { font-size: 1.5rem; }
+    .description {
+        font-size: 1.4rem;
+        max-width: 80%;
+    }
+    .featureText { font-size: 1.4rem; }
+    
+    .listItem {
+        width: 30%;
+        max-width: 320px;
+        padding: 0.85rem 1.35rem;
+    }
+    .listItem p { font-size: 1.4rem; }
+    
+    .featureBox {
+        width: 30%;
+        max-width: 380px;
+    }
+}
+
+/* 1050px-1150px */
+@media screen and (min-width: 1050px) and (max-width: 1150px) {
+    .title, .subtitle, .description {
+        width: 80%;
+    }
+    
+    .title { font-size: 2rem; }
+    .subtitle { font-size: 1.6rem; }
+    .description {
+        font-size: 1.45rem;
+        max-width: 80%;
+    }
+    .featureText { font-size: 1.45rem; }
+    
+    .listItem {
+        width: 30%;
+        max-width: 330px;
+        padding: 0.9rem 1.4rem;
+    }
+    .listItem p { font-size: 1.45rem; }
+    
+    .featureBox {
+        width: 30%;
+        max-width: 390px;
+    }
+}
+
+/* 1150px-1250px */
+@media screen and (min-width: 1150px) and (max-width: 1250px) {
+    .title, .subtitle, .description {
+        width: 80%;
+    }
+    
+    .title { font-size: 2.1rem; }
+    .subtitle { font-size: 1.7rem; }
+    .description {
+        font-size: 1.5rem;
+        max-width: 80%;
+    }
+    .featureText { font-size: 1.5rem; }
+    
+    .listItem {
+        width: 30%;
+        max-width: 340px;
+        padding: 0.95rem 1.45rem;
+    }
+    .listItem p { font-size: 1.5rem; }
+    
+    .featureBox {
+        width: 30%;
+        max-width: 400px;
+    }
+}
+
+/* עבור מסכים קטנים במיוחד - תיקונים נוספים */
+@media screen and (max-width: 750px) {
+    .listContainer,
+    .featureBoxesContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
         width: 95%;
     }
-    .subtitle { font-size: 1.2rem; }
-    .negativeMark,
-    .positiveMark,
-    .featureCheckIcon {
-        min-width: 16px;
-        padding: 0.3rem;
+    
+    .listItem, 
+    .featureBox {
+        width: 85%; /* הקטנת הרוחב מ-95% ל-85% */
+        max-width: 85%; /* הקטנת הרוחב המקסימלי מ-95% ל-85% */
     }
-    .listContainer, .featureBoxesContainer { gap: 1.2rem; }
 }

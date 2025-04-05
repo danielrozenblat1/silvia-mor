@@ -11,8 +11,8 @@
 .background {
   background: black;
   padding-top: 20px;
-  border-radius: 0 0  100px 100px;
-  margin:0 auto;
+  border-radius: 0 0 50px 50px; /* קטן יותר למסכים הקטנים ביותר */
+  margin: 0 auto;
   padding-bottom: 50px;
 }
 
@@ -36,7 +36,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
- padding: 20px auto;
+  padding: 20px auto;
 }
 
 .center {
@@ -146,6 +146,10 @@
     font-size: 1.1rem;
     padding: 1rem 1.5rem;
   }
+  
+  .background {
+    border-radius: 0 0 60px 60px; /* מעט גדול יותר */
+  }
 }
 
 /* 450px - 550px */
@@ -165,6 +169,10 @@
   
   .quates {
     width: 85%;
+  }
+  
+  .background {
+    border-radius: 0 0 70px 70px; /* גדול יותר */
   }
 }
 
@@ -188,6 +196,10 @@
   .center {
     width: 50%;
   }
+  
+  .background {
+    border-radius: 0 0 80px 80px; /* גדול יותר */
+  }
 }
 
 /* 650px - 750px */
@@ -209,6 +221,10 @@
   
   .center {
     margin: 2% auto;
+  }
+  
+  .background {
+    border-radius: 0 0 90px 90px; /* גדול יותר */
   }
 }
 
@@ -236,6 +252,10 @@
   
   .center {
     width: 40%;
+  }
+  
+  .background {
+    border-radius: 0 0 100px 100px; /* הגודל המקורי שהיה לך */
   }
 }
 

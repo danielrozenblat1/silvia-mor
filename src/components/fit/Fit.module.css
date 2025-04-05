@@ -1,100 +1,413 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 1.5rem;
+  gap: 1rem; /* Smaller gap for smallest screens */
+  padding: 1rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Media query for larger screens */
-@media (min-width: 992px) {
-  .container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .card {
-    width: calc(50% - 1rem);
-  }
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .card {
   backdrop-filter: blur(12px);
-  background: rgba(245, 245, 247, 0.7); /* רקע אפרפר-לבן חצי שקוף */
+  background: rgba(245, 245, 247, 0.7);
   border-radius: 0.75rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* גבול כהה יותר */
+  padding: 1rem; /* Smaller padding for smallest screens */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease;
+  width: 90%; /* 90% width for smaller screens (updated from 80%) */
+  max-width: 100%; /* Ensure it doesn't exceed parent width */
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  background: rgba(240, 240, 245, 0.8); /* רקע אפרפר-לבן כהה יותר בהובר */
+  background: rgba(240, 240, 245, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .card .title {
   font-family: 'Assistant', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Smaller font size for smallest screens */
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: right;
-  color: #000000; /* טקסט שחור במקום הגרדיאנט */
+  color: #000000;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  -webkit-text-fill-color: #000000; /* מבטל את האפקט השקוף */
-  background: none; /* מבטל את הגרדיאנט */
+  -webkit-text-fill-color: #000000;
+  background: none;
 }
 
 .itemsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem; /* Smaller gap for smallest screens */
 }
 
 .item {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 1rem;
+  gap: 0.75rem; /* Smaller gap for smallest screens */
   padding: 0.5rem;
   transition: background-color 0.2s ease;
 }
 
 .item:hover {
-  background-color: rgba(0, 0, 0, 0.05); /* רקע אפור כהה יותר בהובר */
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 0.5rem;
 }
 
 .text {
   font-family: 'AssistantR', sans-serif;
-  color: #000000; /* טקסט שחור במקום לבן */
+  color: #000000;
   text-align: right;
+  font-size: 0.875rem; /* Smaller text for smallest screens */
 }
 
 .checkIcon, .xIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.375rem;
   border-radius: 9999px;
-  min-width: 2.5rem;
-  height: 2.5rem;
+  min-width: 2rem;
+  height: 2rem;
 }
 
 .checkIcon {
   background-color: rgba(34, 197, 94, 0.2);
-  color: #22a55b; /* צבע ירוק כהה יותר שיראה טוב על רקע בהיר */
+  color: #22a55b;
 }
 
 .xIcon {
   background-color: rgba(239, 68, 68, 0.2);
-  color: #dc2626; /* צבע אדום כהה יותר שיראה טוב על רקע בהיר */
+  color: #dc2626;
 }
 
 .checkIcon svg, .xIcon svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive breakpoints */
+/* 350-450px */
+@media (min-width: 350px) and (max-width: 449px) {
+  .container {
+    gap: 1.25rem;
+    padding: 1.125rem;
+  }
+  
+  .card {
+    padding: 1.125rem;
+  }
+  
+  .card .title {
+    font-size: 1.3rem;
+  }
+  
+  .text {
+    font-size: 0.9rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.125rem;
+    height: 2.125rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+}
+
+/* 450-550px */
+@media (min-width: 450px) and (max-width: 549px) {
+  .container {
+    gap: 1.35rem;
+    padding: 1.25rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .card .title {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .itemsContainer {
+    gap: 0.85rem;
+  }
+  
+  .item {
+    gap: 0.85rem;
+  }
+  
+  .text {
+    font-size: 0.925rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.25rem;
+    height: 2.25rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+/* 550-650px */
+@media (min-width: 550px) and (max-width: 649px) {
+  .container {
+    gap: 1.5rem;
+    padding: 1.3rem;
+  }
+  
+  .card {
+    padding: 1.3rem;
+  }
+  
+  .card .title {
+    font-size: 1.4rem;
+    margin-bottom: 1.3rem;
+  }
+  
+  .itemsContainer {
+    gap: 0.9rem;
+  }
+  
+  .item {
+    gap: 0.9rem;
+  }
+  
+  .text {
+    font-size: 0.95rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.3rem;
+    height: 2.3rem;
+    padding: 0.425rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+}
+
+/* 650-750px */
+@media (min-width: 650px) and (max-width: 749px) {
+  .container {
+    gap: 1.65rem;
+    padding: 1.35rem;
+  }
+  
+  .card {
+    padding: 1.35rem;
+  }
+  
+  .card .title {
+    font-size: 1.425rem;
+    margin-bottom: 1.35rem;
+  }
+  
+  .itemsContainer {
+    gap: 0.95rem;
+  }
+  
+  .item {
+    gap: 0.95rem;
+  }
+  
+  .text {
+    font-size: 0.975rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.35rem;
+    height: 2.35rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.175rem;
+    height: 1.175rem;
+  }
+}
+
+/* 750-850px */
+@media (min-width: 750px) and (max-width: 849px) {
+  .container {
+    gap: 1.75rem;
+    padding: 1.4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    padding: 1.4rem;
+    width: calc(45% - 0.875rem); /* Slightly narrower to ensure they fit */
+    margin-bottom: 1.75rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .card .title {
+    font-size: 1.45rem;
+    margin-bottom: 1.4rem;
+  }
+  
+  .itemsContainer {
+    gap: 1rem;
+  }
+  
+  .item {
+    gap: 1rem;
+  }
+  
+  .text {
+    font-size: 1rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.45rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+/* 850-950px */
+@media (min-width: 850px) and (max-width: 949px) {
+  .container {
+    gap: 1.85rem;
+    padding: 1.45rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    padding: 1.45rem;
+    width: calc(45% - 0.925rem); /* Slightly narrower to ensure they fit */
+    margin-bottom: 1.85rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .card .title {
+    font-size: 1.475rem;
+    margin-bottom: 1.45rem;
+  }
+  
+  .itemsContainer {
+    gap: 1.05rem;
+  }
+  
+  .item {
+    gap: 1.05rem;
+  }
+  
+  .text {
+    font-size: 1.025rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.45rem;
+    height: 2.45rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.225rem;
+    height: 1.225rem;
+  }
+}
+
+/* 950-1050px */
+@media (min-width: 950px) and (max-width: 1049px) {
+  .container {
+    gap: 1.9rem;
+    padding: 1.5rem;
+    flex-direction: row;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    width: calc(45% - 0.95rem); /* Slightly narrower to ensure they fit */
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .card .title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .itemsContainer {
+    gap: 1.1rem;
+  }
+  
+  .item {
+    gap: 1.1rem;
+  }
+  
+  .text {
+    font-size: 1.05rem;
+  }
+  
+  .checkIcon, .xIcon {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+  }
+  
+  .checkIcon svg, .xIcon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+/* 1050-1150px */
+@media (min-width: 1050px) and (max-width: 1149px) {
+  .container {
+    gap: 1.95rem;
+    flex-direction: row;
+  }
+  
+  .card {
+    width: calc(45% - 0.975rem); /* Slightly narrower to ensure they fit */
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .card .title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 1150-1250px */
+@media (min-width: 1150px) and (max-width: 1250px) {
+  .container {
+    gap: 2rem;
+    flex-direction: row;
+  }
+  
+  .card {
+    width: calc(45% - 1rem); /* Slightly narrower to ensure they fit */
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

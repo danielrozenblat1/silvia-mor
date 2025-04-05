@@ -3,6 +3,7 @@ import { Check } from 'lucide-react';
 import styles from './SeventhScreenFixed.module.css';
 import silvia from "../images/סילביה אצל גורגי.png"
 import Stats from '../components/stats/Stats';
+
 const StyledLayout = () => {
   const listItems = [
     'איך להפסיק לפחד מתסרוקות מורכבות?',
@@ -17,17 +18,17 @@ const StyledLayout = () => {
           {/* Text Content - Right Side */}
           <div className={styles.textContent}>
             <h2 className={styles.title}>
-              אחרי שהכשירה
-              <br />
-              מאות מעצבי
-              <br />
-              שיער מובילים
-              <br />
-              סילביה מור חושפת
-              <br />
-              את התיאוריה הייחודית
-              <br />
-              שהביאה מרוסיה
+              <span className={styles.titleText}>אחרי שהכשירה</span>
+              <span className={styles.titleBreak}></span>
+              <span className={styles.titleText}>מאות מעצבי</span>
+              <span className={styles.titleBreak}></span>
+              <span className={styles.titleText}>שיער מובילים</span>
+              <span className={styles.titleBreak}></span>
+              <span className={styles.titleText}>סילביה מור חושפת</span>
+              <span className={styles.titleBreak}></span>
+              <span className={styles.titleText}>את התיאוריה הייחודית</span>
+              <span className={styles.titleBreak}></span>
+              <span className={styles.titleText}>שהביאה מרוסיה</span>
             </h2>
           </div>
 
@@ -53,7 +54,7 @@ const StyledLayout = () => {
           </div>
         </div>
       </div>
-<Stats/>
+      <Stats/>
     </div>
   );
 };
