@@ -97,7 +97,7 @@ const CourseSillabus = () => {
   ];
 
   return (
-    <div className={styles.container} id="קורס-מתחילות">
+    <div className={styles.container} id="סילבוס">
       <div className={styles.inner}>
         <div className={styles.syllabusHeader} onClick={toggleSyllabus}>
           <div className={styles.headerRight}>

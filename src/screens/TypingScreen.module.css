@@ -4,6 +4,7 @@
     margin-right: 4px;
     animation: blink 1s step-end infinite;
     color: white;
+    font-family: "Assistant";
   }
   
   @keyframes blink {

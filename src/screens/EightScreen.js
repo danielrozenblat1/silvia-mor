@@ -4,6 +4,7 @@ import { Building2, GraduationCap, Users, FileText } from 'lucide-react';
 import backgroundvideo from "../components/videos/סילביה וגורג'י חותמים.mp4";
 import Students from '../components/recommends/Students';
 import TypingEffect from './TypingScreen';
+import YoutubeCarousel from '../components/youtubeCarousel/Shorts';
 
 const IconText = ({ icon: Icon, text }) => (
   <div className={styles.iconTextContainer}>
@@ -13,6 +14,13 @@ const IconText = ({ icon: Icon, text }) => (
 );
 
 const EightScreen = () => {
+
+  const videoIds = [
+    'gc0uFPweO_o',
+    'MRaMoUgn_2Y',
+    'xZkIQQDRtbg',
+    'SaJrm_IXzOo'
+]
   // Array of quotes to cycle through
   const quotes = [
     "אני לא מוכרת חלומות - אני מלמדת תיאוריות שעובדות",
@@ -75,10 +83,10 @@ const EightScreen = () => {
 יש לי את כל הכלים להפוך אתכם למעצבי שיער מובילים, להעניק לכם ביטחון מקצועי מלא, וללמד אתכם איך לבצע כל תסרוקת בצורה מושלמת.
         </div>
         <Students/>
-        <div className={styles.subtitle}>
+        <div className={styles.subtitle} id="עדויות">
           הקורס שלי מדבר בעד עצמו – וזה מה שהתלמידים שלי מספרים
         </div>
-        {/* סרטוני המלצות */}
+      <YoutubeCarousel videoIds={videoIds}/>
       </div>
     </div>
   );

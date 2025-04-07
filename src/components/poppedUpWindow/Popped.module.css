@@ -177,6 +177,7 @@ select.input:focus {
 @media only screen and (max-width: 350px) {
   .popped {
     padding: 1rem;
+    width: 80%; /* שינוי הרוחב ל-80% במסכים קטנים מאוד */
   }
 
   .title {
@@ -194,13 +195,17 @@ select.input:focus {
   }
 }
 
-@media only screen and (min-width: 350px) and (max-width: 450px) {
+@media only screen and (min-width: 351px) and (max-width: 450px) {
+  .popped {
+    width: 80%; /* שינוי הרוחב ל-80% במסכים קטנים */
+  }
+
   .title {
     font-size: 1.6rem;
   }
 }
 
-@media only screen and (min-width: 450px) and (max-width: 750px) {
+@media only screen and (min-width: 451px) and (max-width: 750px) {
   .title {
     font-size: 1.7rem;
   }

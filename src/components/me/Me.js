@@ -7,7 +7,7 @@ const AboutMe = () => {
   return (
     <>
     <div className={styles.background}>
-      <div className={styles.header} id="מי אני">בואו נכיר</div>
+      <div className={styles.header} id="אודות">בואו נכיר</div>
       
       {/* חלק ראשון - תמונה וטקסט */}
       <div className={styles.container}>

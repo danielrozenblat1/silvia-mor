@@ -16,11 +16,12 @@ import result11 from "../../images/סילביה מור תסרוקות 11.png";
 import result12 from "../../images/סילביה מור תסרוקות 12.png";
 import result13 from "../../images/סילביה מור תסרוקות 13.png";
 import result14 from "../../images/סילביה מור תסרוקות 14.png";
-
+import result15 from "../../images/סילביה עבודות חדשות 1.png";
+import result16 from "../../images/סילביה עבודות חדשות 2.png";
 const Works = () => {
   const images = [
     result1, result2, result3, result4,
-    result5, result6, result7, result8, result9, result10, result11, result12, result13, result14
+    result5, result6, result7, result8, result9, result10, result11, result12, result13, result14,result15,result16
   ];
 
   return (

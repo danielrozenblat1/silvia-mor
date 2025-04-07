@@ -3,7 +3,7 @@
   align-items: center;
   max-width: 1000px;
   width: 100%;
-  margin: 0 auto;
+
   padding: 20px;
   border-radius: 10px;
   gap: 30px; /* Added gap for better spacing between image and text */
@@ -11,7 +11,7 @@
 
 .background {
   border-radius: 100px;
- 
+  margin: 2% auto;
   overflow: hidden;
   width: 100%;
   height: auto;
