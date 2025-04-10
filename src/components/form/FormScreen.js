@@ -44,38 +44,44 @@ const FormScreen = (props) => {
       reciver: reciver
     }
 
-    // נתונים לווב-הוק - עם מבנה כמו אצל אביה
+    // נתונים לווב-הוק - ללא קינון מיותר
     const webhookData = {
-      data: {
-        name: name,
-        phone: phone,
-        email: email,
-        reason: reason
-      }
+      name: name,
+      phone: phone,
+      email: email,
+      reason: reason
     }
 
     try {
       console.log('Sending webhook data:', JSON.stringify(webhookData));
       
-      // שליחה במקביל לשני היעדים בדומה לקוד של אביה
-      const [serverResponse, webhookResponse] = await Promise.all([
-        fetch(serverUrl, {
-          method: "POST",
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(serverData)
-        }),
-        fetch(webhookUrl, {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(webhookData)
-        })
-      ]);
+      // שליחה לווב-הוק קודם לכן, עם טיפול בתגובה
+      const webhookResponse = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(webhookData)
+      });
       
       console.log('Webhook response status:', webhookResponse.status);
-      console.log('Server response status:', serverResponse.status);
+      
+      // נסה לקרוא את התגובה כטקסט
+      let webhookResponseText;
+      try {
+        webhookResponseText = await webhookResponse.text();
+        console.log('Webhook response text:', webhookResponseText);
+      } catch (error) {
+        console.log('Could not read webhook response as text:', error);
+      }
+      
+      // שליחה לשרת
+      const serverResponse = await fetch(serverUrl, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(serverData)
+      });
       
       if (serverResponse.ok && webhookResponse.ok) {
         alert("שמרנו את הפרטים שלך, ניצור קשר בימים הקרובים")
@@ -85,7 +91,13 @@ const FormScreen = (props) => {
         reasonRef.current.value = ""
         setSubmitted(true)
       } else {
-        throw new Error('Failed to submit form to one or both endpoints')
+        if (!webhookResponse.ok) {
+          console.error('Webhook error:', webhookResponse.status, webhookResponseText);
+        }
+        if (!serverResponse.ok) {
+          console.error('Server error:', serverResponse.status);
+        }
+        throw new Error('Failed to submit form to one or both endpoints');
       }
     } catch (error) {
       alert("התרחשה שגיאה, אנא נסי שוב מאוחר יותר")
