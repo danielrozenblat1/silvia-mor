@@ -9,6 +9,9 @@ const Popped = ({ onClose, title }) => {
   const reasonRef = useRef(null);
   const reciver = "silvimorart@gmail.com";
 
+  const serverUrl = "https://dynamic-server-dfc88e1f1c54.herokuapp.com/leads/newLead";
+  const webhookUrl = "https://hook.eu2.make.com/8wk2tfyooa1d1inbwh2qensdkxtc6jy9";
+
   const handleClose = () => {
     if (onClose) {
       onClose();
@@ -39,7 +42,7 @@ const Popped = ({ onClose, title }) => {
       return;
     }
 
-    const formData = {
+    const serverData = {
       name,
       phone,
       email,
@@ -47,17 +50,33 @@ const Popped = ({ onClose, title }) => {
       reciver
     };
 
+    const webhookData = {
+      data: {
+        name,
+        phone,
+        email,
+        reason
+      }
+    };
+
     try {
-      const response = await fetch(
-        'https://dynamic-server-dfc88e1f1c54.herokuapp.com/leads/newLead',
-        {
+      const [serverResponse, webhookResponse] = await Promise.all([
+        fetch(serverUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+          body: JSON.stringify(serverData),
+        }),
+        fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(webhookData),
+        })
+      ]);
 
-      if (response.ok) {
+      if (serverResponse.ok && webhookResponse.ok) {
         alert("שמרנו את הפרטים שלך, ניצור קשר בימים הקרובים");
         nameRef.current.value = "";
         phoneRef.current.value = "";
@@ -66,6 +85,8 @@ const Popped = ({ onClose, title }) => {
         handleClose();
 
         window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        throw new Error("שליחה נכשלה לאחד היעדים");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

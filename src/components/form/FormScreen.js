@@ -8,7 +8,7 @@ const FormScreen = (props) => {
   const emailRef = useRef('');
   const reasonRef = useRef('');
 
-  const webhookUrl = "https://hook.eu2.make.com/8wk2tfyooa1d1inbwh2qensdkxtc6jy9";
+  const webhookUrl = "https://hook.eu2.make.com/8wk2tfyooa1d1inbwh2qensdkxtc6jy9"; // סילביה
   const serverUrl = "https://dynamic-server-dfc88e1f1c54.herokuapp.com/leads/newLead";
   const reciver = "silvimorart@gmail.com";
 
@@ -20,7 +20,8 @@ const FormScreen = (props) => {
     const email = emailRef?.current?.value;
     const reason = reasonRef?.current?.value;
 
-    console.log("🌟 נתוני הטופס:", { name, phone, email, reason });
+    console.log("🔍 שלב 1: קריאה לפונקציה התחילה");
+    console.log("📦 קלט:", { name, phone, email, reason });
 
     if (name.trim().length <= 2) {
       alert("אנא הכניסי שם מלא ");
@@ -54,6 +55,10 @@ const FormScreen = (props) => {
       reason
     };
 
+    console.log("🔄 שלב 2: הכנה לשליחה");
+    console.log("📤 serverData:", serverData);
+    console.log("📤 webhookData:", webhookData);
+
     try {
       const [serverResponse, webhookResponse] = await Promise.all([
         fetch(serverUrl, {
@@ -71,8 +76,15 @@ const FormScreen = (props) => {
         })
       ]);
 
-      console.log("📡 webhook response:", webhookResponse.status);
-      console.log("🖥️ server response:", serverResponse.status);
+      console.log("✅ שלב 3: התקבלו תגובות מהשרתים");
+      console.log("🖥️ server response status:", serverResponse.status);
+      console.log("🌐 webhook response status:", webhookResponse.status);
+
+      const webhookText = await webhookResponse.text();
+      console.log("🌐 webhook response text:", webhookText);
+
+      const serverText = await serverResponse.text();
+      console.log("🖥️ server response text:", serverText);
 
       if (serverResponse.ok && webhookResponse.ok) {
         alert("שמרנו את הפרטים שלך, ניצור קשר בימים הקרובים");
@@ -85,8 +97,8 @@ const FormScreen = (props) => {
         throw new Error("שליחה נכשלה לאחד או יותר מהיעדים");
       }
     } catch (error) {
+      console.error("❌ שגיאה:", error);
       alert("התרחשה שגיאה, אנא נסי שוב מאוחר יותר");
-      console.error("🐞 שגיאה במהלך השליחה:", error);
     }
   };
 
