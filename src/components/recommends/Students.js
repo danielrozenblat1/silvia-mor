@@ -25,6 +25,8 @@ const Students = () => {
               src={img}
               alt={`סילביה מור גורג'י קוט ${index + 1}`}
               className={styles.image}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))}
@@ -35,6 +37,8 @@ const Students = () => {
               src={img}
               alt={`סילביה מור גורג'י קוט ${index + 1}`}
               className={styles.image}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))}

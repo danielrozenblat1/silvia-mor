@@ -1,7 +1,40 @@
-// YoutubeCarousel.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './Shorts.module.css';
+
+const LazyYoutubeEmbed = ({ videoId, index }) => {
+  const ref = useRef(null);
+  const [showIframe, setShowIframe] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowIframe(true);
+        observer.disconnect();
+      }
+    });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className={styles.videoWrapper} ref={ref}>
+      {showIframe && (
+        <iframe
+          className={styles.videoFrame}
+          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+          title={`YouTube video ${index + 1}`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+};
 
 const YoutubeCarousel = ({ videoIds }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -13,18 +46,12 @@ const YoutubeCarousel = ({ videoIds }) => {
     if (carouselRef.current) {
       const container = carouselRef.current;
       const itemWidth = container.children[0].offsetWidth;
-      
-      // Check if we're at the start of the original items
+
       if (container.scrollLeft <= 0) {
-        // Jump to the duplicate set without animation
         container.scrollLeft = container.scrollWidth / 2;
       }
-      
-      // Then scroll one item left with animation
-      container.scrollBy({
-        left: -itemWidth,
-        behavior: 'smooth'
-      });
+
+      container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
     }
   };
 
@@ -34,18 +61,12 @@ const YoutubeCarousel = ({ videoIds }) => {
       const itemWidth = container.children[0].offsetWidth;
       const totalWidth = container.scrollWidth;
       const viewportWidth = container.offsetWidth;
-      
-      // Check if we're at the end of the original items
+
       if (container.scrollLeft + viewportWidth >= totalWidth / 2) {
-        // Jump to the start of original items without animation
         container.scrollLeft = 0;
       }
-      
-      // Then scroll one item right with animation
-      container.scrollBy({
-        left: itemWidth,
-        behavior: 'smooth'
-      });
+
+      container.scrollBy({ left: itemWidth, behavior: 'smooth' });
     }
   };
 
@@ -80,7 +101,6 @@ const YoutubeCarousel = ({ videoIds }) => {
     carouselRef.current.scrollLeft = scrollLeft - distance;
   };
 
-  // Handle infinite scroll
   useEffect(() => {
     const element = carouselRef.current;
     if (!element) return;
@@ -88,15 +108,10 @@ const YoutubeCarousel = ({ videoIds }) => {
     const handleScroll = () => {
       const { scrollLeft, scrollWidth, clientWidth } = element;
       const maxScroll = scrollWidth - clientWidth;
-      
-      // If we reach the end of the duplicate set
+
       if (scrollLeft >= maxScroll - 10) {
-        // Jump to the start of the original set
         element.scrollLeft = 0;
-      }
-      // If we reach the start and going backwards
-      else if (scrollLeft <= 10) {
-        // Jump to the start of the duplicate set
+      } else if (scrollLeft <= 10) {
         element.scrollLeft = maxScroll / 2;
       }
     };
@@ -118,20 +133,8 @@ const YoutubeCarousel = ({ videoIds }) => {
         onTouchEnd={handleMouseUp}
         onTouchMove={handleTouchMove}
       >
-        {/* Original videos + Duplicate videos for infinite scroll */}
         {[...videoIds, ...videoIds, ...videoIds].map((videoId, index) => (
-          <div
-            key={`${videoId}-${index}`}
-            className={styles.videoWrapper}
-          >
-            <iframe
-              className={styles.videoFrame}
-              src={`https://www.youtube.com/embed/${videoId}`}
-              title={`YouTube video player ${index + 1}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          <LazyYoutubeEmbed key={`${videoId}-${index}`} videoId={videoId} index={index} />
         ))}
       </div>
 
@@ -142,7 +145,7 @@ const YoutubeCarousel = ({ videoIds }) => {
       >
         <ChevronLeft className={styles.navIcon} />
       </button>
-      
+
       <button
         onClick={handleNextClick}
         className={`${styles.navButton} ${styles.nextButton}`}

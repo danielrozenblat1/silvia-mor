@@ -18,23 +18,28 @@ const Classes = () => {
   return (
     <div className={styles.slider}>
       <div className={styles.slideTrack}>
-        {/* First set of images */}
+        {/* סט ראשון */}
         {images.map((img, index) => (
           <div key={`slide-${index}`} className={styles.slide}>
             <img
               src={img}
-              alt={`סילביה מור גורג'י קוט ${index + 1}`}
+              alt={`תמונת מחזור ${index + 1}`}
               className={styles.image}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))}
-        {/* Duplicate set of images for seamless loop */}
+
+        {/* סט כפול ללופ חלק */}
         {images.map((img, index) => (
           <div key={`slide-duplicate-${index}`} className={styles.slide}>
             <img
               src={img}
-              alt={`סילביה מור גורג'י קוט ${index + 1}`}
+              alt={`תמונת מחזור ${index + 1}`}
               className={styles.image}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))}

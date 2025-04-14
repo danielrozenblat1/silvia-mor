@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './EightScreen.module.css';
 import { Building2, GraduationCap, Users, FileText } from 'lucide-react';
 import backgroundvideo from "../components/videos/סילביה וגורג'י חותמים.mp4";
@@ -14,36 +14,55 @@ const IconText = ({ icon: Icon, text }) => (
 );
 
 const EightScreen = () => {
+  const videoRef = useRef(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   const videoIds = [
     'gc0uFPweO_o',
     'MRaMoUgn_2Y',
     'xZkIQQDRtbg',
     'SaJrm_IXzOo'
-]
-  // Array of quotes to cycle through
+  ];
+
   const quotes = [
     "אני לא מוכרת חלומות - אני מלמדת תיאוריות שעובדות",
-
   ];
-  // "כל אחד יכול להיות מעצב שיער מוביל - עם השיטה הנכונה",
-  // "אקדמיה לתסרוקות - לא עוד קורס, אלא דרך חיים מקצועית",
-  // "ביטחון מקצועי נרכש דרך טכניקה מושלמת"
+
+  // Lazy Load video when in viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowVideo(true);
+        observer.disconnect();
+      }
+    });
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.container}>
         <div className={styles.overlay}></div>
-        <video 
-          className={styles.backgroundVideo} 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-        >
-          <source src={backgroundvideo} type="video/mp4" />
-        </video>
 
-        {/* Replace static quote with typing effect component */}
+        <div ref={videoRef}>
+          {showVideo && (
+            <video
+              className={styles.backgroundVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src={backgroundvideo} type="video/mp4" />
+            </video>
+          )}
+        </div>
+
         <TypingEffect quotes={quotes} />
       </div>
 
@@ -80,13 +99,16 @@ const EightScreen = () => {
         </div>
         <div className={styles.description}>
           אחרי שנים של לימודים בארץ ובחו"ל, הכשרות מקצועיות, ולימוד התיאוריה הייחודית מהמאסטר גיורגי קוט, אני יכולה לומר בפה מלא: 
-יש לי את כל הכלים להפוך אתכם למעצבי שיער מובילים, להעניק לכם ביטחון מקצועי מלא, וללמד אתכם איך לבצע כל תסרוקת בצורה מושלמת.
+          יש לי את כל הכלים להפוך אתכם למעצבי שיער מובילים, להעניק לכם ביטחון מקצועי מלא, וללמד אתכם איך לבצע כל תסרוקת בצורה מושלמת.
         </div>
-        <Students/>
+
+        <Students />
+
         <div className={styles.subtitle} id="עדויות">
           הקורס שלי מדבר בעד עצמו – וזה מה שהתלמידים שלי מספרים
         </div>
-      <YoutubeCarousel videoIds={videoIds}/>
+
+        <YoutubeCarousel videoIds={videoIds} />
       </div>
     </div>
   );
