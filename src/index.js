@@ -3,7 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+if (typeof window !== 'undefined' && !window.safari) {
+  window.safari = {};
+}
 
+window.addEventListener('load', () => {
+  const script = document.createElement('script');
+  script.src = "https://cdn.enable.co.il/licenses/enable-L231329s3li1y4qd-1223-69993/init.js";
+  script.async = true;
+  script.onerror = () => console.warn("Enable script failed to load");
+  document.body.appendChild(script);
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
