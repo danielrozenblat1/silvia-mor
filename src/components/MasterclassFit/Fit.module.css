@@ -1,0 +1,249 @@
+/* Fit.module.css */
+.fitContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    direction: rtl;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+    background: #000000; /* שחור כרקע */
+    font-family: 'AssistantR', sans-serif;
+  }
+  
+  .bgGlow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    z-index: 0;
+  }
+  
+  .bgImageTop, .bgImageBottom {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  
+  .bgImageTop {
+    top: 0;
+    left: 0;
+  }
+  
+  .bgImageBottom {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .contentWrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff; /* צבע לבן לכותרות */
+    margin-bottom: 2rem;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'AssistantR', sans-serif;
+  }
+  
+  .sectionTitle {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .fancyTitle {
+    font-size: 1.8rem;
+    color: #d8b49a; /* צבע מוקה/זהב */
+    position: relative;
+    padding: 0 2rem;
+    font-weight: bold;
+    text-shadow: 0px 1px 4px rgba(216, 180, 154, 0.4);
+    font-family: 'Assistant', sans-serif;
+  }
+  
+  .targetAudienceContainer {
+    margin: 2rem 0;
+  }
+  
+  .description {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #ffffff; /* צבע לבן לטקסט */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .highlightedWord {
+    color: #d8b49a; /* צבע מוקה/זהב */
+    font-weight: bold;
+    text-shadow: 0px 1px 4px rgba(216, 180, 154, 0.4);
+  }
+  
+  .featuresContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center; /* שינוי ממירוך בראש למירכוז אנכי */
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.03); /* רקע כהה שקוף */
+    border-radius: 10px;
+    /* גבול במקום צל */
+    border: 1px solid rgba(216, 180, 154, 0.2); /* גבול בצבע מוקה */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* עיצוב מיוחד לפינות כל אלמנט */
+  .cornerTopRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #d8b49a;
+    border-right: 2px solid #d8b49a;
+  }
+  
+  .cornerBottomLeft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #d8b49a;
+    border-left: 2px solid #d8b49a;
+  }
+  
+  .featureIcon {
+    min-width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.75rem;
+    font-size: 1.5rem;
+    color: #d8b49a; /* צבע מוקה/זהב */
+  }
+  
+  .featureText {
+    font-size: 1.1rem;
+    color: #ffffff; /* צבע לבן לטקסט */
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .pricingSection {
+    margin: 3rem 0;
+    text-align: center;
+  }
+  
+  .priceContainer {
+    margin: 2rem auto;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.03); /* רקע כהה שקוף */
+    border-radius: 12px;
+    /* גבול במקום צל */
+    border: 1px solid rgba(216, 180, 154, 0.2); /* גבול בצבע מוקה */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* עיצוב מיוחד לפינות קופסת המחיר */
+  .largeCornerTopRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 3px solid #d8b49a;
+    border-right: 3px solid #d8b49a;
+  }
+  
+  .largeCornerBottomLeft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-bottom: 3px solid #d8b49a;
+    border-left: 3px solid #d8b49a;
+  }
+  
+  .priceTitle {
+    font-size: 1.3rem;
+    color: #ffffff; /* צבע לבן לטקסט */
+    margin-bottom: 1rem;
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .priceAmount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d8b49a; /* צבע מוקה/זהב */
+    margin-bottom: 0.5rem;
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 2px 6px rgba(216, 180, 154, 0.4);
+  }
+  
+  .pricingNote {
+    font-size: 0.9rem;
+    color: #d8b49a; /* צבע מוקה/זהב */
+    font-style: italic;
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(145deg, rgba(216, 180, 154, 0.15), rgba(216, 180, 154, 0.05));
+    color: #ffffff;
+    border: 1px solid rgba(216, 180, 154, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  
+  .ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), 
+                0 0 10px rgba(216, 180, 154, 0.3);
+    border-color: rgba(216, 180, 154, 0.5);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .featuresContainer {
+      grid-template-columns: 1fr;
+    }
+    
+    .title {
+      font-size: 2rem;
+    }
+    
+    .fancyTitle {
+      font-size: 1.5rem;
+    }
+  }

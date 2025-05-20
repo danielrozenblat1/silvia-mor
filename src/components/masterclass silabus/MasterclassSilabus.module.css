@@ -1,0 +1,387 @@
+/* WorkshopSection.module.css */
+.container {
+    direction: rtl;
+    font-family: 'Assistant', 'Arial', sans-serif;
+    margin: 0 auto;
+}
+  
+.glassCard {
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+}
+  
+.glassCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(220, 220, 235, 0.15) 0%, rgba(180, 180, 190, 0.1) 40%, rgba(10, 10, 20, 0) 80%);
+    filter: blur(30px);
+    z-index: -1;
+}
+  
+.title {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+  
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d8b49a, transparent);
+    border-radius: 4px;
+}
+  
+/* Schedule Section - Completely Redesigned Timeline with 3 items per row */
+.scheduleSection {
+    margin-bottom: 2rem; /* צמצום המרחק בין החלקים */
+}
+  
+.timelineContainer {
+    padding: 1.5rem;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 100%);
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    /* הסרת הצל: box-shadow: inset 0 0 20px rgba(216, 180, 154, 0.05); */
+  
+}
+  
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.timelineItem {
+    flex: 0 0 calc(33.333% - 1rem); /* 3 בשורה */
+    min-width: 230px;
+    display: flex;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.2) 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 5px rgba(216, 180, 154, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(216, 180, 154, 0.08);
+    height: 70px;
+}
+  
+.timelineItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #d8b49a, rgba(216, 180, 154, 0.2));
+    z-index: 1;
+}
+  
+.timelineItem:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2), 0 0 8px rgba(216, 180, 154, 0.3);
+    border-color: rgba(216, 180, 154, 0.2);
+}
+  
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: auto;
+    background: linear-gradient(135deg, rgba(35, 35, 40, 0.9) 0%, rgba(25, 25, 30, 0.95) 100%);
+    border-right: 1px solid rgba(216, 180, 154, 0.15);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+  
+.timelineItem:hover .iconContainer {
+    background: linear-gradient(135deg, rgba(40, 30, 25, 0.9) 0%, rgba(30, 25, 20, 0.95) 100%);
+}
+  
+.iconContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(216, 180, 154, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+  
+.timelineItem:hover .iconContainer::after {
+    opacity: 1;
+}
+  
+.icon {
+    color: #d8b49a;
+    width: 90%;
+    filter: drop-shadow(0 0 5px rgba(216, 180, 154, 0.3));
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+  
+.timelineItem:hover .icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(216, 180, 154, 0.6));
+}
+  
+.timelineContent {
+    flex-grow: 1;
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+  
+.timelineContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(216, 180, 154, 0.03) 0%, transparent 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+  
+.timelineItem:hover .timelineContent::before {
+    opacity: 1;
+}
+  
+.timelineContent p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffffff;
+    font-family: 'AssistantR', sans-serif;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+  
+.timelineItem:hover .timelineContent p {
+    color: #d8b49a;
+    transform: scale(1.03);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+  
+/* Benefits Section - Modified with narrower container */
+.benefitsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.8rem;
+    max-width: 900px; /* הגבלת רוחב הגריד */
+    margin: 0 auto; /* מירכוז הגריד */
+    width: 100%;
+}
+  
+.benefitCard {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+  
+.benefitCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(216, 180, 154, 0.2);
+}
+  
+.benefitIcon {
+    background: rgba(216, 180, 154, 0.1);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #d8b49a;
+    border: 1px solid rgba(216, 180, 154, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+  
+.benefitCard:hover .benefitIcon {
+    transform: scale(1.05);
+    background: rgba(216, 180, 154, 0.15);
+}
+  
+.featureIcon {
+    color: #d8b49a;
+    stroke-width: 1.5;
+    width: 90%;
+    transition: all 0.3s ease;
+}
+  
+.benefitCard:hover .featureIcon {
+    transform: scale(1.1);
+    color: #e9c6a9;
+}
+  
+.benefitContent {
+    position: relative;
+    z-index: 1;
+    max-width: 90%;
+}
+  
+.benefitContent p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.5;
+    font-family: 'AssistantR', sans-serif;
+    transition: all 0.3s ease;
+}
+  
+.benefitCard:hover .benefitContent p {
+    color: #d8b49a;
+}
+  
+/* Responsive design */
+@media (max-width: 992px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .glassCard {
+        padding: 1.5rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        max-width: 800px; /* רוחב מוגבל עבור מסכים בינוניים */
+    }
+  
+    .timelineItem {
+        flex: 0 0 calc(50% - 0.75rem); /* 2 בשורה במסכים בינוניים */
+    }
+
+    .benefitIcon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .featureIcon {
+        width: 24px;
+        height: 24px;
+    }
+}
+  
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .glassCard {
+        padding: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+        max-width: 600px; /* רוחב מוגבל עבור מסכים קטנים */
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+  
+    .timelineItem {
+        flex: 0 0 calc(50% - 0.75rem); /* 2 בשורה במסכים קטנים */
+    }
+
+    .benefitIcon {
+        width: 45px;
+        height: 45px;
+    }
+}
+  
+@media (max-width: 576px) {  
+    .timelineItem {
+        flex: 0 0 100%; /* 1 בשורה במסכים מאוד קטנים */
+    }
+    
+    .featureIcon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem;
+    }
+    
+    .timelineContent p {
+        font-size: 0.9rem;
+    }
+    
+    .benefitCard {
+        padding: 1rem 0.8rem;
+    }
+    
+    .benefitIcon {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .benefitContent p {
+        font-size: 0.9rem;
+    }
+}

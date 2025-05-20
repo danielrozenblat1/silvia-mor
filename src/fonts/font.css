@@ -10,3 +10,15 @@
     font-weight:300;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'Bodni';
+    src: url('./BodoniModa-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight:bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Chronical';
+    src: url('./Chronicle\ Display\ Light\ Italic.otf') format('truetype');
+ 
+    font-style: normal;
+  }
