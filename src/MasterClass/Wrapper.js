@@ -45,7 +45,7 @@ const [scrolled, setScrolled] = useState(false);
     targetDate.setDate(targetDate.getDate() + 7); // עוד שבוע מהיום
   
   return <>
-
+<div style={{background:"linear-gradient(120deg, #565656 0%, #111111 25%, #000000 50%, #222222 75%, #434343 100%)"}}>
 <StickyCountdownComponent 
         targetDate={targetDate}
         title="עד המאסטרקלאס הבא:"
@@ -62,7 +62,7 @@ const [scrolled, setScrolled] = useState(false);
 {/* 
   <ThirdScreen/>
   <ByMe/> */}
-
+</div>
   </>
 
       
