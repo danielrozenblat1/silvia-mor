@@ -11,7 +11,7 @@ import styles from './CountDown.module.css';
 const StickyCountdownComponent = ({
   targetDate,
   title = "עד המאסטרקלאס הבא:",
-  buttonText = "להרשמה לחצי כאן!",
+  buttonText = "להרשמה לחצו כאן!",
   buttonLink = "#signup"
 }) => {
   // חישוב זמן שנותר

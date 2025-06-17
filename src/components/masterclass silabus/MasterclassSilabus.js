@@ -37,7 +37,7 @@ const WorkshopSection = () => {
                 <div className={styles.icon}><Player  icon={hair1} ref={playerRef1} size="100%" onComplete={handleComplete}></Player></div>
                 </div>
                 <div className={styles.timelineContent}>
-                  <p>תסרוקת ראשונה: גלי הוליווד</p>
+                  <p>תסרוקת ראשונה</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -53,7 +53,7 @@ const WorkshopSection = () => {
                 <div className={styles.icon}><Player  icon={hair2} ref={playerRef1} size="100%" onComplete={handleComplete}></Player></div>
                 </div>
                 <div className={styles.timelineContent}>
-                  <p>תסרוקת שנייה גלי הוליווד</p>
+                  <p>תסרוקת שנייה</p>
                 </div>
               </div>
               <div className={styles.timelineItem}>
@@ -69,14 +69,14 @@ const WorkshopSection = () => {
         </div>
 
         <div className={styles.benefitsSection}>
-          <h2 className={styles.title}>מה את הולכת לקבל ביום הזה?</h2>
+          <h2 className={styles.title}>מה אתם הולכים לקבל ביום הזה?</h2>
           <div className={styles.benefitsGrid}>
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
                 <Clock className={styles.featureIcon} />
               </div>
               <div className={styles.benefitContent}>
-                <p>8 שעות של למידה- שממנו תצאי עם כלים ביד.</p>
+                <p>8 שעות של למידה- שממנו תצאו עם כלים ביד.</p>
               </div>
             </div>
             <div className={styles.benefitCard}>
@@ -100,7 +100,7 @@ const WorkshopSection = () => {
                 <Award className={styles.featureIcon} />
               </div>
               <div className={styles.benefitContent}>
-                <p>עולם מקצועי חדש שלא הכרת- תביני מה מבדל אותך כאשת מקצוע – ואיך לפרוץ באמת.</p>
+                <p>עולם מקצועי חדש שלא הכרתם- תבינו מה מבדל אתכם כאנשי מקצוע – ואיך לפרוץ באמת.</p>
               </div>
             </div>
             <div className={styles.benefitCard}>
@@ -108,7 +108,7 @@ const WorkshopSection = () => {
                 <Users className={styles.featureIcon} />
               </div>
               <div className={styles.benefitContent}>
-                <p>קהילה וחוויה מעצימה יום עם נשים כמוך שרוצות לגדול, ללמוד ולהתפתח.</p>
+                <p>קהילה וחוויה מעצימה יום עם אנשים כמוכם שרוצים לגדול, ללמוד ולהתפתח.</p>
               </div>
             </div>
             <div className={styles.benefitCard}>
@@ -116,7 +116,7 @@ const WorkshopSection = () => {
                 <Gift className={styles.featureIcon} />
               </div>
               <div className={styles.benefitContent}>
-                <p>מתנה ממני לסיום- הפתעה שתחכה לך – כי מגיע לך לזכור את היום הזה.</p>
+                <p>מתנה ממני לסיום- הפתעה שתחכה לכם – כי מגיע לכם לזכור את היום הזה.</p>
               </div>
             </div>
           </div>

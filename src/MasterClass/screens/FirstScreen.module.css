@@ -164,6 +164,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-size: 2.5rem;
+
   text-fill-color: transparent;
   position: relative;
   display: inline-block;
@@ -402,6 +403,17 @@
   100% { opacity: 0.3; }
 }
 
+/* Limited seats notice style */
+.limitedSeatsNotice {
+  font-family: 'AssistantR', sans-serif;
+  font-size: 14px;
+  color: #d8b49a;
+  margin-top: 12px;
+  text-align: center;
+  opacity: 0.9;
+  font-style: italic;
+}
+
 .imageSection {
   width: 50%; /* Increased from 45% to make the image larger */
   display: flex;
@@ -537,6 +549,11 @@
   .ctaButton {
     padding: 14px 30px;
     font-size: 18px;
+  }
+  
+  .limitedSeatsNotice {
+    font-size: 12px;
+    margin-top: 10px;
   }
   
   .imagePlaceholder {

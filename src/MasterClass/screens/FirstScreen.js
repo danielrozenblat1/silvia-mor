@@ -16,6 +16,7 @@ const FirstScreen = () => {
     <div className={`${styles.pageContainer} ${isVisible ? styles.visible : ''}`}>
 
       <div className={styles.englishTitle}>Hollywood Waves Masterclass</div>
+   
       
       <div className={styles.container}>
         <div className={styles.bgPattern}></div>
@@ -23,10 +24,10 @@ const FirstScreen = () => {
         
         <div className={styles.contentWrapper}>
           <div className={styles.textSection}>
-            <div className={styles.becomeText}>לשלוט בכל טכניקות התסרוקת ולהפוך ל:</div>
+            <div className={styles.becomeText}>מאסטר קלאס - גלי הוליווד</div>
             <h1 className={styles.mainTitle}>
               <div className={styles.titleContainer}>
-                <span className={styles.fancyText}>מעצבת שיער הרבה יותר מקצועית </span>
+                <span className={styles.fancyText}>כל הסודות והטכניקות שהבאתי מרוסיה</span>
                 <span className={styles.fancyText}>
                 <span className={styles.highlightedeText}>בתוך 8 שעות בלבד</span>
                   <div className={styles.underlineContainer}>
@@ -50,7 +51,7 @@ const FirstScreen = () => {
                     <path d="M4 9c.6 0 1-.4 1-1s-.4-1-1-1-1 .4-1 1 .4 1 1 1z" />
                   </svg>
                 </div>
-                <div className={styles.featureText}>3 תסרוקות מלאות</div>
+                <div className={styles.featureText}>2 תסרוקות על מודליסטית</div>
               </div>
               
               <div className={styles.featureItem}>
@@ -63,7 +64,7 @@ const FirstScreen = () => {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                   </svg>
                 </div>
-                <div className={styles.featureText}>2 אורחים נוספים</div>
+                <div className={styles.featureText}>ערכת מתנה מקצועית</div>
               </div>
               
               <div className={styles.featureItem}>
@@ -77,15 +78,19 @@ const FirstScreen = () => {
                     <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
                   </svg>
                 </div>
-                <div className={styles.featureText}>מתנה ממני לסיום</div>
+                <div className={styles.featureText}>סרטון הדרכה במתנה</div>
               </div>
             </div>
             
   
             <button className={styles.ctaButton}>
-              <span>להרשמה מיידית לחצי כאן</span>
+              <span>לתפוס מקום במאסטר קלאס</span>
               <div className={styles.buttonGlow}></div>
             </button>
+
+            <div className={styles.limitedSeatsNotice}>
+              שימו לב - המאסטר קלאס יהיה עד 50 משתתפים בלבד !
+            </div>
           </div>
           
           <div className={styles.imageSection}>

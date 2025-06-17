@@ -13,7 +13,7 @@ const Fit = () => {
       <div className={styles.contentWrapper}>
    
         <div className={styles.sectionTitle}>
-          <span className={styles.fancyTitle}>ושנייה לפני שאת נרשמת..</span>
+          <span className={styles.fancyTitle}>ושנייה לפני שאתם נרשמים..</span>
         </div>
         
         {/* Target Audience Section */}
@@ -33,7 +33,7 @@ const Fit = () => {
                 <Check color="#d8b49a" />
               </div>
               <div className={styles.featureText}>
-                מעצבי שיער, ספרים, ספריות ומאפרות שרוצות להתחיל לסרק
+                מעצבי שיער, ספרים, ספריות ומאפרות שרוצים להתחיל לסרק
               </div>
             </div>
             
@@ -126,12 +126,12 @@ const Fit = () => {
             <div className={styles.largeCornerTopRight}></div>
             <div className={styles.largeCornerBottomLeft}></div>
             <div className={styles.priceTitle}>מחיר מיוחד לנרשמים עכשיו</div>
-            <div className={styles.priceAmount}>₪297</div>
+            <div className={styles.priceAmount}>₪497</div>
             <div className={styles.pricingNote}>* המחיר יעלה בחצות</div>
           </div>
           
           <button className={styles.ctaButton}>
-            הרשמי עכשיו למאסטרקלאס
+            הרשמו עכשיו למאסטרקלאס
           </button>
         </div>
       </div>

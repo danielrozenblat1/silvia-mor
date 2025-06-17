@@ -16,8 +16,8 @@ const MasterClass = () => {
         <div className={styles.contentWrapper}>
           <div className={styles.textSection}>
             <p className={styles.becomeText}>
-              את <span className={styles.highlightedWord}>משקיעה</span>, <span className={styles.highlightedWord}>לומדת</span>, <span className={styles.highlightedWord}>מוציאה הרבה כסף</span> אבל עדיין מרגישה שמשהו חסר שמשהו לא הולך שיש דברים שעדיין לא למדת.
-              היומן שלך לא מלא כמו שרצית ועדיין אין לך את הביטחון לקבל כלה? בקיצור הבנת.
+              אתם <span className={styles.highlightedWord}>משקיעים</span>, <span className={styles.highlightedWord}>לומדים</span>, <span className={styles.highlightedWord}>מוציאים הרבה כסף</span> אבל עדיין מרגישים שמשהו חסר שמשהו לא הולך שיש דברים שעדיין לא למדתם.
+              היומן שלכם לא מלא כמו שרציתם ועדיין אין לכם את הביטחון לקבל כלה? בקיצור הבנתם.
             </p>
             <p className={styles.becomeText}>
               כמעצבת שיער גם אני חוויתי את אותן תחושות הייתי שם ואז הבנתי שאני זו לו הבעיה.
@@ -25,7 +25,7 @@ const MasterClass = () => {
             
             <div className={styles.mainTitle}>
               <span className={styles.fancyText}>
-                את יודעת שאת רוצה לעלות רמה – אבל לא יודעת לשים את הנקודה על מה באמת חסר לך?
+                אתם יודעים שאתם רוצים לעלות רמה – אבל לא יודעים לשים את הנקודה על מה באמת חסר לכם?
               </span>
             </div>
             
@@ -38,7 +38,7 @@ const MasterClass = () => {
             <div className={styles.mainTitle}>
               <span className={styles.becomeText}>במאסטר קלאס הקרוב</span>
               <span className={styles.fancyText}>
-                אני הולכת לחשוף בפנייך את השיטה שחיפשתי שנים.
+                אני הולכת לחשוף בפניכם את השיטה שחיפשתי שנים.
               </span>
             </div>
 
@@ -72,11 +72,16 @@ const MasterClass = () => {
                 איך לבלוט בתחום שמלא במעצבי שיער וכולם נראים אותו הדבר.
               </span>
             </div>
-            
+     
             <button className={styles.ctaButton}>
-              הרשמי עכשיו
+              לחצו כאן לשריין מקום במאסטר קלאס
               <div className={styles.buttonGlow}></div>
             </button>
+                   
+            <p className={styles.limitedSeats}>
+              שימו לב - המאסטר קלאס יהיה עד 50 משתתפים בלבד
+            </p>
+            
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ import PersonalStorySection from '../components/masterclassMe/Me';
 import ThirdScreen from './screens/ThirdScreen';
 import ForthScreen from './screens/ForthScreen';
 import Fit from '../components/MasterclassFit/Fit';
+import LocationSection from '../components/Location/Location';
 
 
 
@@ -59,6 +60,7 @@ const [scrolled, setScrolled] = useState(false);
 
   <ForthScreen/>
 <Fit/>
+<LocationSection/>
 {/* 
   <ThirdScreen/>
   <ByMe/> */}
