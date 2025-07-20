@@ -1,26 +1,25 @@
-/* Fit.module.css */
+/* Fit.module.css - Responsive Design */
 .fitContainer {
     width: 100%;
     position: relative;
     overflow: hidden;
     direction: rtl;
-    padding: 3rem 1rem;
+    padding: 3rem 0;
     min-height: 100vh;
     background: #000000; /* שחור כרקע */
     font-family: 'AssistantR', sans-serif;
-  }
-  
-  .bgGlow {
+}
+
+.bgGlow {
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-
     z-index: 0;
-  }
-  
-  .bgImageTop, .bgImageBottom {
+}
+
+.bgImageTop, .bgImageBottom {
     position: absolute;
     width: 300px;
     height: 300px;
@@ -28,41 +27,41 @@
     background-repeat: no-repeat;
     opacity: 0.2;
     z-index: 0;
-  }
-  
-  .bgImageTop {
+}
+
+.bgImageTop {
     top: 0;
     left: 0;
-  }
-  
-  .bgImageBottom {
+}
+
+.bgImageBottom {
     bottom: 0;
     right: 0;
-  }
-  
-  .contentWrapper {
+}
+
+.contentWrapper {
     position: relative;
     z-index: 1;
     max-width: 1100px;
     margin: 0 auto;
-  }
-  
-  .title {
+}
+
+.title {
     text-align: center;
     font-size: 2.5rem;
     color: #ffffff; /* צבע לבן לכותרות */
     margin-bottom: 2rem;
     text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
     font-family: 'AssistantR', sans-serif;
-  }
-  
-  .sectionTitle {
+}
+
+.sectionTitle {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
-  }
-  
-  .fancyTitle {
+}
+
+.fancyTitle {
     font-size: 1.8rem;
     color: #d8b49a; /* צבע מוקה/זהב */
     position: relative;
@@ -70,13 +69,13 @@
     font-weight: bold;
     text-shadow: 0px 1px 4px rgba(216, 180, 154, 0.4);
     font-family: 'Assistant', sans-serif;
-  }
-  
-  .targetAudienceContainer {
+}
+
+.targetAudienceContainer {
     margin: 2rem 0;
-  }
-  
-  .description {
+}
+
+.description {
     text-align: center;
     font-size: 1.3rem;
     color: #ffffff; /* צבע לבן לטקסט */
@@ -84,21 +83,21 @@
     line-height: 1.6;
     font-family: 'AssistantR', sans-serif;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  }
-  
-  .highlightedWord {
+}
+
+.highlightedWord {
     color: #d8b49a; /* צבע מוקה/זהב */
     font-weight: bold;
     text-shadow: 0px 1px 4px rgba(216, 180, 154, 0.4);
-  }
-  
-  .featuresContainer {
+}
+
+.featuresContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-  }
-  
-  .featureItem {
+}
+
+.featureItem {
     display: flex;
     align-items: center; /* שינוי ממירוך בראש למירכוז אנכי */
     padding: 1.5rem;
@@ -108,10 +107,10 @@
     border: 1px solid rgba(216, 180, 154, 0.2); /* גבול בצבע מוקה */
     position: relative;
     overflow: hidden;
-  }
-  
-  /* עיצוב מיוחד לפינות כל אלמנט */
-  .cornerTopRight {
+}
+
+/* עיצוב מיוחד לפינות כל אלמנט */
+.cornerTopRight {
     position: absolute;
     top: 0;
     right: 0;
@@ -119,9 +118,9 @@
     height: 20px;
     border-top: 2px solid #d8b49a;
     border-right: 2px solid #d8b49a;
-  }
-  
-  .cornerBottomLeft {
+}
+
+.cornerBottomLeft {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -129,9 +128,9 @@
     height: 20px;
     border-bottom: 2px solid #d8b49a;
     border-left: 2px solid #d8b49a;
-  }
-  
-  .featureIcon {
+}
+
+.featureIcon {
     min-width: 30px;
     display: flex;
     align-items: center;
@@ -139,21 +138,21 @@
     margin-left: 0.75rem;
     font-size: 1.5rem;
     color: #d8b49a; /* צבע מוקה/זהב */
-  }
-  
-  .featureText {
+}
+
+.featureText {
     font-size: 1.1rem;
     color: #ffffff; /* צבע לבן לטקסט */
     font-family: 'AssistantR', sans-serif;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  }
-  
-  .pricingSection {
+}
+
+.pricingSection {
     margin: 3rem 0;
     text-align: center;
-  }
-  
-  .priceContainer {
+}
+
+.priceContainer {
     margin: 2rem auto;
     max-width: 500px;
     padding: 2rem;
@@ -163,10 +162,10 @@
     border: 1px solid rgba(216, 180, 154, 0.2); /* גבול בצבע מוקה */
     position: relative;
     overflow: hidden;
-  }
-  
-  /* עיצוב מיוחד לפינות קופסת המחיר */
-  .largeCornerTopRight {
+}
+
+/* עיצוב מיוחד לפינות קופסת המחיר */
+.largeCornerTopRight {
     position: absolute;
     top: 0;
     right: 0;
@@ -174,9 +173,9 @@
     height: 40px;
     border-top: 3px solid #d8b49a;
     border-right: 3px solid #d8b49a;
-  }
-  
-  .largeCornerBottomLeft {
+}
+
+.largeCornerBottomLeft {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -184,34 +183,34 @@
     height: 40px;
     border-bottom: 3px solid #d8b49a;
     border-left: 3px solid #d8b49a;
-  }
-  
-  .priceTitle {
+}
+
+.priceTitle {
     font-size: 1.3rem;
     color: #ffffff; /* צבע לבן לטקסט */
     margin-bottom: 1rem;
     font-family: 'AssistantR', sans-serif;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  }
-  
-  .priceAmount {
+}
+
+.priceAmount {
     font-size: 3rem;
     font-weight: bold;
     color: #d8b49a; /* צבע מוקה/זהב */
     margin-bottom: 0.5rem;
     font-family: 'AssistantR', sans-serif;
     text-shadow: 0px 2px 6px rgba(216, 180, 154, 0.4);
-  }
-  
-  .pricingNote {
+}
+
+.pricingNote {
     font-size: 0.9rem;
     color: #d8b49a; /* צבע מוקה/זהב */
     font-style: italic;
     font-family: 'AssistantR', sans-serif;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-  }
-  
-  .ctaButton {
+}
+
+.ctaButton {
     padding: 1rem 2rem;
     font-size: 1.2rem;
     background: linear-gradient(145deg, rgba(216, 180, 154, 0.15), rgba(216, 180, 154, 0.05));
@@ -224,26 +223,538 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     font-family: 'AssistantR', sans-serif;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-  }
-  
-  .ctaButton:hover {
+}
+
+.ctaButton:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), 
                 0 0 10px rgba(216, 180, 154, 0.3);
     border-color: rgba(216, 180, 154, 0.5);
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .featuresContainer {
-      grid-template-columns: 1fr;
+}
+
+/* Media Queries - Responsive Design */
+
+/* מתחת ל350px */
+@media (max-width: 349px) {
+    .fitContainer {
+        padding: 1rem 0;
+    }
+    
+    .contentWrapper {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 0;
     }
     
     .title {
-      font-size: 2rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
     
     .fancyTitle {
-      font-size: 1.5rem;
+        font-size: 1rem;
+        padding: 0 0.3rem;
     }
-  }
+    
+    .description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        padding: 0 0.3rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        width: 100%;
+    }
+    
+    .featureItem {
+        padding: 0.8rem;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .featureIcon {
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .featureText {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .priceContainer {
+        padding: 0.8rem;
+        margin: 1rem auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .priceAmount {
+        font-size: 1.8rem;
+    }
+    
+    .ctaButton {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* 350px-450px */
+@media (min-width: 350px) and (max-width: 449px) {
+    .fitContainer {
+        padding: 1.5rem 0;
+    }
+    
+    .contentWrapper {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .title {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+    
+    .fancyTitle {
+        font-size: 1.6rem;
+        padding: 0 ;
+    }
+    
+    .description {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        padding: 0 0.3rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        width: 100%;
+    }
+    
+    .featureItem {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .featureIcon {
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .featureText {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    .priceContainer {
+        padding: 1rem;
+        margin: 1.5rem auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .priceAmount {
+        font-size: 2.1rem;
+    }
+    
+    .ctaButton {
+        padding: 0.9rem 1rem;
+        font-size: 1.05rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* 450px-550px */
+@media (min-width: 450px) and (max-width: 549px) {
+    .fitContainer {
+        padding: 2rem 0.75rem;
+    }
+    
+    .contentWrapper {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.3rem;
+        padding: 0 0.8rem;
+    }
+    
+    .description {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .featureItem {
+        padding: 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .featureText {
+        font-size: 1.02rem;
+        line-height: 1.5;
+    }
+    
+    .priceContainer {
+        padding: 1.3rem;
+        margin: 1.8rem auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .priceAmount {
+        font-size: 2.4rem;
+    }
+    
+    .ctaButton {
+        padding: 1rem 1.3rem;
+        font-size: 1.1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* 550px-650px */
+@media (min-width: 550px) and (max-width: 649px) {
+    .fitContainer {
+        padding: 2.2rem 1rem;
+    }
+    
+    .contentWrapper {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 1.6rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.4rem;
+        padding: 0 1rem;
+    }
+    
+    .description {
+        font-size: 1.15rem;
+        margin-bottom: 1.6rem;
+        padding: 0 0.5rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        width: 100%;
+    }
+    
+    .featureItem {
+        padding: 1.3rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .featureText {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+    
+    .priceContainer {
+        padding: 1.5rem;
+        margin: 2rem auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .priceAmount {
+        font-size: 2.5rem;
+    }
+    
+    .ctaButton {
+        padding: 1rem 1.5rem;
+        font-size: 1.15rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* 650px-750px */
+@media (min-width: 650px) and (max-width: 749px) {
+    .fitContainer {
+        padding: 2.5rem 1.2rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.5rem;
+        padding: 0 1.5rem;
+    }
+    
+    .description {
+        font-size: 1.2rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+    }
+    
+    .featureItem {
+        padding: 1.4rem;
+    }
+    
+    .featureText {
+        font-size: 1.05rem;
+    }
+    
+    .priceContainer {
+        padding: 1.8rem;
+        margin: 2.2rem auto;
+    }
+    
+    .priceAmount {
+        font-size: 2.8rem;
+    }
+    
+    .ctaButton {
+        padding: 1rem 1.8rem;
+        font-size: 1.2rem;
+        width: 70%;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+/* 750px-850px */
+@media (min-width: 750px) and (max-width: 849px) {
+    .fitContainer {
+        padding: 2.8rem 1.5rem;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+        margin-bottom: 1.9rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.6rem;
+        padding: 0 1.6rem;
+    }
+    
+    .description {
+        font-size: 1.25rem;
+        margin-bottom: 1.9rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+    }
+    
+    .featureItem {
+        padding: 1.45rem;
+    }
+    
+    .featureText {
+        font-size: 1.08rem;
+    }
+    
+    .priceContainer {
+        padding: 1.9rem;
+        margin: 2.5rem auto;
+    }
+    
+    .priceAmount {
+        font-size: 2.9rem;
+    }
+    
+    .ctaButton {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        width: 65%;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* 850px-950px */
+@media (min-width: 850px) and (max-width: 949px) {
+    .fitContainer {
+        padding: 3rem 1.5rem;
+    }
+    
+    .title {
+        font-size: 2.3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.7rem;
+        padding: 0 1.8rem;
+    }
+    
+    .description {
+        font-size: 1.28rem;
+        margin-bottom: 2rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .featureItem {
+        padding: 1.5rem;
+    }
+    
+    .featureText {
+        font-size: 1.1rem;
+    }
+    
+    .priceContainer {
+        padding: 2rem;
+        margin: 2.8rem auto;
+    }
+    
+    .priceAmount {
+        font-size: 3rem;
+    }
+    
+    .ctaButton {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        width: 60%;
+    }
+    
+    .bgImageTop, .bgImageBottom {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* 950px-1050px */
+@media (min-width: 950px) and (max-width: 1049px) {
+    .title {
+        font-size: 2.4rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.75rem;
+        padding: 0 1.9rem;
+    }
+    
+    .description {
+        font-size: 1.3rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .ctaButton {
+        width: 55%;
+    }
+}
+
+/* 1050px-1150px */
+@media (min-width: 1050px) and (max-width: 1149px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .fancyTitle {
+        font-size: 1.8rem;
+        padding: 0 2rem;
+    }
+    
+    .featuresContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .ctaButton {
+        width: 50%;
+    }
+}
+
+/* 1150px-1250px */
+@media (min-width: 1150px) and (max-width: 1249px) {
+    .featuresContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .ctaButton {
+        width: 45%;
+    }
+}
+
+/* מעל 1250px */
+@media (min-width: 1250px) {
+    .featuresContainer {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.8rem;
+    }
+    
+    .ctaButton {
+        width: 40%;
+    }
+    
+    .contentWrapper {
+        max-width: 1200px;
+    }
+}

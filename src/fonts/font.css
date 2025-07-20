@@ -22,3 +22,9 @@
  
     font-style: normal;
   }
+    @font-face {
+    font-family: 'Comorant';
+    src: url('./CormorantInfant-VariableFont_wght.ttf') format('truetype');
+
+    font-style: normal;
+  }

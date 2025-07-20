@@ -11,6 +11,10 @@ import recommend6 from "../images/סילביה מור המלצות הודעות 
 import recommend7 from "../images/סילביה מור המלצות הודעות 7.png";
 import recommend8 from "../images/סילביה מור המלצות הודעות 8.png";
 import recommend9 from "../images/סילביה מור המלצות הודעות 9.png";
+import recommend10 from "../images/סילביה המלצות חדשות 1.png";
+import recommend11 from "../images/סילביה המלצות חדשות 2.png";
+import recommend12 from "../images/סילביה המלצות חדשות 3.png";
+import recommend13 from "../images/סילביה המלצות חדשות 4.png";
 import styles from "./RecommendsScreen.module.css";
 
 const RecommendsScreen = () => {
@@ -24,7 +28,11 @@ const RecommendsScreen = () => {
     { src: recommend6 },
     { src: recommend7 },
     { src: recommend8 },
-    { src: recommend9 }
+    { src: recommend9 },
+       { src: recommend10 },
+          { src: recommend11 },
+             { src: recommend12 },
+                { src: recommend13 }
   ];
 
   return (

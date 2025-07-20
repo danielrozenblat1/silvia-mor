@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SecondScreen.module.css';
-import { Camera, Calendar, Star } from 'lucide-react';
+import { SquareScissors, ListChecks, DollarSign } from 'lucide-react';
 
 const MasterClass = () => {
   return (
@@ -45,21 +45,21 @@ const MasterClass = () => {
             <div className={styles.featuresContainer}>
               <div className={styles.featureRow}>
                 <div className={styles.featureIcon}>
-                  <Camera className={styles.icon} />
+                  <SquareScissors className={styles.icon} />
                 </div>
                 <p className={styles.featureText}>איך להתחיל לסרק כלות בביטחון</p>
               </div>
               
               <div className={styles.featureRow}>
                 <div className={styles.featureIcon}>
-                  <Calendar className={styles.icon} />
+                  <ListChecks className={styles.icon} />
                 </div>
                 <p className={styles.featureText}>איך לעבוד לפי סדר פעולות ברור</p>
               </div>
               
               <div className={styles.featureRow}>
                 <div className={styles.featureIcon}>
-                  <Star className={styles.icon} />
+                  <DollarSign className={styles.icon} />
                 </div>
                 <p className={styles.featureText}>איך להתחיל לעלות מחירים</p>
               </div>

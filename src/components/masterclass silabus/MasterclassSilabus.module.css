@@ -49,9 +49,9 @@
     border-radius: 4px;
 }
   
-/* Schedule Section - Completely Redesigned Timeline with 3 items per row */
+/* Schedule Section */
 .scheduleSection {
-    margin-bottom: 2rem; /* צמצום המרחק בין החלקים */
+    margin-bottom: 2rem;
 }
   
 .timelineContainer {
@@ -60,8 +60,6 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 100%);
     border-radius: 15px;
     margin-top: 1.5rem;
-    /* הסרת הצל: box-shadow: inset 0 0 20px rgba(216, 180, 154, 0.05); */
-  
 }
   
 .timeline {
@@ -74,8 +72,8 @@
 }
   
 .timelineItem {
-    flex: 0 0 calc(33.333% - 1rem); /* 3 בשורה */
-    min-width: 230px;
+    flex: 0 0 calc(33.333% - 1rem);
+    min-width: 200px;
     display: flex;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.2) 100%);
     border-radius: 12px;
@@ -199,7 +197,7 @@
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
   
-/* Benefits Section - Modified with narrower container */
+/* Benefits Section */
 .benefitsSection {
     display: flex;
     flex-direction: column;
@@ -210,8 +208,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.8rem;
-    max-width: 900px; /* הגבלת רוחב הגריד */
-    margin: 0 auto; /* מירכוז הגריד */
+    max-width: 900px;
+    margin: 0 auto;
     width: 100%;
 }
   
@@ -290,69 +288,273 @@
 .benefitCard:hover .benefitContent p {
     color: #d8b49a;
 }
-  
-/* Responsive design */
-@media (max-width: 992px) {
+
+/* Responsive Design - New Breakpoints */
+
+/* מתחת ל-350px */
+@media (max-width: 349px) {
     .container {
-        padding: 1.5rem;
+        padding: 0.5rem;
     }
     
     .glassCard {
-        padding: 1.5rem;
-    }
-    
-    .benefitsGrid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        max-width: 800px; /* רוחב מוגבל עבור מסכים בינוניים */
-    }
-  
-    .timelineItem {
-        flex: 0 0 calc(50% - 0.75rem); /* 2 בשורה במסכים בינוניים */
-    }
-
-    .benefitIcon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .featureIcon {
-        width: 24px;
-        height: 24px;
-    }
-}
-  
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-    
-    .glassCard {
-        padding: 1rem;
-    }
-    
-    .benefitsGrid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.2rem;
-        max-width: 600px; /* רוחב מוגבל עבור מסכים קטנים */
+        padding: 0.8rem;
+        width: 95%;
     }
     
     .title {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
-  
-    .timelineItem {
-        flex: 0 0 calc(50% - 0.75rem); /* 2 בשורה במסכים קטנים */
+    
+    .title::after {
+        width: 60px;
     }
-
+    
+    .scheduleSection,
+    .MasterclassSilabus_scheduleSection__izqiH {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+    
+    .timelineContainer {
+        padding: 0.8rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    
+    .timeline {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.3rem !important;
+        justify-content: center !important;
+        justify-items: center !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+    
+    .timelineItem,
+    .MasterclassSilabus_timelineItem__82KoN {
+        flex: unset !important;
+        min-width: unset !important;
+        height: 65px;
+        max-width: unset !important;
+    }
+    
+    .iconContainer {
+        width: 40px;
+    }
+    
+    .timelineContent {
+        padding: 0.4rem;
+        text-align: center !important;
+    }
+    
+    .timelineContent p {
+        font-size: 0.75rem;
+        text-align: center !important;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        max-width: 320px;
+    }
+    
+    .benefitCard {
+        padding: 0.7rem;
+    }
+    
     .benefitIcon {
-        width: 45px;
-        height: 45px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .featureIcon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.75rem;
+        line-height: 1.3;
     }
 }
-  
-@media (max-width: 576px) {  
-    .timelineItem {
-        flex: 0 0 100%; /* 1 בשורה במסכים מאוד קטנים */
+
+/* 350-450px */
+@media (min-width: 350px) and (max-width: 450px) {
+    .container {
+        padding: 0.8rem;
+    }
+    
+    .glassCard {
+        padding: 1rem;
+        width: 95%;
+    }
+    
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .title::after {
+        width: 70px;
+    }
+    
+    .scheduleSection,
+    .MasterclassSilabus_scheduleSection__izqiH {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .timelineContainer {
+        padding:0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    
+    .timeline {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.5rem !important;
+        justify-content: unset !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+    
+    .timelineItem,
+    .MasterclassSilabus_timelineItem__82KoN {
+        flex: unset !important;
+        min-width: unset !important;
+        height: 70px;
+        max-width: unset !important;
+    }
+    
+    .iconContainer {
+        width: 45px;
+    }
+    
+    .timelineContent {
+        padding: 0.5rem;
+    }
+    
+    .timelineContent p {
+        font-size: 0.8rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 380px;
+    }
+    
+    .benefitCard {
+        padding: 0.9rem;
+    }
+    
+    .benefitIcon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .featureIcon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+}
+
+/* 450-550px */
+@media (min-width: 450px) and (max-width: 550px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .glassCard {
+        padding: 1.2rem;
+        width: 92%;
+    }
+    
+    .title {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .title::after {
+        width: 80px;
+    }
+    
+    .scheduleSection,
+    .MasterclassSilabus_scheduleSection__izqiH {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .timelineContainer {
+        padding: 1.2rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    
+    .timeline {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.7rem !important;
+        justify-content: unset !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+    
+    .timelineItem,
+    .MasterclassSilabus_timelineItem__82KoN {
+        flex: unset !important;
+        min-width: unset !important;
+        height: 75px;
+        max-width: unset !important;
+    }
+    
+    .iconContainer {
+        width: 50px;
+    }
+    
+    .timelineContent {
+        padding: 0.6rem;
+    }
+    
+    .timelineContent p {
+        font-size: 0.85rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+        max-width: 450px;
+    }
+    
+    .benefitCard {
+        padding: 1rem;
+    }
+    
+    .benefitIcon {
+        width: 40px;
+        height: 40px;
     }
     
     .featureIcon {
@@ -360,28 +562,584 @@
         height: 22px;
     }
     
-    .timelineContent {
-        padding: 0.7rem;
+    .benefitContent p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
+/* 550-650px */
+@media (min-width: 550px) and (max-width: 650px) {
+    .container {
+        padding: 1.2rem;
     }
     
-    .timelineContent p {
-        font-size: 0.9rem;
-    }
-    
-    .benefitCard {
-        padding: 1rem 0.8rem;
-    }
-    
-    .benefitIcon {
-        width: 42px;
-        height: 42px;
+    .glassCard {
+        padding: 1.4rem;
+        width: 90%;
     }
     
     .title {
         font-size: 1.5rem;
+        margin-bottom: 1.3rem;
     }
-
+    
+    .title::after {
+        width: 85px;
+    }
+    
+    .timelineContainer {
+        padding: 1.3rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(50% - 0.5rem);
+        min-width: 250px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 58px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 0.8rem;
+    }
+    
+    .timelineContent p {
+        font-size: 0.95rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 480px;
+    }
+    
+    .benefitCard {
+        padding: 1.15rem;
+    }
+    
+    .benefitIcon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .featureIcon {
+        width: 26px;
+        height: 26px;
+    }
+    
     .benefitContent p {
         font-size: 0.9rem;
+        line-height: 1.45;
+    }
+}
+
+/* 650-750px */
+@media (min-width: 650px) and (max-width: 750px) {
+    .container {
+        padding: 1.3rem;
+    }
+    
+    .glassCard {
+        padding: 1.5rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 1.4rem;
+    }
+    
+    .title::after {
+        width: 90px;
+    }
+    
+    .timelineContainer {
+        padding: 1.4rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(50% - 0.5rem);
+        min-width: 280px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 0.9rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+        max-width: 600px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem;
+    }
+    
+    .benefitIcon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .featureIcon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+}
+
+/* 750-850px */
+@media (min-width: 750px) and (max-width: 850px) {
+    .container {
+        padding: 1.4rem;
+    }
+    
+    .glassCard {
+        padding: 1.6rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.65rem;
+        margin-bottom: 1.4rem;
+    }
+    
+    .title::after {
+        width: 95px;
+    }
+    
+    .timelineContainer {
+        padding: 1.4rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(50% - 0.5rem);
+        min-width: 300px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 1rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.7rem;
+        max-width: 650px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem;
+    }
+    
+    .benefitIcon {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .featureIcon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.93rem;
+        line-height: 1.5;
+    }
+}
+
+/* 850-950px */
+@media (min-width: 850px) and (max-width: 950px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .glassCard {
+        padding: 1.7rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .title::after {
+        width: 100px;
+    }
+    
+    .timelineContainer {
+        padding: 1.5rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(33.333% - 0.7rem);
+        min-width: 250px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 1rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.7rem;
+        max-width: 700px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem;
+    }
+    
+    .benefitIcon {
+        width: 54px;
+        height: 54px;
+    }
+    
+    .featureIcon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.94rem;
+        line-height: 1.5;
+    }
+}
+
+/* 950-1050px */
+@media (min-width: 950px) and (max-width: 1050px) {
+    .container {
+        padding: 1.6rem;
+    }
+    
+    .glassCard {
+        padding: 1.8rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .title::after {
+        width: 100px;
+    }
+    
+    .timelineContainer {
+        padding: 1.5rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(33.333% - 0.7rem);
+        min-width: 280px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 1rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+        max-width: 800px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem;
+    }
+    
+    .benefitIcon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .featureIcon {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* 1050-1150px */
+@media (min-width: 1050px) and (max-width: 1150px) {
+    .container {
+        padding: 1.7rem;
+    }
+    
+    .glassCard {
+        padding: 1.9rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .title::after {
+        width: 100px;
+    }
+    
+    .timelineContainer {
+        padding: 1.5rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(33.333% - 0.7rem);
+        min-width: 300px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 1rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+        max-width: 850px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem;
+    }
+    
+    .benefitIcon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .featureIcon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* 1150-1250px */
+@media (min-width: 1150px) and (max-width: 1250px) {
+    .container {
+        padding: 1.8rem;
+    }
+    
+    .glassCard {
+        padding: 2rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .title::after {
+        width: 100px;
+    }
+    
+    .timelineContainer {
+        padding: 1.5rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(33.333% - 1rem);
+        min-width: 330px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 1rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+        max-width: 900px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem 1rem;
+    }
+    
+    .benefitIcon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .featureIcon {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* 1250px ומעלה */
+@media (min-width: 1250px) {
+    .container {
+        padding: 2rem;
+    }
+    
+    .glassCard {
+        padding: 2rem;
+        width: 90%;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .title::after {
+        width: 100px;
+    }
+    
+    .timelineContainer {
+        padding: 1.5rem;
+    }
+    
+    .timeline {
+        gap: 1rem;
+    }
+    
+    .timelineItem {
+        flex: 0 0 calc(33.333% - 1rem);
+        min-width: 350px;
+        height: 70px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+    }
+    
+    .timelineContent {
+        padding: 0.7rem 1rem;
+    }
+    
+    .timelineContent p {
+        font-size: 1rem;
+    }
+    
+    .benefitsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+        max-width: 900px;
+    }
+    
+    .benefitCard {
+        padding: 1.2rem 1rem;
+    }
+    
+    .benefitIcon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .featureIcon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .benefitContent p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 }

@@ -1,32 +1,41 @@
 /* CountDown.module.css */
 
-.stickyContainer {
+/* מיכל הקומפוננט - עיצוב זהה תמיד (ללא רקע אפור) */
+.countdownContainer {
+  width: 100%;
+  height: 125px;
+  z-index: 1000;
+  direction: rtl;
+  /* מתחיל כחלק רגיל מהדף */
+  position: relative;
+  
+  /* ללא רקע - שקוף לחלוטין */
+  background: black;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+  
+  /* מעבר אפיקי וחלק מאוד */
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* מצב sticky - עם אפקט הזכוכית */
+.countdownContainer.sticky {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 125px; /* הגדלה מ-100px ל-125px */
-  z-index: 1000;
-  direction: rtl;
-  /* מתחיל ללא רקע */
-  background: transparent;
-  border-bottom: transparent;
-  box-shadow: none;
-  /* מעבר חלק לרקע ואפקטים */
-  transition: all 0.4s ease-in-out;
-}
-
-/* מצב גלילה - בו מופיע אפקט הזכוכית והרקע */
-.stickyContainer.scrolled {
+  /* רק במצב sticky מופיע הרקע */
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(216, 180, 154, 0.15);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  min-height: 125px;
 }
 
 /* תוכן המיכל - מסדר את הטיימר והכפתור */
-.stickyContent {
+.countdownContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,79 +45,57 @@
   padding: 0 20px;
 }
 
-/* עיצוב מיכל הספירה לאחור - רחב יותר */
+/* עיצוב מיכל הספירה לאחור - ללא רקע נפרד */
 .countdownWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* במצב התחלתי - ללא רקע ואפקטים */
+  /* ללא רקע - שקוף תמיד */
   background: transparent;
-  border-radius: 12px;
-  border: 1px solid transparent;
+  border-radius: 0;
+  border: none;
   box-shadow: none;
-  padding: 15px 25px; /* הגדלת ריפוד מ-10px 20px ל-15px 25px */
+  padding: 15px 25px;
   position: relative;
-  overflow: hidden;
-  flex: 1 1 85%; /* משתמש ב-85% מהרוחב הזמין - יותר רחב */
-  margin-left: 30px; /* רווח מהכפתור */
+  overflow: visible;
+  flex: 1 1 auto;
   
-  /* מעבר חלק */
-  transition: all 0.4s ease-in-out;
+  /* ללא מעבר כי אין שינוי */
+  transition: none;
 }
 
-/* מצב גלילה למיכל הספירה */
+/* ביטול מצב גלילה למיכל הספירה - נשאר שקוף */
 .countdownWrapper.scrolled {
-  background: linear-gradient(135deg, rgba(20, 20, 25, 0.4) 0%, rgba(10, 10, 15, 0.3) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(216, 180, 154, 0.1);
-  box-shadow: inset 0 0 20px rgba(100, 100, 130, 0.05);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 
-/* אפקט זוהר מסביב לטיימר - פעיל רק במצב גלילה */
+/* ביטול האפקט זוהר מסביב לטיימר */
 .countdownWrapper.scrolled::before {
-  content: '';
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  top: -25%;
-  left: -25%;
-  background: radial-gradient(ellipse at center, rgba(216, 180, 154, 0.08) 0%, transparent 70%);
-  filter: blur(15px);
-  z-index: -1;
-  opacity: 0.7;
-  animation: glowCountdown 8s infinite alternate;
-}
-
-@keyframes glowCountdown {
-  0% {
-    opacity: 0.5;
-    filter: blur(15px);
-  }
-  100% {
-    opacity: 0.8;
-    filter: blur(20px);
-  }
+  display: none;
 }
 
 /* עיצוב כותרת */
 .countdownTitle {
   font-family: 'AssistantR', sans-serif;
   color: #ffffff;
-  font-size: 1.1rem; /* הגדלה מ-1rem ל-1.1rem */
+  font-size: 1.1rem;
   text-align: right;
-  margin-bottom: 8px; /* הגדלה מ-5px ל-8px */
+  margin-bottom: 8px;
   font-weight: 500;
   text-shadow: 0 0 15px rgba(216, 180, 154, 0.4);
   letter-spacing: 1px;
 }
 
-/* תצוגת הטיימר - מרווח יותר */
+/* תצוגת הטיימר */
 .timerDisplay {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 25px; /* הגדלה מ-22px ל-25px */
+  gap: 25px;
   flex-wrap: nowrap;
   white-space: nowrap;
   position: relative;
@@ -119,14 +106,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px; /* הגדלה מ-3px ל-5px */
+  gap: 5px;
   position: relative;
 }
 
 /* הספרות */
 .digits {
   display: flex;
-  flex-direction: row; /* שינוי חזרה לסדר רגיל */
+  flex-direction: row;
   gap: 3px;
   position: relative;
 }
@@ -134,8 +121,8 @@
 /* מיכל לספרה בודדת */
 .digitContainer {
   position: relative;
-  width: 38px; /* הגדלה מ-35px ל-38px */
-  height: 52px; /* הגדלה מ-48px ל-52px */
+  width: 38px;
+  height: 52px;
   perspective: 600px;
   margin: 0 1px;
 }
@@ -150,7 +137,7 @@
   background: rgba(20, 20, 25, 0.4);
   color: rgba(255, 255, 255, 0.95);
   font-family: 'Playfair Display', serif;
-  font-size: 1.9rem; /* הגדלה מ-1.8rem ל-1.9rem */
+  font-size: 1.9rem;
   font-weight: 400;
   letter-spacing: 0;
   
@@ -199,7 +186,7 @@
 /* תווית יחידת זמן */
 .unitLabel {
   font-family: 'Assistant', sans-serif;
-  font-size: 14px; /* הגדלה מ-13px ל-14px */
+  font-size: 14px;
   color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -211,37 +198,102 @@
 .expired {
   font-family: 'AssistantR', sans-serif;
   color: #d8b49a;
-  font-size: 1.3rem; /* הגדלה מ-1.2rem ל-1.3rem */
+  font-size: 1.3rem;
   text-align: center;
   margin: 5px 0;
   font-weight: 500;
   text-shadow: 0 0 15px rgba(216, 180, 154, 0.4);
 }
 
-/* עיצוב כפתור הרשמה - מתחיל ללא אפקטים */
+/* מיכל האייקונים החברתיים - במרכז השורה */
+.socialIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin: 0 30px;
+}
+
+/* עיצוב כפתורי האייקונים - עיצוב אחיד ללא שינוי בגלילה */
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  
+  /* עיצוב קבוע ללא תלות בגלילה */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  
+  /* צבע הסימבול */
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ביטול מצב אייקונים אחרי גלילה - נשאר אותו דבר */
+.socialIcon.scrolled {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* אפקט hover לאייקונים */
+.socialIcon:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(216, 180, 154, 0.2);
+  color: #ffffff;
+}
+
+/* אפקט לחיצה לאייקונים */
+.socialIcon:active {
+  transform: translateY(1px) scale(1.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* עיצוב כפתור הרשמה - עיצוב אחיד ללא שינוי בגלילה */
 .signupButton {
   display: inline-block;
-  padding: 13px 32px; /* הגדלה מ-11px 28px ל-13px 32px */
+  padding: 13px 32px;
   font-family: 'AssistantR', sans-serif;
-  font-size: 1.2rem; /* הגדלה מ-1.1rem ל-1.2rem */
+  font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   letter-spacing: 1px;
   color: #ffffff;
   
-  /* מתחיל עם רקע שקוף יותר וללא אפקטים */
-  background: rgba(216, 180, 154, 0.1);
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
+  /* עיצוב קבוע ללא תלות בגלילה */
+  background: rgba(216, 180, 154, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
-    0 5px 10px rgba(0, 0, 0, 0.1),
-    0 0 5px rgba(216, 180, 154, 0.1);
+    0 8px 15px rgba(0, 0, 0, 0.15),
+    0 0 10px rgba(216, 180, 154, 0.15);
   
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -249,19 +301,18 @@
   white-space: nowrap;
 }
 
-/* מצב כפתור אחרי גלילה */
+/* ביטול מצב כפתור אחרי גלילה - נשאר אותו דבר */
 .signupButton.scrolled {
-  background: rgba(216, 180, 154, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(216, 180, 154, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
-    0 10px 20px rgba(0, 0, 0, 0.2),
-    0 0 15px rgba(216, 180, 154, 0.2),
-    inset 0 0 8px rgba(255, 255, 255, 0.1);
+    0 8px 15px rgba(0, 0, 0, 0.15),
+    0 0 10px rgba(216, 180, 154, 0.15);
 }
 
-/* אפקטים ייחודיים לכפתור - פעילים גם במצב ראשוני וגם במצב גלילה */
+/* אפקט נוצץ לכפתור */
 .signupButton::after {
   content: '';
   position: absolute;
@@ -282,14 +333,13 @@
 /* אפקט hover לכפתור */
 .signupButton:hover {
   transform: translateY(-2px);
-  background: rgba(216, 180, 154, 0.3);
+  background: rgba(216, 180, 154, 0.25);
   box-shadow: 
-    0 15px 25px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(216, 180, 154, 0.3),
-    inset 0 0 10px rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+    0 12px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(216, 180, 154, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .signupButton:hover::after {
@@ -304,60 +354,168 @@
     0 0 10px rgba(216, 180, 154, 0.2);
 }
 
-/* גלישה בטלפון */
+/* מסכי טלפון - האייקונים נעלמים, הכפתור עובר למטה */
 @media (max-width: 768px) {
-  .stickyContent {
+  .countdownContent {
     flex-direction: column;
-    height: auto;
-    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    gap: 3px; /* הוספת gap קטן בין הסטופר לכפתור */
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
   }
   
-  .stickyContainer {
-    height: auto;
+  .countdownContainer {
+    height: 125px;
+    width: 100%;
+    padding: 0;
   }
   
   .countdownWrapper {
+    flex: 1;
     width: 100%;
-    margin-bottom: 15px;
+    margin: 0;
+    padding: 8px 15px;
     align-items: center;
-    margin-left: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .countdownWrapper.scrolled {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
   }
   
   .countdownTitle {
-    font-size: 0.9rem;
+    font-size: 1rem; /* הגדלה מ-0.9rem ל-1rem */
     text-align: center;
+    margin-bottom: 8px;
   }
   
   .timerDisplay {
     justify-content: center;
-    gap: 15px;
+    gap: 20px; /* הגדלה מ-18px ל-20px */
+    margin-bottom: 3px; /* הקטנה מ-8px ל-3px */
   }
   
-  .signupButton {
-    width: 100%;
-    padding: 10px 15px;
-    font-size: 1rem;
-  }
-  
-  /* עדכון padding לתוכן במסכים קטנים */
-  
-}
-
-@media (max-width: 576px) {
+  /* הגדלת ספרות הסטופר במובייל */
   .digitContainer {
-    width: 34px;
-    height: 44px;
+    width: 32px; /* הגדלה מ-28px ל-32px */
+    height: 42px; /* הגדלה מ-36px ל-42px */
   }
   
   .digitCard {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* הגדלה מ-1.4rem ל-1.6rem */
   }
   
   .unitLabel {
-    font-size: 11px;
+    font-size: 12px; /* הגדלה מ-10px ל-12px */
+  }
+  
+  /* האייקונים נעלמים במסכי טלפון */
+  .socialIcons {
+    display: none;
+  }
+  
+  .signupButton {
+    flex: none;
+    padding: 8px 24px;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin: 2% auto;
+    background: rgba(216, 180, 154, 0.15);
+  }
+  
+  .signupButton.scrolled {
+    background: rgba(216, 180, 154, 0.15);
+  }
+}
+
+@media (max-width: 576px) {
+  .countdownContent {
+    padding: 5px 10px;
+    gap: 5px;
+  }
+  
+  .countdownWrapper {
+    padding: 3px 8px;
+  }
+  
+  .digitContainer {
+    width: 30px; /* הגדלה מ-28px ל-30px */
+    height: 40px; /* הגדלה מ-36px ל-40px */
+  }
+  
+  .digitCard {
+    font-size: 1.5rem; /* הגדלה מ-1.4rem ל-1.5rem */
+  }
+  
+  .unitLabel {
+    font-size: 11px; /* הגדלה מ-10px ל-11px */
   }
   
   .timerDisplay {
-    gap: 10px;
+    gap: 10px; /* הגדלה מ-8px ל-10px */
+  }
+  
+  .signupButton {
+    padding: 5px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .countdownTitle {
+    font-size: 0.8rem; /* הגדלה מ-0.7rem ל-0.8rem */
+    margin-bottom: 3px;
+  }
+}
+
+/* מסכים קטנים מאוד */
+@media (max-width: 400px) {
+  .countdownContent {
+    padding: 3px 8px;
+    gap: 3px;
+  }
+  
+  .countdownWrapper {
+    padding: 2px 5px;
+  }
+  
+  .digitContainer {
+    width: 24px;
+    height: 32px;
+  }
+  
+  .digitCard {
+    font-size: 1.2rem;
+  }
+  
+  .unitLabel {
+    font-size: 9px;
+  }
+  
+  .timerDisplay {
+    gap: 6px;
+  }
+  
+  .signupButton {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .countdownTitle {
+    font-size: 0.65rem;
+    margin-bottom: 2px;
   }
 }

@@ -81,7 +81,7 @@ const LocationSection = () => {
               <div className={styles.parkingContent}>
                 <h4 className={styles.parkingTitle}>אפשרויות חניה</h4>
                 <p className={styles.parkingText}>
-                  חניון המתחם: ₪7-65
+                יש חניון במתחם
                 </p>
               </div>
             </div>

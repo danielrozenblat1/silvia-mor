@@ -3,9 +3,9 @@ import styles from './MasterclassSilabus.module.css';
 import { Clock, Scissors, Coffee, Settings, MessageCircle, Gift, Book, Award, Users } from 'lucide-react';
 import { Player } from '@lordicon/react';
 import arrive from "../../Icons/wired-outline-1871-red-carpet-hover-pinch.json"
-import hair1 from "../../Icons/wired-outline-1569-barber-scissors-hover-pinch.json"
+import hair1 from "../../Icons/wired-outline-1570-hair-dryer-hover-pinch.json"
 import breaks from "../../Icons/wired-outline-22-play-pause-morph-rotation.json"
-import hair2 from "../../Icons/wired-outline-1563-hair-clip-hover-pinch.json"
+import hair2 from "../../Icons/wired-outline-1591-hair-brush-hover-pinch.json"
 import question from "../../Icons/wired-outline-424-question-bubble-hover-wiggle.json" 
 const WorkshopSection = () => {
       const handleComplete = () => {

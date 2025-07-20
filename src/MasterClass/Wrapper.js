@@ -15,6 +15,9 @@ import ThirdScreen from './screens/ThirdScreen';
 import ForthScreen from './screens/ForthScreen';
 import Fit from '../components/MasterclassFit/Fit';
 import LocationSection from '../components/Location/Location';
+import RecommendsScreen from '../screens/RecommendsScreen';
+import RecommendsScreenM from '../screens/RecommendsScreenMasterclass';
+import ByMeM from '../components/ByMe masterclass/ByMe';
 
 
 
@@ -47,20 +50,21 @@ const [scrolled, setScrolled] = useState(false);
   
   return <>
 <div style={{background:"linear-gradient(120deg, #565656 0%, #111111 25%, #000000 50%, #222222 75%, #434343 100%)"}}>
-<StickyCountdownComponent 
+{/* <StickyCountdownComponent 
         targetDate={targetDate}
         title="עד המאסטרקלאס הבא:"
         buttonText="להרשמה לחצי כאן!"
         buttonLink="#registration-form"
-      />
+      /> */}
 <FirstScreen/>
 <MasterClass/>
 <PersonalStorySection/>
   <EventSections/>
-
+<RecommendsScreenM/>
   <ForthScreen/>
 <Fit/>
 <LocationSection/>
+<ByMeM/>
 {/* 
   <ThirdScreen/>
   <ByMe/> */}

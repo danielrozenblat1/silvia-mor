@@ -1,393 +1,769 @@
+/* Base styles - מתחת ל-350px */
 .whoContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    padding: 3rem 0;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-    gap: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0.5rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 100%;
+  z-index: 1;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.7;
+    filter: blur(30px) contrast(2.5) brightness(0.9);
   }
-  
-  .bgGlow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 100%;
-    /* הסרת הרקע כמבוקש */
-    z-index: 1;
-  }
-  
-  @keyframes glowPulse {
-    0% {
-      opacity: 0.7;
-      filter: blur(30px) contrast(2.5) brightness(0.9);
-    }
-    100% {
-      opacity: 1;
-      filter: blur(40px) contrast(3) brightness(1.1);
-    }
-  }
-  
-  .contentSection {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 2;
-    direction: rtl;
-    text-align: right;
-    padding-left: 2rem;
-    order: 2;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  
-  .fadeIn {
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    filter: blur(40px) contrast(3) brightness(1.1);
   }
-  
-  .imageSection {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    order: 1;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contentSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  direction: rtl;
+  text-align: center;
+  padding: 0 0.25rem;
+  order: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  order: 1;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.25rem;
+}
+
+.slideIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imageFrame {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 220px;
+}
+
+.profileImage {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(1.05) contrast(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.imageBorder {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.profileImage:hover {
+  transform: scale(1.02) translateY(-3px);
+  filter: brightness(1.1) contrast(1.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 12px rgba(216, 180, 154, 0.3);
+}
+
+.name {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  position: relative;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.quote {
+  font-family: 'AssistantR', sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  opacity: 0.95;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0;
+}
+
+.emphasisText {
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.5rem;
+  line-height: 1.3;
+  opacity: 1;
+}
+
+.highlightedText {
+  background: linear-gradient(90deg, #e5bf9e, #ffefe3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  text-shadow: none;
+}
+
+.description {
+  font-family: 'AssistantR', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0;
+}
+
+.paragraph {
+  margin-bottom: 1rem;
+}
+
+.principlesContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0.8rem 0 1.2rem;
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.principleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 40%;
+  margin-bottom: 8px;
+  max-width: calc(50% - 0.25rem);
+}
+
+.principleIcon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.principleIcon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(229, 191, 158, 0.1);
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.principle {
+  color: #d8b49a;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+.principle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent, #d8b49a, transparent);
+  border-radius: 4px;
+  animation: underlinePulse 3s infinite;
+}
+
+.glassPanel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.glassPanel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(216, 180, 154, 0.25);
+}
+
+.panelText {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.invitationText {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.8rem;
+  position: relative;
+  padding-top: 0.8rem;
+  word-wrap: break-word;
+}
+
+.invitationText::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.highlightedWord {
+  position: relative;
+  color: #e5bf9e;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.accentText {
+  color: #e5bf9e;
+  font-weight: 600;
+}
+
+@keyframes underlinePulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* 350px - 450px */
+@media (min-width: 350px) {
+  .whoContainer {
+    padding: 0.75rem;
+    gap: 1.5rem;
   }
-  
-  .slideIn {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .imageFrame {
-    position: relative;
-    display: inline-block;
-  }
-  
+
   .profileImage {
-    width: 100%;
-    max-width: 420px;
-    border-radius: 12px;
-    object-fit: cover;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(1.05) contrast(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 260px;
   }
-  
-  .imageBorder {
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  .profileImage:hover {
-    transform: scale(1.02) translateY(-5px);
-    filter: brightness(1.1) contrast(1.08);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), 0 0 15px rgba(216, 180, 154, 0.3);
-  }
-  
+
   .name {
-    font-family: 'Assistant', sans-serif;
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 1.1;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    position: relative;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .quote {
-    font-family: 'AssistantR', sans-serif;
-    font-size: 22px;
-    line-height: 1.5;
-    color: #ffffff;
-    margin-bottom: 2rem;
-    position: relative;
-    max-width: 95%;
-    opacity: 0.95;
-  }
-  
-  .emphasisText {
     font-size: 24px;
-    font-weight: 500;
-    display: block;
-    margin-top: 0.5rem;
-    line-height: 1.4;
-    opacity: 1;
   }
-  
-  .highlightedText {
-    background: linear-gradient(90deg, #e5bf9e, #ffefe3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    font-weight: 700;
-    position: relative;
-    display: inline-block;
-    text-shadow: none;
+
+  .quote {
+    font-size: 18px;
   }
-  
+
+  .emphasisText {
+    font-size: 18px;
+  }
+
   .description {
-    font-family: 'AssistantR', sans-serif;
+    font-size: 18px;
+  }
+
+  .principle {
+    font-size: 18px;
+  }
+
+  .principleIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .panelText {
+    font-size: 18px;
+  }
+
+  .invitationText {
+    font-size: 15px;
+  }
+
+  .glassPanel {
+    padding: 1rem;
+  }
+}
+
+/* 450px - 550px */
+@media (min-width: 450px) {
+  .whoContainer {
+    padding: 1rem;
+    gap: 1.75rem;
+  }
+
+  .profileImage {
+    max-width: 300px;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+
+  .quote {
+    font-size: 15px;
+  }
+
+  .emphasisText {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .principle {
+    font-size: 15px;
+  }
+
+  .principleIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .glassPanel {
+    padding: 1.2rem;
+  }
+
+  .panelText {
+    font-size: 14px;
+  }
+
+  .invitationText {
+    font-size: 16px;
+  }
+}
+
+/* 550px - 650px */
+@media (min-width: 550px) {
+  .whoContainer {
+    padding: 1.25rem;
+    gap: 2rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .profileImage {
+    max-width: 330px;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
+  .quote {
+    font-size: 16px;
+  }
+
+  .emphasisText {
     font-size: 17px;
-    line-height: 1.7;
-    color: #ffffff;
-    position: relative;
-    max-width: 95%;
   }
-  
-  .paragraph {
-    margin-bottom: 1.2rem;
+
+  .description {
+    font-size: 15px;
   }
-  
+
+  .principle {
+    font-size: 16px;
+  }
+
+  .principleIcon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .glassPanel {
+    padding: 1.3rem;
+  }
+
+  .panelText {
+    font-size: 15px;
+  }
+
+  .invitationText {
+    font-size: 17px;
+  }
+}
+
+/* 650px - 750px */
+@media (min-width: 650px) {
+  .whoContainer {
+    padding: 1.5rem;
+    gap: 2.25rem;
+    width: 92%;
+  }
+
+  .profileImage {
+    max-width: 360px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .quote {
+    font-size: 17px;
+  }
+
+  .emphasisText {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .principle {
+    font-size: 16px;
+  }
+
+  .principleIcon {
+    width: 36px;
+    height: 36px;
+  }
+
   .principlesContainer {
-    display: flex;
-    justify-content: space-between;
-    margin: 1.2rem 0 1.8rem;
+    gap: 0.8rem;
+  }
+
+  .principleItem {
+    width: auto;
+    margin: 0 0.5rem;
+  }
+
+  .glassPanel {
+    padding: 1.4rem;
+  }
+
+  .panelText {
+    font-size: 15px;
+  }
+
+  .invitationText {
+    font-size: 17px;
+  }
+}
+
+/* 750px - 850px */
+@media (min-width: 750px) {
+  .whoContainer {
+    flex-direction: row;
+    padding: 2.25rem;
+    gap: 3rem;
     width: 90%;
   }
-  
-  .principleItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+
+  .contentSection {
+    align-items: flex-start;
+    text-align: right;
+    padding-left: 1.5rem;
+    order: 2;
+    transform: translateX(20px);
   }
-  
+
+  .fadeIn {
+    transform: translateX(0);
+  }
+
+  .imageSection {
+    order: 1;
+    transform: translateX(-20px);
+  }
+
+  .slideIn {
+    transform: translateX(0);
+  }
+
+  .profileImage {
+    max-width: 400px;
+  }
+
+  .name {
+    font-size: 34px;
+    text-align: right;
+  }
+
+  .quote {
+    font-size: 19px;
+    text-align: right;
+  }
+
+  .description {
+    text-align: right;
+  }
+
+  .principlesContainer {
+    justify-content: space-between;
+    width: 85%;
+  }
+
+  .glassPanel {
+    width: 95%;
+  }
+}
+
+/* 850px - 950px */
+@media (min-width: 850px) {
+  .whoContainer {
+    padding: 2.5rem;
+    gap: 3.25rem;
+    width: 85%;
+  }
+
+  .contentSection {
+    padding-left: 2rem;
+  }
+
+  .profileImage {
+    max-width: 420px;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .quote {
+    font-size: 20px;
+  }
+
+  .emphasisText {
+    font-size: 21px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
+  .principle {
+    font-size: 18px;
+  }
+
   .principleIcon {
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 6px;
-    position: relative;
   }
-  
-  .principleIcon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(229, 191, 158, 0.1);
-    filter: blur(8px);
-    z-index: -1;
-  }
-  
-  .principle {
-    color: #d8b49a;
-    font-weight: 600;
-    font-size: 19px;
-    position: relative;
-    padding-bottom: 5px;
-    text-align: center;
-  }
-  
-  .principle::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, transparent, #d8b49a, transparent);
-    border-radius: 4px;
-    animation: underlinePulse 3s infinite;
-  }
-  
+
   .glassPanel {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    backdrop-filter: blur(7px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    padding: 1.7rem;
+  }
+
+  .panelText {
+    font-size: 17px;
+  }
+
+  .invitationText {
+    font-size: 19px;
+  }
+}
+
+/* 950px - 1050px */
+@media (min-width: 950px) {
+  .whoContainer {
+    padding: 2.75rem;
+    gap: 3.5rem;
+    width: 82%;
+  }
+
+  .name {
+    font-size: 38px;
+  }
+
+  .quote {
+    font-size: 21px;
+  }
+
+  .emphasisText {
+    font-size: 22px;
+  }
+
+  .principlesContainer {
+    width: 90%;
+  }
+
+  .glassPanel {
+    padding: 1.8rem;
+  }
+
+  .invitationText {
+    font-size: 20px;
+  }
+}
+
+/* 1050px - 1150px */
+@media (min-width: 1050px) {
+  .whoContainer {
+    padding: 3rem;
+    gap: 3.75rem;
+    width: 80%;
+  }
+
+  .name {
+    font-size: 40px;
+  }
+
+  .quote {
+    font-size: 22px;
+  }
+
+  .emphasisText {
+    font-size: 23px;
+  }
+
+  .description {
+    max-width: 95%;
+  }
+
+  .quote {
+    max-width: 95%;
+  }
+}
+
+/* 1150px - 1250px */
+@media (min-width: 1150px) {
+  .whoContainer {
+    padding: 3rem 0;
+    gap: 4rem;
+  }
+
+  .name {
+    font-size: 42px;
+    margin-bottom: 1.5rem;
+  }
+
+  .quote {
+    font-size: 22px;
+    margin-bottom: 2rem;
+  }
+
+  .emphasisText {
+    font-size: 24px;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .description {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .paragraph {
+    margin-bottom: 1.2rem;
+  }
+
+  .principlesContainer {
+    margin: 1.2rem 0 1.8rem;
+    width: 90%;
+  }
+
+  .principleItem {
+    gap: 8px;
+  }
+
+  .principleIcon {
+    margin-bottom: 6px;
+  }
+
+  .principle {
+    font-size: 19px;
+    padding-bottom: 5px;
+  }
+
+  .glassPanel {
     padding: 1.8rem;
     margin-top: 1rem;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    width: 95%;
   }
-  
-  .glassPanel:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 0 12px rgba(216, 180, 154, 0.25);
-  }
-  
+
   .panelText {
     font-size: 17px;
     line-height: 1.7;
     margin-bottom: 1.5rem;
   }
-  
+
   .invitationText {
     font-size: 20px;
-    font-weight: 600;
-    color: #ffffff;
-    text-align: center;
     margin-top: 1rem;
-    position: relative;
     padding-top: 1rem;
   }
-  
-  .invitationText::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25%;
-    right: 25%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* 1250px+ */
+@media (min-width: 1250px) {
+  .whoContainer {
+    width: 75%;
   }
-  
-  .highlightedWord {
-    position: relative;
-    color: #e5bf9e;
-    font-weight: 600;
-    display: inline-block;
-  }
-  
-  .accentText {
-    color: #e5bf9e;
-    font-weight: 600;
-  }
-  
-  @keyframes underlinePulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-  }
-  
-  /* Media Queries */
-  @media (max-width: 1200px) {
-    .whoContainer {
-      width: 90%;
-    }
-  }
-  
-  @media (max-width: 992px) {
-    .whoContainer {
-      padding: 2rem;
-      width: 95%;
-    }
-    
-    .name {
-      font-size: 36px;
-    }
-    
-    .quote {
-      font-size: 20px;
-    }
-    
-    .emphasisText {
-      font-size: 22px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .whoContainer {
-      flex-direction: column;
-      gap: 3rem;
-    }
-    
-    .contentSection {
-      padding-left: 0;
-      align-items: center;
-      text-align: center;
-      order: 2;
-    }
-    
-    .imageSection {
-      margin-bottom: 1rem;
-      order: 1;
-    }
-    
-    .profileImage {
-      max-width: 350px;
-    }
-    
-    .quote, .description {
-      max-width: 100%;
-    }
-    
-    .principlesContainer {
-      width: 100%;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .principleItem {
-      margin: 0 10px;
-    }
-    
-    .glassPanel {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .whoContainer {
-      padding: 1.5rem;
-    }
-    
-    .name {
-      font-size: 32px;
-    }
-    
-    .quote {
-      font-size: 18px;
-    }
-    
-    .emphasisText {
-      font-size: 20px;
-    }
-    
-    .description {
-      font-size: 16px;
-    }
-    
-    .profileImage {
-      max-width: 300px;
-    }
-    
-    .principle {
-      font-size: 17px;
-    }
-    
-    .glassPanel {
-      padding: 1.5rem;
-    }
-    
-    .invitationText {
-      font-size: 18px;
-    }
-    
-    .principlesContainer {
-      flex-wrap: wrap;
-    }
-    
-    .principleItem {
-      width: 45%;
-      margin-bottom: 15px;
-    }
-  }
+}

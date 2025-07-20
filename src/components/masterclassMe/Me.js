@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import styles from './Me.module.css';
-import imageSrc from "../../images/סילביה וגורג'י.jpeg";
+import imageSrc from "../../images/סילבי גורגי.jpg";
 
 const Who = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +42,7 @@ const Who = () => {
           <div className={styles.principlesContainer}>
             <div className={styles.principleItem}>
               <div className={styles.principleIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                   <path d="M2 17l10 5 10-5"/>
                   <path d="M2 12l10 5 10-5"/>
@@ -52,7 +52,7 @@ const Who = () => {
             </div>
             <div className={styles.principleItem}>
               <div className={styles.principleIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                   <line x1="9" y1="9" x2="15" y2="15"/>
                   <line x1="15" y1="9" x2="9" y2="15"/>
@@ -62,16 +62,16 @@ const Who = () => {
             </div>
             <div className={styles.principleItem}>
               <div className={styles.principleIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                 </svg>
               </div>
               <span className={styles.principle}>תיאוריה</span>
             </div>
             <div className={styles.principleItem}>
               <div className={styles.principleIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e5bf9e" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10"/>
                   <line x1="22" y1="12" x2="18" y2="12"/>
                   <line x1="6" y1="12" x2="2" y2="12"/>

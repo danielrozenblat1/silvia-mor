@@ -1,16 +1,14 @@
 .pageContainer {
   width: 100%;
-  min-height: 90vh;
+height: 80vh;
   overflow: hidden;
   position: relative;
   background-color: #000000; /* Matte black background */
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* חזרה ל-center כמו במקור */
-  padding-top: 10vh; /* הוספת ריפוד עליון משמעותי */
+  justify-content: center;
 }
 
 .visible {
@@ -19,15 +17,13 @@
 }
 
 .englishTitle {
-  font-family: 'Chronical', serif;
+  font-family: 'Comorant', serif;
   font-size: 4rem;
   color: #ffffff;
-  letter-spacing: 2px;
   text-shadow: 0 0 20px rgba(216, 180, 154, 0.4);
   position: relative;
   display: inline-block;
-
-  margin-bottom: 3vh; /* כמו במקור */
+  margin-bottom: 3vh;
 }
 
 .englishTitle::before,
@@ -52,10 +48,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; /* שינוי בחזרה ל-center כדי למקם את התוכן במרכז */
+  align-items: center;
   position: relative;
   padding: 20px 20px 40px;
-  margin-top: -5vh; /* חזרה למרווח השלילי כמו במקור */
+  margin-top: -5vh;
 }
 
 .bgPattern {
@@ -66,10 +62,11 @@
   height: 100%;
   opacity: 0.6;
 }
+
 .underlinedText {
   position: relative;
   display: inline-block;
-  color: #d8b49a;  /* הוספת צבע לטקסט */
+  color: #d8b49a;
   font-weight: 700;
   font-size: 1.8rem;
 }
@@ -86,6 +83,7 @@
   z-index: -1;
   animation: pulsate 3s infinite;
 }
+
 .bgGlow {
   position: absolute;
   top: 50%;
@@ -116,14 +114,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1400px; /* Increased from 1200px to make it wider */
+  max-width: 1400px;
   z-index: 2;
   direction: rtl;
   position: relative;
 }
 
 .textSection {
-  width: 60%; /* Decreased from 70% to give more space to the image */
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,7 +132,7 @@
 
 .becomeText {
   font-family: 'AssistantR', sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   color: #ffffff;
   margin-bottom: 12px;
   text-align: center;
@@ -164,7 +162,6 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-size: 2.5rem;
-
   text-fill-color: transparent;
   position: relative;
   display: inline-block;
@@ -172,14 +169,13 @@
   margin-bottom: 12px;
 }
 
-/* New wrapper for the time text with underline */
 .timeWrapper {
   position: relative;
   display: inline-block;
   margin-top: 5px;
 }
 
-.highlightedTime {
+.highlightedText {
   color: #d8b49a;
   font-weight: 700;
   font-size: 1.8rem;
@@ -187,7 +183,7 @@
   display: inline-block;
 }
 
-.highlightedTime::after {
+.highlightedText::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -209,11 +205,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.underlinedText {
-  position: relative;
-  display: inline-block;
 }
 
 .underlineContainer {
@@ -258,7 +249,6 @@
   border-radius: 4px;
 }
 
-/* New feature container styles - adjusted to be smaller */
 .featuresContainer {
   display: flex;
   justify-content: center;
@@ -287,8 +277,8 @@
 }
 
 .featureIcon {
-  width: 45px; /* Made smaller from 60px */
-  height: 45px; /* Made smaller from 60px */
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -305,8 +295,8 @@
 }
 
 .featureText {
-  font-family: 'AssistantR', sans-serif; /* Changed to AssistantR */
-  font-size: 15px; /* Made smaller */
+  font-family: 'AssistantR', sans-serif;
+  font-size: 15px;
   color: #ffffff;
   text-align: center;
 }
@@ -335,7 +325,6 @@
   box-shadow: 0 2px 6px rgba(216, 180, 154, 0.3);
 }
 
-/* Redesigned CTA Button to match the feature item style */
 .ctaButton {
   position: relative;
   padding: 16px 40px;
@@ -403,7 +392,6 @@
   100% { opacity: 0.3; }
 }
 
-/* Limited seats notice style */
 .limitedSeatsNotice {
   font-family: 'AssistantR', sans-serif;
   font-size: 14px;
@@ -415,7 +403,7 @@
 }
 
 .imageSection {
-  width: 50%; /* Increased from 45% to make the image larger */
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -435,8 +423,8 @@
 }
 
 .imagePlaceholder {
-  width: 520px; /* Further increased size */
-  height: 650px; /* Further increased proportionally */
+  width: 520px;
+  height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -447,7 +435,7 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Keep as contain to prevent image distortion */
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 
@@ -455,7 +443,6 @@
   transform: scale(1.02);
 }
 
-/* Media Queries */
 @media (max-width: 1200px) {
   .contentWrapper {
     max-width: 100%;
@@ -470,7 +457,7 @@
 
 @media (max-width: 992px) {
   .pageContainer {
-    padding-top: 12vh; /* הגדלת padding במסכים בינוניים */
+    padding-top: 12vh;
   }
 
   .contentWrapper {
@@ -496,12 +483,12 @@
     font-size: 2rem;
   }
   
-  .highlightedTime {
+  .highlightedText {
     font-size: 1.6rem;
   }
 
   .imagePlaceholder {
-    width: 450px; /* Adjusted for tablet */
+    width: 450px;
     height: 560px;
   }
   
@@ -511,73 +498,261 @@
   }
   
   .featuresContainer {
-    flex-direction: row; /* Keep row for tablets */
+    flex-direction: row;
     max-width: 450px;
   }
 }
 
-@media (max-width: 576px) {
+.mobileImageSection {
+  display: none;
+}
+
+/* עדכון למסכי טלפונים - צמצום רווחים וגובה נמוך יותר */
+@media (max-width: 768px) {
   .pageContainer {
-    padding-top: 10vh; /* הגדלת padding גם במסכים קטנים */
+    padding: 0;
+    height: 95vh; /* גובה נמוך יותר */
+    min-height: 95vh;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+  }
+
+  .contentWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 15px;
+    min-height: 0;
+  }
+
+  /* הסתרת התמונה המקורית */
+  .imageSection {
+    display: none;
+  }
+
+  /* הצגת התמונה הניידת - קטנה יותר */
+  .mobileImageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    order: 3;
+    margin-bottom: 0; /* ביטול margin כדי שהקוביות יוכלו לעלות עליה */
+    flex-shrink: 0;
+    position: relative; /* הוספה לצורך המיקום של הקוביות */
+  }
+
+  .mobileImageSection .imagePlaceholder {
+    width: 250px;
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    filter: drop-shadow(0 0 25px rgba(216, 180, 154, 0.15));
+  }
+
+  .mobileImageSection .image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+  }
+
+  .textSection {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  /* סדר האלמנטים */
+  .becomeText {
+    order: 1;
+    margin-bottom: 2px; /* צמצום רווח */
+    font-size: 18px; /* חזרה לגודל יותר גדול */
   }
 
   .mainTitle {
-    font-size: 32px;
+    order: 2;
+    margin-bottom: 5px; /* צמצום רווח */
+    font-size: 26px; /* חזרה לגודל יותר גדול */
+    line-height: 1.1;
+    max-width: 90%; /* רוחב קטן יותר */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .fancyText {
-    font-size: 1.7rem;
-  }
-  
-  .highlightedTime {
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* חזרה לגודל יותר גדול */
+    margin-bottom: 2px; /* צמצום רווח */
   }
 
-  .englishTitle {
-    font-size: 2.8rem;
-  }
-  
-  .englishTitle::before,
-  .englishTitle::after {
-    width: 30px;
+  .highlightedText {
+    font-size: 1.3rem; /* חזרה לגודל יותר גדול */
+    color: #d8b49a;
   }
 
-  .joinText {
-    font-size: 16px;
+  /* קוביות שעולות על התמונה עם margin שלילי */
+  .featuresContainer {
+    order: 4;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+    margin: -60px auto 5px; /* margin שלילי גדול יותר כדי לעלות על התמונה */
+    padding: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10; /* להבטיח שהקוביות יהיו מעל התמונה */
+  }
+
+  .featureItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 6px; /* צמצום padding */
+    margin: 0 4px;
+    max-width: none;
+    min-width: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%); /* רקע יותר חזק */
+    backdrop-filter: blur(8px); /* blur יותר חזק */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* גבול יותר חזק */
+    border-radius: 8px;
+  }
+
+  .featureIcon {
+    width: 32px; /* הקטנה */
+    height: 32px;
+    margin-bottom: 6px; /* צמצום רווח */
+    flex-shrink: 0;
+  }
+
+  .featureText {
+    font-size: 11px; /* הקטנה */
+    line-height: 1.1;
+    text-align: center;
+    word-wrap: break-word;
   }
 
   .ctaButton {
-    padding: 14px 30px;
-    font-size: 18px;
+    order: 5;
+    padding: 14px 32px; /* חזרה לגודל יותר גדול */
+    font-size: 18px; /* חזרה לגודל יותר גדול */
+    margin-bottom: -12px; /* מרגין שלילי עמוק עוד יותר */
+    margin-top: 0;
+    flex-shrink: 0;
   }
-  
+
   .limitedSeatsNotice {
-    font-size: 12px;
-    margin-top: 10px;
+    order: 6;
+    font-size: 13px; /* הגדלה מ-11px */
+    margin-top: -6px; /* מרגין שלילי עמוק יותר */
+    flex-shrink: 0;
   }
-  
-  .imagePlaceholder {
-    width: 350px; /* Adjusted for mobile but still larger than original */
-    height: 440px;
+
+  /* הכותרת האנגלית קטנה יותר */
+  .englishTitle {
+    font-size: 1.6rem; /* הקטנה */
+    margin-bottom: 1vh; /* צמצום רווח */
   }
-  
+
+  .englishTitle::before,
+  .englishTitle::after {
+    width: 20px;
+  }
+}
+
+/* עדכון לטלפונים קטנים */
+@media (max-width: 480px) {
+  .pageContainer {
+    height: 90vh; /* גובה עוד יותר נמוך */
+    min-height: 90vh;
+    padding-top:20px;
+    max-height: 90vh;
+  }
+
   .featuresContainer {
-    flex-direction: column; /* Stack for mobile */
-    gap: 8px;
-    max-width: 280px;
+    padding: 0 ;
+    margin: -70px auto -30px; /* margin שלילי עוד יותר עמוק */
   }
-  
+
   .featureItem {
-    padding: 10px 6px;
+    padding: 6px 4px; /* צמצום נוסף */
+    margin: 0 2px;
   }
-  
+
   .featureIcon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 8px;
+    width: 28px; /* הקטנה נוספת */
+    height: 28px;
+    margin-bottom: 4px;
   }
-  
+
   .featureText {
-    font-size: 14px;
+    font-size: 10px; /* הקטנה נוספת */
+  }
+
+  .mobileImageSection .imagePlaceholder {
+    width: 220px;
+    height: 280px;
+  }
+
+  .englishTitle {
+    font-size: 1.6rem; /* הקטנה נוספת */
+    margin-bottom: 0.5vh;
+  }
+
+  .becomeText {
+    font-size: 16px; /* חזרה לגודל יותר גדול */
+    margin-bottom: 1px;
+  }
+
+  .mainTitle {
+    font-size: 24px; /* חזרה לגודל יותר גדול */
+    margin-bottom: 3px;
+    max-width: 85%; /* רוחב קטן יותר גם בטלפונים קטנים */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fancyText {
+    font-size: 1.3rem; /* חזרה לגודל יותר גדול */
+    margin-bottom: 1px;
+  }
+
+  .highlightedText {
+    font-size: 1.2rem; /* חזרה לגודל יותר גדול */
+  }
+
+  .ctaButton {
+    padding: 12px 28px; /* חזרה לגודל יותר גדול */
+    font-size: 16px;
+    margin-bottom: -15px; /* מרגין שלילי עמוק עוד יותר */
+  }
+
+  .limitedSeatsNotice {
+    font-size: 12px; /* הגדלה מ-10px */
+    margin-top: -8px; /* מרגין שלילי עמוק יותר */
   }
 }

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FirstScreen.module.css";
-import silvia from "../../images/סילביה תמונה ראשית מאסטרקלאס.png";
+import silvia from "../../images/סילביה מסך ראשי מאסטרקלאס.png";
 
 import StickyCountdownComponent from "../../components/countdown/CountDown";
-// Import your icons here or use inline SVGs
 
 const FirstScreen = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +16,6 @@ const FirstScreen = () => {
 
       <div className={styles.englishTitle}>Hollywood Waves Masterclass</div>
    
-      
       <div className={styles.container}>
         <div className={styles.bgPattern}></div>
         <div className={styles.bgGlow}></div>
@@ -27,7 +25,7 @@ const FirstScreen = () => {
             <div className={styles.becomeText}>מאסטר קלאס - גלי הוליווד</div>
             <h1 className={styles.mainTitle}>
               <div className={styles.titleContainer}>
-                <span className={styles.fancyText}>כל הסודות והטכניקות שהבאתי מרוסיה</span>
+                <span className={styles.fancyText}>להפוך למעצבי שיער שעובדים בצורה נכונה ושולטים בכל תסרוקת</span>
                 <span className={styles.fancyText}>
                 <span className={styles.highlightedeText}>בתוך 8 שעות בלבד</span>
                   <div className={styles.underlineContainer}>
@@ -37,52 +35,56 @@ const FirstScreen = () => {
                 </span>
               </div>
             </h1>
+
+            {/* התמונה - תוצב מתחת לכותרת במסכי טלפונים */}
+            <div className={styles.mobileImageSection}>
+              <div className={styles.imagePlaceholder}>
+                <img className={styles.image} src={silvia} alt="סילביה מאסטרקלאס" />
+              </div>
+            </div>
             
             <div className={styles.featuresContainer}>
+
+              {/* תסרוקות על מודליסטית */}
               <div className={styles.featureItem}>
                 <div className={styles.featureIcon}>
-                  {/* New feminine hairstyle icon - thinner strokes */}
+                  {/* אייקון מספריים - מתאים לתסרוקות */}
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
-                    <path d="M4 19c.96-3.5 2.58-6 5-6 1.65 0 3.13 1.2 4 3" />
-                    <path d="M15 13c1.24-1.3 3.5-1.7 5-1 .5 3-1 6-1 6" />
-                    <path d="M6 11c0-3.75 3-7.5 6-7.5s6 3.75 6 7.5c0 0-1.5 1.5-6 1.5s-6-1.5-6-1.5z" />
-                    <path d="M12 3.5V3" />
-                    <path d="M20 9c.6 0 1-.4 1-1S20.6 7 20 7s-1 .4-1 1 .4 1 1 1z" />
-                    <path d="M4 9c.6 0 1-.4 1-1s-.4-1-1-1-1 .4-1 1 .4 1 1 1z" />
+                    <circle cx="6" cy="6" r="3" />
+                    <circle cx="18" cy="6" r="3" />
+                    <line x1="8.12" y1="8.12" x2="12" y2="12" />
+                    <line x1="15.88" y1="8.12" x2="12" y2="12" />
+                    <line x1="12" y1="12" x2="12" y2="22" />
                   </svg>
                 </div>
                 <div className={styles.featureText}>2 תסרוקות על מודליסטית</div>
               </div>
-              
+
+              {/* ערכת מתנה מקצועית */}
               <div className={styles.featureItem}>
                 <div className={styles.featureIcon}>
-                  {/* People icon - thinner strokes */}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  {/* אייקון תיק או קופסה - מתאים לערכה מקצועית */}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.2" className={styles.icon}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7V6a4 4 0 10-8 0v1H4v13h16V7h-4zM8 6a4 4 0 118 0v1H8V6z" />
                   </svg>
                 </div>
                 <div className={styles.featureText}>ערכת מתנה מקצועית</div>
               </div>
-              
+
+              {/* סרטון הדרכה במתנה */}
               <div className={styles.featureItem}>
                 <div className={styles.featureIcon}>
-                  {/* Gift icon - thinner strokes */}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
-                    <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                    <rect x="2" y="7" width="20" height="5"></rect>
-                    <line x1="12" y1="22" x2="12" y2="7"></line>
-                    <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                    <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                  {/* אייקון וידאו או פליי - מתאים לסרטון הדרכה */}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.2" className={styles.icon}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-6.518-3.75A1 1 0 007 8.25v7.5a1 1 0 001.234.982l6.518-3.75a1 1 0 000-1.764z" />
+                    <rect width="20" height="14" x="2" y="5" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div className={styles.featureText}>סרטון הדרכה במתנה</div>
               </div>
+
             </div>
             
-  
             <button className={styles.ctaButton}>
               <span>לתפוס מקום במאסטר קלאס</span>
               <div className={styles.buttonGlow}></div>
@@ -93,6 +95,7 @@ const FirstScreen = () => {
             </div>
           </div>
           
+          {/* התמונה המקורית - תוצג רק במסכי מחשב */}
           <div className={styles.imageSection}>
             <div className={styles.imagePlaceholder}>
               <img className={styles.image} src={silvia} alt="סילביה מאסטרקלאס" />
