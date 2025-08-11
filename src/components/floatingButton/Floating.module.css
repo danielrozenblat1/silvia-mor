@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Assistant', sans-serif;
-
   direction: rtl;
 }
 
@@ -145,6 +144,41 @@
   transform: translateY(-1px);
 }
 
+/* Social Icons Styles */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.iconWrapper {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.iconWrapper:hover {
+  transform: scale(1.1);
+  background-color: rgba(216, 180, 154, 0.2);
+  border-color: rgba(216, 180, 154, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: rgba(216, 180, 154, 1);
+}
+
+.iconWrapper:active {
+  transform: scale(1.05);
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .floatingSection {
@@ -171,5 +205,15 @@
   
   .dateHighlight {
     font-size: 18px;
+  }
+  
+  .socialIcons {
+    gap: 12px;
+    margin-top: 12px;
+    padding-top: 8px;
+  }
+  
+  .iconWrapper {
+    padding: 6px;
   }
 }
