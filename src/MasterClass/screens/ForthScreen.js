@@ -3,6 +3,10 @@ import { GraduationCap, BookOpen, Clock, Shield, Award, Zap } from 'lucide-react
 import styles from './ForthScreen.module.css';
 
 const ForthScreen = () => {
+  const handleButtonClick = () => {
+    window.open('https://secure.cardcom.solutions/EA/EA5/rBHGNxddek6HJ87ottzr4w/PaymentSP', '_blank');
+  };
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.bgGlow}></div>
@@ -68,7 +72,7 @@ const ForthScreen = () => {
             </div>
           </div>
           
-          <button className={styles.ctaButton}>
+          <button className={styles.ctaButton} onClick={handleButtonClick}>
             להרשמה במחיר הטבה – לחצו כאן
             <div className={styles.buttonGlow}></div>
           </button>
@@ -118,7 +122,7 @@ const ForthScreen = () => {
             </div>
           </div>
           
-          <button className={styles.ctaButton}>
+          <button className={styles.ctaButton} onClick={handleButtonClick}>
             להרשמה במחיר הטבה – לחצו כאן
             <div className={styles.buttonGlow}></div>
           </button>

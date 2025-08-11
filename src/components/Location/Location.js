@@ -3,6 +3,10 @@ import styles from './Location.module.css';
 import { FaMapMarkerAlt, FaTrain, FaCar, FaParking } from 'react-icons/fa';
 
 const LocationSection = () => {
+  const handleButtonClick = () => {
+    window.open('https://secure.cardcom.solutions/EA/EA5/rBHGNxddek6HJ87ottzr4w/PaymentSP', '_blank');
+  };
+
   return (
     <div className={styles.pageContainer}>
       {/* Background blurry images */}
@@ -88,7 +92,7 @@ const LocationSection = () => {
           </div>
 
           {/* CTA Button */}
-          <button className={styles.ctaButton}>
+          <button className={styles.ctaButton} onClick={handleButtonClick}>
             <span className={styles.buttonGlow}></span>
        לחצו כאן לשריין מקום במאסטר קלאס
           </button>

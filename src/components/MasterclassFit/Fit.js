@@ -3,6 +3,10 @@ import styles from './Fit.module.css';
 import { Check } from 'lucide-react';
 
 const Fit = () => {
+  const handleButtonClick = () => {
+    window.open('https://secure.cardcom.solutions/EA/EA5/rBHGNxddek6HJ87ottzr4w/PaymentSP', '_blank');
+  };
+
   return (
     <div className={styles.fitContainer}>
       {/* Background elements */}
@@ -126,11 +130,12 @@ const Fit = () => {
             <div className={styles.largeCornerTopRight}></div>
             <div className={styles.largeCornerBottomLeft}></div>
             <div className={styles.priceTitle}>מחיר מיוחד לנרשמים עכשיו</div>
-            <div className={styles.priceAmount}>₪497</div>
-            <div className={styles.pricingNote}>* המחיר יעלה בחצות</div>
+            <div className={styles.originalPrice}>₪497</div>
+            <div className={styles.discountedPrice}>₪297</div>
+            <div className={styles.pricingNote}>* המחיר יעלה בחצות *</div>
           </div>
           
-          <button className={styles.ctaButton}>
+          <button className={styles.ctaButton} onClick={handleButtonClick}>
             הרשמו עכשיו למאסטרקלאס
           </button>
         </div>

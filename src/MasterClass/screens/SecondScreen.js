@@ -3,6 +3,10 @@ import styles from './SecondScreen.module.css';
 import { SquareScissors, ListChecks, DollarSign } from 'lucide-react';
 
 const MasterClass = () => {
+  const handleButtonClick = () => {
+    window.open('https://secure.cardcom.solutions/EA/EA5/rBHGNxddek6HJ87ottzr4w/PaymentSP', '_blank');
+  };
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.bgGlow}></div>
@@ -73,13 +77,13 @@ const MasterClass = () => {
               </span>
             </div>
      
-            <button className={styles.ctaButton}>
+            <button className={styles.ctaButton} onClick={handleButtonClick}>
               לחצו כאן לשריין מקום במאסטר קלאס
               <div className={styles.buttonGlow}></div>
             </button>
                    
             <p className={styles.limitedSeats}>
-              שימו לב - המאסטר קלאס יהיה עד 50 משתתפים בלבד
+              שימו לב - המאסטר קלאס יהיה עד 20 משתתפים בלבד
             </p>
             
           </div>

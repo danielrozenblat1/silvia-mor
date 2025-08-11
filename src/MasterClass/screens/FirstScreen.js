@@ -11,6 +11,10 @@ const FirstScreen = () => {
     setIsVisible(true);
   }, []);
 
+  const handleButtonClick = () => {
+    window.open('https://secure.cardcom.solutions/EA/EA5/rBHGNxddek6HJ87ottzr4w/PaymentSP', '_blank');
+  };
+
   return (
     <div className={`${styles.pageContainer} ${isVisible ? styles.visible : ''}`}>
 
@@ -22,7 +26,7 @@ const FirstScreen = () => {
         
         <div className={styles.contentWrapper}>
           <div className={styles.textSection}>
-            <div className={styles.becomeText}>מאסטר קלאס - גלי הוליווד</div>
+            <div className={styles.becomeText}>מאסטר קלאס</div>
             <h1 className={styles.mainTitle}>
               <div className={styles.titleContainer}>
                 <span className={styles.fancyText}>להפוך למעצבי שיער שעובדים בצורה נכונה ושולטים בכל תסרוקת</span>
@@ -57,7 +61,7 @@ const FirstScreen = () => {
                     <line x1="12" y1="12" x2="12" y2="22" />
                   </svg>
                 </div>
-                <div className={styles.featureText}>2 תסרוקות על מודליסטית</div>
+                <div className={styles.featureText}>2 תסרוקות</div>
               </div>
 
               {/* ערכת מתנה מקצועית */}
@@ -85,13 +89,13 @@ const FirstScreen = () => {
 
             </div>
             
-            <button className={styles.ctaButton}>
+            <button className={styles.ctaButton} onClick={handleButtonClick}>
               <span>לתפוס מקום במאסטר קלאס</span>
               <div className={styles.buttonGlow}></div>
             </button>
 
             <div className={styles.limitedSeatsNotice}>
-              שימו לב - המאסטר קלאס יהיה עד 50 משתתפים בלבד !
+              שימו לב - המאסטר קלאס יהיה עד 20 משתתפים בלבד !
             </div>
           </div>
           

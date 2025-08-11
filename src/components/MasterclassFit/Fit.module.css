@@ -193,6 +193,24 @@
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.originalPrice {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #666;
+    text-decoration: line-through;
+    margin-bottom: 0.5rem;
+    font-family: 'AssistantR', sans-serif;
+}
+
+.discountedPrice {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d8b49a;
+    margin-bottom: 0.5rem;
+    font-family: 'AssistantR', sans-serif;
+    text-shadow: 0px 2px 6px rgba(216, 180, 154, 0.4);
+}
+
 .priceAmount {
     font-size: 3rem;
     font-weight: bold;
@@ -292,6 +310,14 @@
         box-sizing: border-box;
     }
     
+    .originalPrice {
+        font-size: 1.4rem;
+    }
+    
+    .discountedPrice {
+        font-size: 1.8rem;
+    }
+    
     .priceAmount {
         font-size: 1.8rem;
     }
@@ -367,6 +393,14 @@
         box-sizing: border-box;
     }
     
+    .originalPrice {
+        font-size: 1.6rem;
+    }
+    
+    .discountedPrice {
+        font-size: 2.1rem;
+    }
+    
     .priceAmount {
         font-size: 2.1rem;
     }
@@ -434,6 +468,14 @@
         margin: 1.8rem auto;
         width: 100%;
         box-sizing: border-box;
+    }
+    
+    .originalPrice {
+        font-size: 1.8rem;
+    }
+    
+    .discountedPrice {
+        font-size: 2.4rem;
     }
     
     .priceAmount {
@@ -505,6 +547,14 @@
         box-sizing: border-box;
     }
     
+    .originalPrice {
+        font-size: 1.9rem;
+    }
+    
+    .discountedPrice {
+        font-size: 2.5rem;
+    }
+    
     .priceAmount {
         font-size: 2.5rem;
     }
@@ -559,6 +609,14 @@
     .priceContainer {
         padding: 1.8rem;
         margin: 2.2rem auto;
+    }
+    
+    .originalPrice {
+        font-size: 2rem;
+    }
+    
+    .discountedPrice {
+        font-size: 2.8rem;
     }
     
     .priceAmount {
@@ -616,6 +674,14 @@
         margin: 2.5rem auto;
     }
     
+    .originalPrice {
+        font-size: 2.1rem;
+    }
+    
+    .discountedPrice {
+        font-size: 2.9rem;
+    }
+    
     .priceAmount {
         font-size: 2.9rem;
     }
@@ -671,6 +737,14 @@
         margin: 2.8rem auto;
     }
     
+    .originalPrice {
+        font-size: 2rem;
+    }
+    
+    .discountedPrice {
+        font-size: 3rem;
+    }
+    
     .priceAmount {
         font-size: 3rem;
     }
@@ -707,6 +781,14 @@
         gap: 1.5rem;
     }
     
+    .originalPrice {
+        font-size: 2rem;
+    }
+    
+    .discountedPrice {
+        font-size: 3rem;
+    }
+    
     .ctaButton {
         width: 55%;
     }
@@ -727,6 +809,14 @@
         grid-template-columns: repeat(3, 1fr);
     }
     
+    .originalPrice {
+        font-size: 2rem;
+    }
+    
+    .discountedPrice {
+        font-size: 3rem;
+    }
+    
     .ctaButton {
         width: 50%;
     }
@@ -736,6 +826,14 @@
 @media (min-width: 1150px) and (max-width: 1249px) {
     .featuresContainer {
         grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .originalPrice {
+        font-size: 2rem;
+    }
+    
+    .discountedPrice {
+        font-size: 3rem;
     }
     
     .ctaButton {
@@ -748,6 +846,14 @@
     .featuresContainer {
         grid-template-columns: repeat(4, 1fr);
         gap: 1.8rem;
+    }
+    
+    .originalPrice {
+        font-size: 2rem;
+    }
+    
+    .discountedPrice {
+        font-size: 3rem;
     }
     
     .ctaButton {
