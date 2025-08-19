@@ -12,7 +12,7 @@ const Popped = ({ onClose, title }) => {
   const reciver = "silvimorart@gmail.com";
 
   const serverUrl = "https://dynamic-server-dfc88e1f1c54.herokuapp.com/leads/newLead";
-  const webhookUrl = "https://hook.eu2.make.com/8wk2tfyooa1d1inbwh2qensdkxtc6jy9";
+  const webhookUrl = "https://hook.eu2.make.com/peo7lcn944wrdke9kyu4wn5hpgvkvs2b";
 
   const handleClose = () => {
     if (onClose) {
@@ -147,10 +147,7 @@ const Popped = ({ onClose, title }) => {
                 defaultValue=""
               >
                 <option value="" disabled>בחרי סיבת פנייה</option>
-                <option value="הרשמה לקורס">הרשמה לקורס</option>
-                <option value="שאלה על הקורס">שאלה על הקורס</option>
-                <option value="בקשה לפרטים נוספים על סילבוס">בקשה לפרטים נוספים על סילבוס</option>
-                <option value="אחר">אחר</option>
+                <option value="פרטים על מאסטרקלאס">מאסטר קלאס</option>
               </select>
 
               {/* תיבת האישור למדיניות הפרטיות */}
@@ -164,8 +161,8 @@ const Popped = ({ onClose, title }) => {
                   direction: "rtl", 
                   fontFamily: "AssistantR", 
                   fontSize: "0.85rem", 
+                  color:"white",
                   textAlign: "right", 
-                  color:'white',
                   display: "flex", 
                   alignItems: "center", 
                   flexWrap: "wrap", 
@@ -179,7 +176,7 @@ const Popped = ({ onClose, title }) => {
                   />
                   קראתי את
                   <span onClick={handlePrivacyClick}>
-                            <PrivacyPolicy 
+                       <PrivacyPolicy 
             ownerName="סילביה מור" 
             email="silvimorart@gmail.com" 
             phone="+972 52-625-5255" 

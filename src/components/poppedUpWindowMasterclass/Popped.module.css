@@ -1,0 +1,212 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(30, 30, 40, 0.95), rgba(10, 10, 15, 0.98));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popped {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(40, 40, 50, 0.9), rgba(25, 25, 35, 0.95));
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 2px 8px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.closeIcon:hover {
+  color: #D4AF37;
+  transform: rotate(90deg);
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-family: "AssistantR";
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  direction: rtl;
+}
+
+.title {
+  font-family: "Assistant";
+  font-size: 1.8rem;
+  text-align: center;
+  direction: rtl;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #E3DCD2, #F8F4EA, #D4AF37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.input {
+  width: 300px;
+  padding: 14px 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  direction: rtl;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: "AssistantR";
+  outline: none;
+  transition: all 0.25s ease-in-out;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.25s ease;
+}
+
+.input:focus {
+  border-color: #D4AF37;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.input:focus::placeholder {
+  color: rgba(212, 175, 55, 0.6);
+}
+
+/* Style for select element and its options */
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1em;
+  padding-left: 2.5rem;
+}
+
+select.input option {
+  background-color: #2A2A35;
+  color: #ffffff;
+  padding: 12px;
+}
+
+select.input option:hover {
+  background-color: #D4AF37;
+}
+
+select.input:focus {
+  border-color: #D4AF37;
+}
+
+.button {
+  font-family: 'AssistantR';
+  font-size: 1.1rem;
+  width: 300px;
+  color: #ffffff;
+  background: linear-gradient(45deg, rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.6));
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  direction: rtl;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(45deg, rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.7));
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 350px) {
+  .popped {
+    padding: 1rem;
+    width: 80%; /* שינוי הרוחב ל-80% במסכים קטנים מאוד */
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .input, .button {
+    width: 260px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: 12px 24px;
+  }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 450px) {
+  .popped {
+    width: 80%; /* שינוי הרוחב ל-80% במסכים קטנים */
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 750px) {
+  .title {
+    font-size: 1.7rem;
+  }
+}

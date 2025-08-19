@@ -18,6 +18,7 @@ import HairstylingCourse from './components/course/CourseSillabus';
 import SilabusScreen from './screens/SilabusScreen';
 import RecommendsScreen from './screens/RecommendsScreen';
 import AboutMe from './components/me/Me';
+import PrivacyPolicy from './components/privacy copy/Privacy';
 
 
 const Wrapper=()=>{
@@ -55,7 +56,12 @@ const [scrolled, setScrolled] = useState(false);
   <SilabusScreen/>
   <RecommendsScreen/>
   <NinthScreen/>
-
+   <PrivacyPolicy 
+            ownerName="סילביה מור" 
+            email="silvimorart@gmail.com" 
+            phone="+972 52-625-5255" 
+            domain="https://silviamor.co.il/" 
+          />
   
 
   <ByMe/>

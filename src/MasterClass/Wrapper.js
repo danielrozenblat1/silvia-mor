@@ -19,6 +19,8 @@ import RecommendsScreen from '../screens/RecommendsScreen';
 import RecommendsScreenM from '../screens/RecommendsScreenMasterclass';
 import ByMeM from '../components/ByMe masterclass/ByMe';
 import FloatingMasterclass from '../components/floatingButton/Floating';
+import PrivacyPolicy from '../components/privacy/Privacy';
+import FifthScreen from './screens/FifthScreen';
 
 
 
@@ -65,7 +67,9 @@ const [scrolled, setScrolled] = useState(false);
   <ForthScreen/>
 <Fit/>
 <LocationSection/>
-<FloatingMasterclass/>
+{/* <FloatingMasterclass/> */}
+<FifthScreen/>
+
 <ByMeM/>
 {/* 
   <ThirdScreen/>
