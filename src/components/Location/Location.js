@@ -8,7 +8,7 @@ const LocationSection = () => {
   };
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.pageContainer} id="מיקום">
       {/* Background blurry images */}
       <div className={styles.bgImageTop}></div>
       <div className={styles.bgImageBottom}></div>

@@ -1,7 +1,7 @@
       
 
 
-import NavBarNew from '../components/NewNav/NavBarNew';
+import NavBarNew from "../components/CourseNav/NavBarNew";
 import styles from "./Wrapper.module.css"
 import { useEffect, useState } from 'react';
 import ByMe from '../components/ByMe/ByMe';
@@ -59,6 +59,7 @@ const [scrolled, setScrolled] = useState(false);
         buttonText="להרשמה לחצי כאן!"
         buttonLink="#registration-form"
       /> */}
+      <NavBarNew/>
 <FirstScreen/>
 <MasterClass/>
 <PersonalStorySection/>

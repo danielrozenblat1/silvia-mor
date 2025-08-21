@@ -1,0 +1,334 @@
+.navbar {
+  position: fixed;
+  width: 70%;
+  max-width: 1200px;
+  height: 80px;
+  z-index: 1000;
+  box-sizing: border-box;
+  font-family: "AssistantR";
+  margin: 20px auto;
+  border-radius: 40px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(-30px);
+  left: 15%;
+  right: 15%;
+  top: 20px;
+  /* רקע שחור עם glass morphism מיוחד */
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.85) 0%, 
+    rgba(15, 15, 15, 0.9) 20%, 
+    rgba(0, 0, 0, 0.85) 40%, 
+    rgba(20, 20, 20, 0.9) 60%, 
+    rgba(0, 0, 0, 0.85) 80%, 
+    rgba(15, 15, 15, 0.9) 100%
+  );
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.1),
+    inset 0 4px 16px rgba(255, 255, 255, 0.05),
+    0 4px 20px rgba(0, 0, 0, 0.6),
+    0 8px 40px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+  pointer-events: none;
+}
+
+.navbarInner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-radius: 40px;
+  background: transparent;
+}
+
+.logo img {
+  height: 60px;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) 
+          drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+  animation: pulseLogo 3s ease-in-out infinite;
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) 
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+  }
+}
+
+.menuButton {
+  /* כפתור בגווני בז עם glass morphism מיוחד */
+  background: linear-gradient(145deg, 
+    rgba(245, 235, 220, 0.95), 
+    rgba(222, 204, 185, 0.95));
+  color: #2c2c2c;
+  font-family: "AssistantR";
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-right: 50px;
+  min-width: 160px;
+  height: 45px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px) saturate(200%);
+  -webkit-backdrop-filter: blur(15px) saturate(200%);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 4px 8px rgba(245, 235, 220, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(245, 235, 220, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.menuButton:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, 
+    rgba(250, 240, 225, 0.98), 
+    rgba(230, 212, 193, 0.98));
+  color: #1a1a1a;
+  box-shadow:
+    inset 0 3px 6px rgba(255, 255, 255, 0.9),
+    inset 0 6px 12px rgba(245, 235, 220, 0.7),
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    0 0 30px rgba(245, 235, 220, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.menuButton:active {
+  transform: scale(0.98);
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 1),
+    inset 0 8px 16px rgba(245, 235, 220, 0.8),
+    0 1px 4px rgba(0, 0, 0, 0.15),
+    0 0 10px rgba(245, 235, 220, 0.2);
+}
+
+.buttonContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  direction: rtl;
+}
+
+.buttonText {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.8),
+    0 0 5px rgba(245, 235, 220, 0.6);
+}
+
+/* Mobile Menu - רקע שחור לגמרי */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 1); /* רקע שחור לגמרי */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: revealMenu 0.6s ease forwards;
+}
+
+.mobileMenu.closing {
+  animation: closeMenu 0.6s ease forwards;
+}
+
+@keyframes revealMenu {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes closeMenu {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeButton {
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.9), rgba(0, 0, 0, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.closeButton:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(15, 15, 15, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mobileMenuLogo img {
+  height: 60px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+.mobileMenuContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 1;
+  transition: all 0.4s ease;
+  padding: 40px 20px;
+}
+
+.mobileMenuItem {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-family: "AssistantR";
+  font-weight: 500;
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 20px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.mobileMenuItem:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+  background: rgba(40, 40, 40, 0.9);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mobileMenuItem:active {
+  transform: scale(0.98);
+}
+
+.centerLogo {
+  width: 80px;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  animation: pulseCenterLogo 2s ease-in-out infinite;
+  margin-top: 20px;
+}
+
+@keyframes pulseCenterLogo {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1));
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .navbar {
+    width: 80%;
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+  }
+  .navbarInner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 95%;
+    height: 70px;
+    left: 2.5%;
+    right: 2.5%;
+  }
+  .navbarInner {
+    padding: 0 15px;
+  }
+  .logo img {
+    height: 30px;
+  }
+  .menuButton {
+    min-width: 140px;
+    font-size: 1rem;
+    padding: 6px 15px;
+    height: 40px;
+    margin-right: 30px;
+  }
+  
+  .mobileMenuItem {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    min-width: 180px;
+  }
+  
+  .mobileMenuContent {
+    gap: 18px;
+    padding: 30px 15px;
+  }
+}
